@@ -41,7 +41,7 @@ gateForm.addEventListener('submit', (e) => {
 // img: null renders a monogram placeholder — drop in headshot paths when ready
 const TEAM = [
   {
-    name: 'Murtuza Tinwala', role: 'PRINCIPAL — INDUSTRIAL & OPERATIONS', initials: 'MT', img: null,
+    name: 'Murtuza Tinwala', role: 'PRINCIPAL — INDUSTRIAL & OPERATIONS', initials: 'MT', img: 'assets/Murtuza.jpeg',
     creds: [
       '38+ years in manufacturing and industrial real estate ownership',
       'Led a team of 50+ installers delivering 200+ projects annually',
