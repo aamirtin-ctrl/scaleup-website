@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>ScaleUp — Investor Access</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="investors.css">
+</head>
+<body class="iv-locked">
+
+  <!-- ===================== ACCESS GATE ===================== -->
+  <div class="iv-gate" id="iv-gate">
+    <div class="iv-gate-panel">
+      <span class="su-logo-mark"><i></i><i></i><i></i></span>
+      <span class="iv-gate-eyebrow">INVESTOR ACCESS</span>
+      <h1 class="iv-gate-title">This area is gated.</h1>
+      <p class="iv-gate-sub">Enter the access code to continue.</p>
+      <form class="iv-gate-form" id="iv-gate-form">
+        <input type="password" id="iv-code" placeholder="Access code" autocomplete="off" autofocus>
+        <button type="submit" class="su-btn-fill">Enter <span class="su-arr">&#8594;</span></button>
+      </form>
+      <span class="iv-gate-hint">Need access? <a href="mailto:contactus@scaleupflex.com?subject=Investor%20access%20request">Request the code</a> &middot; <a href="index.html">Back to site</a></span>
+    </div>
+  </div>
+
+  <!-- ===================== PAGE ===================== -->
+  <div class="iv-page" id="iv-page">
+
+    <!-- floating pill nav -->
+    <header class="iv-nav">
+      <a class="su-logo" href="index.html" title="Back to site">
+        <span class="su-logo-mark su-logo-mark-sm"><i></i><i></i><i></i></span>
+        <span class="su-logo-word su-logo-word-sm">ScaleUp</span>
+      </a>
+      <nav class="iv-nav-links">
+        <a href="#gap">The gap</a>
+        <a href="#team">Who we are</a>
+        <a href="#markets">Markets</a>
+        <a href="#coinvest">Co-invest</a>
+        <a href="#acquirers">Acquirers</a>
+      </nav>
+      <a href="index.html" class="iv-nav-cta">Back to site</a>
+    </header>
+
+    <!-- hero -->
+    <section class="iv-hero">
+      <div class="iv-polaroids" id="iv-polaroids">
+        <figure class="iv-polaroid" style="--tilt:-7deg; --d:0.15s; left:4%; top:14%;"><img loading="lazy" decoding="async" src="assets/rockwall.webp" alt="Rockwall Flex Park"></figure>
+        <figure class="iv-polaroid iv-polaroid-sm" style="--tilt:5deg; --d:0.45s; left:11%; top:56%;"><img loading="lazy" decoding="async" src="assets/mckinney.webp" alt="McKinney site"></figure>
+        <figure class="iv-polaroid" style="--tilt:8deg; --d:0.3s; right:4%; top:16%;"><img loading="lazy" decoding="async" src="assets/hero.webp" alt="ScaleUp development"></figure>
+        <figure class="iv-polaroid iv-polaroid-sm" style="--tilt:-5deg; --d:0.6s; right:11%; top:58%;"><img loading="lazy" decoding="async" src="assets/princeton.webp" alt="Princeton site"></figure>
+      </div>
+      <div class="iv-hero-center">
+        <span class="iv-eyebrow iv-hero-line" style="--d:0.05s;">INVESTOR OVERVIEW</span>
+        <h1>
+          <span class="iv-hero-line" style="--d:0.15s;">Room.</span>
+          <span class="iv-hero-line" style="--d:0.3s;">To scale.</span>
+          <span class="iv-hero-line iv-hero-up" style="--d:0.45s;">Up.</span>
+        </h1>
+        <div class="iv-hero-mark iv-hero-line" style="--d:0.65s;">
+          <span class="su-logo-mark"><i></i><i></i><i></i></span>
+        </div>
+        <p class="iv-hero-sub iv-hero-line" style="--d:0.8s;">Small-bay flex, built and operated in North Texas.</p>
+      </div>
+      <div class="iv-hero-scroll iv-hero-line" style="--d:1s;"><span class="su-hint-arrow">&#8595;</span></div>
+    </section>
+
+    <!-- the gap -->
+    <section class="iv-section" id="gap">
+      <div class="iv-inner">
+        <div class="iv-head iv-reveal">
+          <span class="iv-eyebrow"><i></i>THE GAP</span>
+          <h2>Room to scale up.</h2>
+          <p>Developers spent a decade building big-box logistics — contractors, makers, and operators got left behind. Small-bay flex is structurally undersupplied, and demand keeps accelerating.</p>
+        </div>
+        <div class="iv-bars iv-reveal">
+          <span class="iv-bars-label">SHARE OF NEW INDUSTRIAL CONSTRUCTION</span>
+          <div class="iv-bar-row">
+            <span class="iv-bar-name">Big-box logistics</span>
+            <div class="iv-bar-track"><div class="iv-bar-fill" style="--w:88%"></div></div>
+          </div>
+          <div class="iv-bar-row">
+            <span class="iv-bar-name">Small-bay flex</span>
+            <div class="iv-bar-track"><div class="iv-bar-fill iv-bar-red" style="--w:4%"></div><span class="iv-bar-callout">&lt;0.5%</span></div>
+          </div>
+        </div>
+        <div class="iv-stats">
+          <div class="iv-stat iv-reveal" style="--d:0s;">
+            <span class="iv-stat-val" data-count="0.5" data-prefix="&lt;" data-suffix="%" data-dec="1">&lt;0.5%</span>
+            <span class="iv-stat-label">of new industrial construction is small-bay flex</span>
+          </div>
+          <div class="iv-stat iv-reveal" style="--d:0.12s;">
+            <span class="iv-stat-val" data-count="4.5" data-suffix="%" data-dec="1">4.5%</span>
+            <span class="iv-stat-label">Rockwall flex vacancy vs. 9.4% DFW industrial</span>
+          </div>
+          <div class="iv-stat iv-reveal" style="--d:0.24s;">
+            <span class="iv-stat-val" data-count="16.30" data-prefix="$" data-dec="2">$16.30</span>
+            <span class="iv-stat-label">Rockwall flex rent / SF vs. $9.78 DFW average</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- who we are — rotating team stage -->
+    <section class="iv-section" id="team">
+      <div class="iv-inner">
+        <div class="iv-head iv-reveal iv-head-center">
+          <span class="iv-eyebrow"><i></i>WHO WE ARE</span>
+          <h2>Meet the team.</h2>
+          <p>Operators, not promoters — principals who commit personal equity and run what they build.</p>
+        </div>
+      </div>
+      <div class="iv-team-stage iv-reveal" id="iv-team-stage"></div>
+    </section>
+
+    <!-- active markets -->
+    <section class="iv-section" id="markets">
+      <div class="iv-inner">
+        <div class="iv-head iv-reveal">
+          <span class="iv-eyebrow"><i></i>ACTIVE MARKETS</span>
+          <h2>A pipeline, not a project.</h2>
+        </div>
+        <div class="iv-markets" id="iv-markets"></div>
+      </div>
+    </section>
+
+    <!-- co-investors -->
+    <section class="iv-section" id="coinvest">
+      <div class="iv-inner">
+        <div class="iv-head iv-reveal">
+          <span class="iv-eyebrow"><i></i>FOR CO-INVESTORS</span>
+          <h2>Partner with an operator.</h2>
+        </div>
+        <div class="iv-principles">
+          <div class="iv-principle iv-reveal" style="--d:0s;">
+            <span class="iv-principle-n">01</span>
+            <h3>Developer-operator alignment</h3>
+            <p>Principals commit substantial personal equity to every project. We operate what we build.</p>
+          </div>
+          <div class="iv-principle iv-reveal" style="--d:0.1s;">
+            <span class="iv-principle-n">02</span>
+            <h3>Conservative underwriting</h3>
+            <p>No cap-rate compression modeled. Upside comes from execution, not assumptions.</p>
+          </div>
+          <div class="iv-principle iv-reveal" style="--d:0.2s;">
+            <span class="iv-principle-n">03</span>
+            <h3>Investor-first waterfall</h3>
+            <p>Preferred returns paid first. Capital returned before profits are shared.</p>
+          </div>
+          <div class="iv-principle iv-reveal" style="--d:0.3s;">
+            <span class="iv-principle-n">04</span>
+            <h3>Sharia-compliant structures</h3>
+            <p>Riba-free financing available, including Ijara structures through Islamic banking partners.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- institutional acquirers -->
+    <section class="iv-section iv-section-last" id="acquirers">
+      <div class="iv-inner">
+        <div class="iv-head iv-reveal">
+          <span class="iv-eyebrow"><i></i>FOR INSTITUTIONAL ACQUIRERS</span>
+          <h2>We build the product<br>you want to own.</h2>
+        </div>
+        <div class="iv-acq iv-reveal">
+          <div class="iv-acq-point">
+            <h3>Portfolio, not project</h3>
+            <p>A repeatable pipeline — same product, same lease structure, same operating standard.</p>
+          </div>
+          <div class="iv-acq-point">
+            <h3>Built to spec, not retrofitted</h3>
+            <p>Documentation from day one: submittals, change orders, and operating history delivered with the asset.</p>
+          </div>
+        </div>
+        <div class="iv-acq-cta iv-reveal">
+          <a href="mailto:contactus@scaleupflex.com?subject=Acquisition%20inquiry" class="su-btn-fill">Acquisition inquiries <span class="su-arr">&#8594;</span></a>
+          <span class="iv-acq-note">Direct to principals.</span>
+        </div>
+      </div>
+    </section>
+
+    <footer class="iv-footer">
+      <a class="su-logo" href="index.html">
+        <span class="su-logo-mark su-logo-mark-sm"><i></i><i></i><i></i></span>
+        <span class="su-logo-word su-logo-word-sm">ScaleUp</span>
+      </a>
+      <span class="su-footer-note">Confidential &middot; &copy; 2026 ScaleUp Developments</span>
+      <a href="index.html" class="iv-back">&#8592; Back to the main site</a>
+    </footer>
+
+  </div>
+
+  <script src="logo.js"></script>
+  <script src="investors.js"></script>
+</body>
+</html>
