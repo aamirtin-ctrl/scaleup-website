@@ -417,6 +417,16 @@ const SLOT_TRANSFORMS = [
   'rotate(-7deg) translate(-11%, 7%) scale(0.92)',
 ];
 
+const styleCache = new WeakMap();
+function setStyles(node, styles) {
+  let cache = styleCache.get(node);
+  if (!cache) { cache = {}; styleCache.set(node, cache); }
+  for (const k in styles) {
+    const v = styles[k];
+    if (cache[k] !== v) { cache[k] = v; node.style[k] = v; }
+  }
+}
+
 function applyFrame() {
   const vw = window.innerWidth;
   const vh = window.innerHeight;
@@ -444,49 +454,57 @@ function applyFrame() {
   const detailO = clamp((t - 0.62) / 0.30, 0, 1);
 
   // left panel + hint
-  leftPanel.style.opacity = panelO;
-  leftPanel.style.transform = (mobile ? '' : 'translateY(-50%) ') + `translateX(${-30 * (1 - panelO)}px)`;
-  leftPanel.style.pointerEvents = panelO < 0.2 ? 'none' : 'auto';
-  hintEl.style.opacity = hintO;
+  setStyles(leftPanel, {
+    opacity: panelO.toFixed(3),
+    transform: (mobile ? '' : 'translateY(-50%) ') + `translateX(${(-30 * (1 - panelO)).toFixed(2)}px)`,
+    pointerEvents: panelO < 0.2 ? 'none' : 'auto',
+  });
+  setStyles(hintEl, { opacity: hintO.toFixed(3) });
 
   cards.forEach((c, idx) => {
     const slot = (idx - active + 3) % 3; // 0 = front, 1 = backA, 2 = backB
-    const s = c.el.style;
 
     if (slot === 0) {
-      s.left = fL + 'px';
-      s.top = fT + 'px';
-      s.width = fW + 'px';
-      s.height = fH + 'px';
-      s.borderRadius = fRadius + 'px';
-      s.transform = `rotate(${fRot}deg)`;
-      s.zIndex = 6;
-      s.opacity = 1;
-      s.boxShadow = t < 0.9 ? '0 50px 100px rgba(74,56,30,0.35)' : 'none';
+      setStyles(c.el, {
+        left: fL.toFixed(2) + 'px',
+        top: fT.toFixed(2) + 'px',
+        width: fW.toFixed(2) + 'px',
+        height: fH.toFixed(2) + 'px',
+        borderRadius: fRadius.toFixed(2) + 'px',
+        transform: `rotate(${fRot.toFixed(3)}deg)`,
+        zIndex: '6',
+        opacity: '1',
+        boxShadow: t < 0.9 ? '0 50px 100px rgba(74,56,30,0.35)' : 'none',
+      });
       c.el.classList.remove('is-back');
 
-      c.face.style.opacity = faceO;
-      c.backlabel.style.opacity = 0;
-      c.detail.style.opacity = detailO;
-      c.detail.style.pointerEvents = detailO > 0.5 ? 'auto' : 'none';
-      if (c.pageCount > 1) c.inner.style.transform = `translateY(${-innerProgress(p, c.pageCount) * (100 / c.pageCount)}%)`;
+      setStyles(c.face, { opacity: faceO.toFixed(3) });
+      setStyles(c.backlabel, { opacity: '0' });
+      setStyles(c.detail, {
+        opacity: detailO.toFixed(3),
+        pointerEvents: detailO > 0.5 ? 'auto' : 'none',
+      });
+      if (c.pageCount > 1) setStyles(c.inner, {
+        transform: `translateY(${(-innerProgress(p, c.pageCount) * (100 / c.pageCount)).toFixed(4)}%)`,
+      });
     } else {
-      s.left = restL + 'px';
-      s.top = restT + 'px';
-      s.width = restW + 'px';
-      s.height = restH + 'px';
-      s.borderRadius = '18px';
-      s.transform = SLOT_TRANSFORMS[slot];
-      s.zIndex = slot === 1 ? 2 : 1;
-      s.opacity = backO;
-      s.boxShadow = '0 30px 60px rgba(74,56,30,0.25)';
+      setStyles(c.el, {
+        left: restL.toFixed(2) + 'px',
+        top: restT.toFixed(2) + 'px',
+        width: restW.toFixed(2) + 'px',
+        height: restH.toFixed(2) + 'px',
+        borderRadius: '18px',
+        transform: SLOT_TRANSFORMS[slot],
+        zIndex: slot === 1 ? '2' : '1',
+        opacity: backO.toFixed(3),
+        boxShadow: '0 30px 60px rgba(74,56,30,0.25)',
+      });
       c.el.classList.add('is-back');
 
-      c.face.style.opacity = 0;
-      c.backlabel.style.opacity = 1;
-      c.detail.style.opacity = 0;
-      c.detail.style.pointerEvents = 'none';
-      if (c.pageCount > 1) c.inner.style.transform = 'translateY(0)';
+      setStyles(c.face, { opacity: '0' });
+      setStyles(c.backlabel, { opacity: '1' });
+      setStyles(c.detail, { opacity: '0', pointerEvents: 'none' });
+      if (c.pageCount > 1) setStyles(c.inner, { transform: 'translateY(0)' });
     }
   });
 }
