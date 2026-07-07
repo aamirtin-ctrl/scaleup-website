@@ -457,8 +457,7 @@ function applyFrame() {
         transform: `rotate(${fRot.toFixed(3)}deg)`,
         zIndex: '6',
         opacity: '1',
-        visibility: 'visible',
-        boxShadow: t < 0.12 ? '0 50px 100px rgba(74,56,30,0.35)' : 'none',
+        boxShadow: t < 0.9 ? '0 50px 100px rgba(74,56,30,0.35)' : 'none',
       });
       c.el.classList.remove('is-back');
 
@@ -467,7 +466,6 @@ function applyFrame() {
       setStyles(c.detail, {
         opacity: detailO.toFixed(3),
         pointerEvents: detailO > 0.5 ? 'auto' : 'none',
-        contentVisibility: detailO <= 0.001 ? 'hidden' : 'visible',
       });
       if (c.pageCount > 1) setStyles(c.inner, {
         transform: `translateY(${(-innerProgress(p, c.pageCount) * (100 / c.pageCount)).toFixed(4)}%)`,
@@ -482,14 +480,13 @@ function applyFrame() {
         transform: SLOT_TRANSFORMS[slot],
         zIndex: slot === 1 ? '2' : '1',
         opacity: backO.toFixed(3),
-        visibility: backO <= 0.001 ? 'hidden' : 'visible',
         boxShadow: '0 30px 60px rgba(74,56,30,0.25)',
       });
       c.el.classList.add('is-back');
 
       setStyles(c.face, { opacity: '0' });
       setStyles(c.backlabel, { opacity: '1' });
-      setStyles(c.detail, { opacity: '0', pointerEvents: 'none', contentVisibility: 'hidden' });
+      setStyles(c.detail, { opacity: '0', pointerEvents: 'none' });
       if (c.pageCount > 1) setStyles(c.inner, { transform: 'translateY(0)' });
     }
   });
