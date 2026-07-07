@@ -94,23 +94,6 @@ const DEVS = [
       { date: 'TBD', title: 'Delivery & move-ins' },
     ],
   },
-  {
-    name: 'Princeton', region: 'NORTH TEXAS', location: 'Princeton, TX',
-    status: 'Coming Soon', leasing: false, eyebrow: 'COMING SOON — CONTRACT UNDER REVIEW',
-    cta: 'Register interest',
-    img: 'assets/princeton.webp',
-    blurb: 'Our next North Texas site, along the Highway 380 corridor. The land contract is still under review — plans, specs, and leasing details will be announced once it closes.',
-    stats: [
-      { label: 'STATUS', val: 'Under review' },
-      { label: 'DETAILS', val: 'Coming soon' },
-      { label: 'CORRIDOR', val: 'Hwy 380' },
-    ],
-    timeline: [ // placeholder milestones — Aamir will supply real dates/details
-      { date: 'Now', title: 'Contract under review', desc: 'Land contract in negotiation.', state: 'current' },
-      { date: 'TBD', title: 'Site announcement' },
-      { date: 'TBD', title: 'Planning & design' },
-    ],
-  },
 ];
 
 /* ============================================================
@@ -462,7 +445,7 @@ function applyFrame() {
   setStyles(hintEl, { opacity: hintO.toFixed(3) });
 
   cards.forEach((c, idx) => {
-    const slot = (idx - active + 3) % 3; // 0 = front, 1 = backA, 2 = backB
+    const slot = (idx - active + cards.length) % cards.length; // 0 = front, rest stacked behind
 
     if (slot === 0) {
       setStyles(c.el, {
@@ -644,7 +627,8 @@ document.getElementById('su-form').addEventListener('submit', async (e) => {
       body: JSON.stringify({
         name: f.get('name'),
         email: f.get('email'),
-        development: f.get('dev'),
+        phone: f.get('phone') || 'Not provided',
+        park: f.get('dev'),
         message: f.get('message'),
         _subject: `Leasing inquiry — ${f.get('dev')}`,
         _replyto: f.get('email'),
