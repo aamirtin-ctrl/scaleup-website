@@ -2,4 +2,29 @@ User-agent: *
 Allow: /
 Disallow: /investors.html
 
+# AI / answer-engine crawlers are welcome
+User-agent: GPTBot
+Allow: /
+Disallow: /investors.html
+
+User-agent: OAI-SearchBot
+Allow: /
+Disallow: /investors.html
+
+User-agent: ClaudeBot
+Allow: /
+Disallow: /investors.html
+
+User-agent: anthropic-ai
+Allow: /
+Disallow: /investors.html
+
+User-agent: PerplexityBot
+Allow: /
+Disallow: /investors.html
+
+User-agent: Google-Extended
+Allow: /
+Disallow: /investors.html
+
 Sitemap: https://scaleupflex.com/sitemap.xml

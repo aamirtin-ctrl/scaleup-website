@@ -161,6 +161,7 @@ button { font-family: inherit; }
 .su-card {
   position: absolute; overflow: hidden; background: var(--panel);
   will-change: transform, width, height, left, top;
+  contain: layout paint;
 }
 .su-card.is-back { cursor: pointer; }
 /* swap animation: transitions only while .swapping is set */
@@ -398,6 +399,7 @@ button { font-family: inherit; }
 .su-about {
   position: relative; overflow: hidden;
   color: var(--text-2); padding: 130px 6vw 110px;
+  content-visibility: auto; contain-intrinsic-size: auto 1400px;
 }
 .su-cross { position: absolute; font-size: 24px; font-weight: 300; color: rgba(36,29,19,0.2); pointer-events: none; }
 .su-about-inner { max-width: 1180px; margin: 0 auto; text-align: center; }
@@ -508,7 +510,7 @@ button { font-family: inherit; }
 .t-pop-stars { margin-bottom: 10px; font-size: 13px; letter-spacing: 2px; color: var(--red); }
 
 /* ============ contact (cream) ============ */
-.su-contact { padding: 130px 6vw 0; }
+.su-contact { padding: 130px 6vw 0; content-visibility: auto; contain-intrinsic-size: auto 1200px; }
 .su-contact-inner {
   max-width: 1180px; margin: 0 auto;
   display: grid; grid-template-columns: 1.05fr 1fr; gap: 80px; align-items: start;
