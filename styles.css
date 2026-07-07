@@ -128,6 +128,7 @@ button { font-family: inherit; }
 
 .su-left {
   position: absolute; left: 5.2vw; top: 50%;
+  will-change: transform, opacity;
   width: 40vw; max-width: 520px; z-index: 3;
   transform: translateY(-50%);
 }
@@ -160,7 +161,7 @@ button { font-family: inherit; }
 /* ---- cards (photo-backed — light text over dark scrims stays) ---- */
 .su-card {
   position: absolute; overflow: hidden; background: var(--panel);
-  will-change: transform, width, height, left, top;
+  will-change: transform, opacity;
   contain: layout paint;
 }
 .su-card.is-back { cursor: pointer; }

@@ -457,7 +457,8 @@ function applyFrame() {
         transform: `rotate(${fRot.toFixed(3)}deg)`,
         zIndex: '6',
         opacity: '1',
-        boxShadow: t < 0.9 ? '0 50px 100px rgba(74,56,30,0.35)' : 'none',
+        visibility: 'visible',
+        boxShadow: '0 24px 48px rgba(74,56,30,0.30)',
       });
       c.el.classList.remove('is-back');
 
@@ -480,7 +481,8 @@ function applyFrame() {
         transform: SLOT_TRANSFORMS[slot],
         zIndex: slot === 1 ? '2' : '1',
         opacity: backO.toFixed(3),
-        boxShadow: '0 30px 60px rgba(74,56,30,0.25)',
+        visibility: backO <= 0.001 ? 'hidden' : 'visible',
+        boxShadow: '0 24px 48px rgba(74,56,30,0.25)',
       });
       c.el.classList.add('is-back');
 
