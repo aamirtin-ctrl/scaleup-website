@@ -1,0 +1,4 @@
+# Old Craft CMS URLs -> new site (301s preserve any link equity)
+/contact-us   /#contact   301
+/contact-us/  /#contact   301
+/index.php    /           301
