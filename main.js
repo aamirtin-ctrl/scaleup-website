@@ -62,26 +62,26 @@ const DEVS = [
   {
     name: 'McKinney', region: 'NORTH TEXAS', location: 'McKinney, TX',
     address: '1990 N McDonald St, McKinney, TX 75071',
-    status: 'In Planning', leasing: false, eyebrow: 'IN PLANNING — BREAKING GROUND Q3 2026',
+    status: 'In Planning', leasing: false, eyebrow: 'IN PLANNING — BREAKING GROUND Q4 2026',
     cta: 'Register interest',
     img: 'assets/mckinney.webp',
-    blurb: 'A planned 6.2-acre flex industrial development on N McDonald St — roughly 75,000 SF of warehouse and flex space, including about 20,000 SF of retail and showroom frontage.',
+    blurb: 'A planned 6.2-acre mixed-use development on N McDonald St — retail, showroom, and flex space totaling roughly 75,000 SF, with about 20,000 SF of retail and showroom fronting McDonald St.',
     stats: [
       { label: 'SITE SIZE', val: '6.20 acres' },
       { label: 'PLANNED BUILD', val: '75,000± SF' },
-      { label: 'GROUNDBREAKING', val: 'Q3 2026' },
+      { label: 'GROUNDBREAKING', val: 'Q4 2026' },
     ],
     outlook: {
       minis: [
         ['6.20', 'ACRES'],
         ['75,000±', 'SF PLANNED'],
         ['~20K', 'SF RETAIL / SHOWROOM'],
-        ['Q3 2026', 'GROUNDBREAKING'],
+        ['Q4 2026', 'GROUNDBREAKING'],
       ],
       rows: [
         { name: 'Site secured', sub: '1990 N McDonald St, McKinney, TX 75071', val: 'Complete', state: 'done' },
         { name: 'Planning & design', sub: 'Site plan, entitlements, and engineering', val: 'In progress', state: 'current' },
-        { name: 'Groundbreaking', sub: 'Construction start', val: 'Q3 2026' },
+        { name: 'Groundbreaking', sub: 'Construction start', val: 'Q4 2026' },
         { name: 'Pre-leasing', sub: 'Unit mix, rates, and floor plans announced', val: 'To be announced' },
       ],
       note: 'Unit mix and rates will be published as planning completes.',
@@ -89,7 +89,7 @@ const DEVS = [
     timeline: [ // placeholder milestones — Aamir will supply real dates/details
       { date: 'Early 2026', title: 'Site secured', desc: '1990 N McDonald St, McKinney, TX 75071', state: 'done' },
       { date: 'Now', title: 'Planning & design', desc: 'Site plan, entitlements, and engineering underway.', state: 'current' },
-      { date: 'Q3 2026', title: 'Groundbreaking' },
+      { date: 'Q4 2026', title: 'Groundbreaking' },
       { date: 'TBD', title: 'Vertical construction' },
       { date: 'TBD', title: 'Delivery & move-ins' },
     ],

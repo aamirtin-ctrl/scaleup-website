@@ -6,4 +6,30 @@
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
+  <url>
+    <loc>https://scaleupflex.com/blog.html</loc>
+    <lastmod>2026-06-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://scaleupflex.com/blog/what-is-flex-space.html</loc>
+    <lastmod>2026-06-02</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://scaleupflex.com/blog/flex-space-vs-traditional-warehouse.html</loc>
+    <lastmod>2026-06-05</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://scaleupflex.com/blog/how-much-does-flex-space-cost-dfw.html</loc>
+    <lastmod>2026-06-09</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://scaleupflex.com/blog/what-size-flex-space-does-my-business-need.html</loc>
+    <lastmod>2026-06-12</lastmod>
+    <priority>0.6</priority>
+  </url>
 </urlset>

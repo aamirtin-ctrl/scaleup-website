@@ -179,7 +179,7 @@ stageIO.observe(stage);
 /* ---------------- active markets ---------------- */
 const MARKETS = [
   { name: 'Rockwall Flex Park', loc: 'Rockwall, TX', status: 'Under construction', dot: '#C9A227', delivery: 'Summer 2027' },
-  { name: 'McKinney Flex Park', loc: 'McKinney, TX', status: 'In planning', dot: '#C9A227', delivery: 'Breaking ground Q3 2026' },
+  { name: 'McKinney Flex Park', loc: 'McKinney, TX', status: 'In planning', dot: '#C9A227', delivery: 'Breaking ground Q4 2026' },
   { name: 'Princeton Flex Park', loc: 'Princeton, TX', status: 'Contract under review', dot: 'rgba(36,29,19,0.35)', delivery: 'Future phase' },
   { name: 'Pipeline', loc: 'DFW + Sun Belt', status: 'Sourcing', dot: '#4FB477', delivery: 'Ongoing' },
 ];
