@@ -29,18 +29,19 @@
 }
 .bl-chip::before { content: ''; display: block; width: 7px; height: 7px; border-radius: 50%; background: var(--red); }
 .bl-hero h1 {
-  margin-top: 22px; font-family: 'Lora', serif; font-weight: 600;
+  margin-top: 6px; font-family: 'Lora', serif; font-weight: 600;
   font-size: clamp(40px, 5.6vw, 76px); line-height: 1.04; letter-spacing: -0.02em; color: var(--text);
 }
 .bl-hero p { margin: 18px auto 0; max-width: 560px; font-size: 16px; line-height: 1.65; color: var(--muted); }
 .bl-search { margin: 30px auto 0; display: flex; gap: 10px; max-width: 520px; }
 .bl-search input {
-  flex: 1; padding: 14px 22px; border-radius: 100px;
+  flex: 1; padding: 14px 22px; border-radius: 12px;
   font-family: 'Archivo', sans-serif; font-size: 15px; color: var(--text);
   background: #FFFEF9; border: 1px solid rgba(36,29,19,0.18); outline: none;
   transition: border-color 0.2s ease;
 }
 .bl-search input:focus { border-color: rgba(36,29,19,0.45); }
+.bl-search .su-btn-fill { border-radius: 12px; }
 
 /* ---------- listing layout ---------- */
 .bl-main { max-width: 1180px; margin: 0 auto; padding: 0 6vw 90px; display: grid; grid-template-columns: 1fr 300px; gap: 48px; align-items: start; }
