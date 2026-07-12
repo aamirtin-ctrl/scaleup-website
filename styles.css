@@ -358,6 +358,55 @@ button { font-family: inherit; }
   padding: 36px 40px 40px; box-shadow: 0 50px 120px rgba(54,42,24,0.35);
   animation: su-rise 0.4s cubic-bezier(0.2, 0.7, 0.2, 1) both;
 }
+.su-modal-panel.su-modal-wide {
+  width: min(1080px, 94vw); max-height: 90vh;
+  padding: 38px 44px 44px;
+}
+
+/* ---- progress media gallery ---- */
+.su-pg { position: relative; margin-top: 26px; }
+.su-pg-strip {
+  display: flex; gap: 18px; overflow-x: auto; scroll-snap-type: x mandatory;
+  padding-bottom: 10px; -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin; scrollbar-color: rgba(36,29,19,0.25) transparent;
+}
+.su-pg-item {
+  flex: 0 0 min(640px, 82%); scroll-snap-align: start; margin: 0;
+}
+.su-pg-item img, .su-pg-item video {
+  width: 100%; aspect-ratio: 16 / 10; object-fit: cover; display: block;
+  border-radius: 16px; background: rgba(36,29,19,0.06);
+  border: 1px solid rgba(36,29,19,0.1); box-shadow: 0 16px 40px rgba(74,56,30,0.14);
+}
+.su-pg-item figcaption { display: flex; align-items: baseline; gap: 12px; padding: 12px 4px 0; }
+.su-pg-date {
+  flex-shrink: 0; font-size: 10.5px; font-weight: 600; letter-spacing: 0.16em;
+  color: var(--red);
+}
+.su-pg-cap { font-size: 13.5px; line-height: 1.45; color: rgba(36,29,19,0.65); }
+.su-pg-arrow {
+  position: absolute; top: 50%; transform: translateY(-70%);
+  width: 42px; height: 42px; border-radius: 50%;
+  border: 1px solid rgba(36,29,19,0.18); background: #FFFDF6; color: var(--ink);
+  font-size: 16px; cursor: pointer; box-shadow: 0 10px 26px rgba(74,56,30,0.18);
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+.su-pg-arrow:hover { border-color: rgba(36,29,19,0.45); background: #FFFEF9; }
+.su-pg-prev { left: -14px; }
+.su-pg-next { right: -14px; }
+.su-pg-empty {
+  margin-top: 26px; padding: 26px 28px; border-radius: 16px;
+  background: rgba(36,29,19,0.04); border: 1px dashed rgba(36,29,19,0.2);
+  font-size: 14.5px; line-height: 1.6; color: rgba(36,29,19,0.6);
+}
+.su-modal-wide .su-tl { margin-top: 34px; }
+
+@media (max-width: 700px) {
+  .su-modal-panel.su-modal-wide { padding: 28px 20px 32px; max-height: 88vh; }
+  .su-pg-item { flex-basis: 88%; }
+  .su-pg-arrow { display: none; }
+}
+
 .su-modal-close {
   position: absolute; top: 18px; right: 18px; width: 38px; height: 38px; border-radius: 50%;
   border: 1px solid rgba(36,29,19,0.25); background: none; color: var(--ink); font-size: 15px;

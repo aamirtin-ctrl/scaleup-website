@@ -97,6 +97,19 @@ const DEVS = [
 ];
 
 /* ============================================================
+   CONSTRUCTION PROGRESS MEDIA
+   Drop files into assets/progress/ and add a line here (newest first).
+   type: 'image' or 'video'. See assets/progress/README.md.
+   ============================================================ */
+const PROGRESS_MEDIA = {
+  Rockwall: [
+    { type: 'image', src: 'assets/rockwall.webp',     date: 'RENDERING', caption: 'The finished park — aerial view from N Goliad St' },
+    { type: 'image', src: 'assets/3000rockwall.webp', date: 'RENDERING', caption: 'Showroom unit interior — glass front, open bay' },
+    { type: 'image', src: 'assets/2000rockwall.webp', date: 'RENDERING', caption: 'Standard bay — office front, roll-up rear' },
+  ],
+};
+
+/* ============================================================
    DEVELOPMENTS DECK
    ============================================================ */
 const scene = document.getElementById('su-scene');
@@ -305,19 +318,59 @@ function buildCard(d, idx) {
 /* ---- construction progress modal ---- */
 const modal = el('div', 'su-modal', `
   <div class="su-modal-back"></div>
-  <div class="su-modal-panel">
+  <div class="su-modal-panel su-modal-wide">
     <button type="button" class="su-modal-close" aria-label="Close">&#10005;</button>
     <span class="su-modal-eyebrow">CONSTRUCTION PROGRESS</span>
     <h3 class="su-modal-title"></h3>
     <p class="su-modal-sub"></p>
+    <div class="su-pg" hidden>
+      <div class="su-pg-strip" tabindex="0" aria-label="Progress photos and videos"></div>
+      <button type="button" class="su-pg-arrow su-pg-prev" aria-label="Previous">&#8592;</button>
+      <button type="button" class="su-pg-arrow su-pg-next" aria-label="Next">&#8594;</button>
+    </div>
+    <div class="su-pg-empty" hidden>Construction photos and video updates will appear here as work progresses on site.</div>
     <div class="su-tl"></div>
   </div>`);
 document.body.appendChild(modal);
+
+const pgWrap = modal.querySelector('.su-pg');
+const pgStrip = modal.querySelector('.su-pg-strip');
+const pgEmpty = modal.querySelector('.su-pg-empty');
+
+function buildGallery(items) {
+  if (!items || !items.length) {
+    pgWrap.hidden = true;
+    pgEmpty.hidden = false;
+    return;
+  }
+  pgWrap.hidden = false;
+  pgEmpty.hidden = true;
+  pgStrip.innerHTML = items.map((m) => `
+    <figure class="su-pg-item">
+      ${m.type === 'video'
+        ? `<video src="${m.src}" controls playsinline preload="metadata"></video>`
+        : `<img src="${m.src}" alt="${m.caption || 'Construction progress'}" loading="lazy" decoding="async">`}
+      <figcaption>
+        <span class="su-pg-date">${m.date || ''}</span>
+        <span class="su-pg-cap">${m.caption || ''}</span>
+      </figcaption>
+    </figure>`).join('');
+  pgStrip.scrollLeft = 0;
+}
+
+function pgScroll(dir) {
+  const item = pgStrip.querySelector('.su-pg-item');
+  if (!item) return;
+  pgStrip.scrollBy({ left: dir * (item.offsetWidth + 18), behavior: 'smooth' });
+}
+modal.querySelector('.su-pg-prev').addEventListener('click', () => pgScroll(-1));
+modal.querySelector('.su-pg-next').addEventListener('click', () => pgScroll(1));
 
 function openProgress(i) {
   const d = DEVS[i];
   modal.querySelector('.su-modal-title').textContent = d.name;
   modal.querySelector('.su-modal-sub').textContent = d.address || d.location;
+  buildGallery(PROGRESS_MEDIA[d.name]);
   modal.querySelector('.su-tl').innerHTML = (d.timeline || []).map(m => `
     <div class="su-tl-item${m.state ? ' ' + m.state : ''}">
       <span class="su-tl-dot"></span>
@@ -331,6 +384,7 @@ function openProgress(i) {
 function closeProgress() {
   modal.classList.remove('open');
   document.body.style.overflow = '';
+  pgStrip.querySelectorAll('video').forEach(v => v.pause());
 }
 modal.querySelector('.su-modal-back').addEventListener('click', closeProgress);
 modal.querySelector('.su-modal-close').addEventListener('click', closeProgress);
