@@ -115,6 +115,9 @@ button { font-family: inherit; }
   font-size: clamp(46px, 6.6vw, 102px); line-height: 1.02; letter-spacing: -0.015em;
   color: #FAF6EF; text-shadow: 0 2px 40px rgba(0,0,0,0.35);
 }
+.su-rotate { display: inline-block; transition: opacity 0.28s ease, transform 0.28s ease; }
+.su-rotate.su-word-out { opacity: 0; transform: translateY(0.35em); }
+.su-tm { font-size: 0.32em; vertical-align: 1.6em; letter-spacing: 0; font-family: 'Archivo', sans-serif; font-weight: 600; }
 .su-btn-hero { margin-top: 36px; padding: 16px 30px; font-size: 16px; box-shadow: 0 10px 30px rgba(184,50,50,0.32); }
 .su-hero-meta {
   position: absolute; right: 52px; bottom: 13%; z-index: 5; text-align: right;

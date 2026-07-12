@@ -614,6 +614,24 @@ T_COLS.forEach(col => {
    ============================================================ */
 const CONTACT_EMAIL = 'contactus@scaleupflex.com';
 
+/* ============================================================
+   HERO — rotating space type in the headline
+   ============================================================ */
+(() => {
+  const rot = document.getElementById('su-rotate');
+  if (!rot || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const WORDS = ['Office', 'Warehouse', 'Studio', 'Showroom'];
+  let i = 0;
+  setInterval(() => {
+    i = (i + 1) % WORDS.length;
+    rot.classList.add('su-word-out');
+    setTimeout(() => {
+      rot.textContent = WORDS[i];
+      rot.classList.remove('su-word-out');
+    }, 290);
+  }, 3200);
+})();
+
 document.getElementById('su-form').addEventListener('submit', async (e) => {
   e.preventDefault();
   const form = e.target;
@@ -635,6 +653,7 @@ document.getElementById('su-form').addEventListener('submit', async (e) => {
         _subject: `Leasing inquiry — ${f.get('dev')}`,
         _replyto: f.get('email'),
         _template: 'table',
+        _autoresponse: `Hi ${f.get('name')},\n\nThanks for reaching out to ScaleUp. We received your inquiry${f.get('dev') !== 'Not sure yet' ? ` about ${f.get('dev')}` : ''} and one of our principals will get back to you within one business day.\n\nIf it's time-sensitive, call us at (469) 628-1922.\n\nScaleUp Developments\nhttps://scaleupflex.com`,
       }),
     });
     const data = await res.json().catch(() => null);
