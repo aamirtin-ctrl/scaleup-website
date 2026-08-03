@@ -279,6 +279,8 @@ function buildCard(d, idx) {
           <div class="su-plan-strip">${imgs.map(src =>
             `<img src="${src}" alt="${pc.name} — ${pc.size}" loading="lazy" decoding="async">`).join('')}</div>
           <span class="su-plan-size">${pc.size}</span>
+          <button type="button" class="su-plan-arrow su-plan-prev" aria-label="Previous photo">&#8249;</button>
+          <button type="button" class="su-plan-arrow su-plan-next" aria-label="Next photo">&#8250;</button>
           <div class="su-plan-dots">${imgs.map((_, i) =>
             `<button type="button" class="su-plan-dot${i === 0 ? ' active' : ''}" data-i="${i}" aria-label="Photo ${i + 1}"></button>`).join('')}</div>
         </div>`;
@@ -422,19 +424,35 @@ cards.forEach(c => deckRoot.appendChild(c.el));
 deckRoot.querySelectorAll('.su-plan-carousel').forEach((car) => {
   const strip = car.querySelector('.su-plan-strip');
   const dots = [...car.querySelectorAll('.su-plan-dot')];
-  dots.forEach((dot) => dot.addEventListener('click', (e) => {
-    e.stopPropagation();
-    const img = strip.children[+dot.dataset.i];
+  const count = strip.children.length;
+  const current = () => (strip.clientWidth ? Math.round(strip.scrollLeft / strip.clientWidth) : 0);
+  const goTo = (i) => {
+    const img = strip.children[(i % count + count) % count];
     if (img) strip.scrollTo({ left: img.offsetLeft - strip.offsetLeft, behavior: 'smooth' });
-  }));
+  };
+
+  // auto-advance, pausing on hover and briefly after any manual move
+  let timer, resumeT;
+  const stop = () => clearInterval(timer);
+  const play = () => { stop(); timer = setInterval(() => { if (strip.clientWidth) goTo(current() + 1); }, 4500); };
+  const nudge = () => { stop(); clearTimeout(resumeT); resumeT = setTimeout(play, 7000); };
+
+  dots.forEach((dot) => dot.addEventListener('click', (e) => { e.stopPropagation(); goTo(+dot.dataset.i); nudge(); }));
+  car.querySelector('.su-plan-prev').addEventListener('click', (e) => { e.stopPropagation(); e.preventDefault(); goTo(current() - 1); nudge(); });
+  car.querySelector('.su-plan-next').addEventListener('click', (e) => { e.stopPropagation(); e.preventDefault(); goTo(current() + 1); nudge(); });
+
   let tick;
   strip.addEventListener('scroll', () => {
     clearTimeout(tick);
     tick = setTimeout(() => {
-      const i = Math.round(strip.scrollLeft / strip.clientWidth);
+      const i = current();
       dots.forEach((d, k) => d.classList.toggle('active', k === i));
     }, 60);
   }, { passive: true });
+
+  car.addEventListener('mouseenter', stop);
+  car.addEventListener('mouseleave', play);
+  if (!matchMedia('(prefers-reduced-motion: reduce)').matches) play();
 });
 
 /* ---- tabs ---- */
