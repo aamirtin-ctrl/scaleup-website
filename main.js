@@ -731,6 +731,39 @@ T_COLS.forEach(col => {
 const CONTACT_EMAIL = 'contactus@scaleupflex.com';
 
 /* ============================================================
+   SCHEDULE A MEETING — HubSpot Meetings embed (syncs to HubSpot CRM)
+   Paste your HubSpot meetings link below to switch it on, e.g.
+   'https://meetings.hubspot.com/your-slug' or a team/round-robin link.
+   ============================================================ */
+const HUBSPOT_MEETING_URL = '';
+(() => {
+  const openBtn = document.getElementById('su-book-open');
+  const modal = document.getElementById('su-book-modal');
+  const embed = document.getElementById('su-book-embed');
+  if (!openBtn || !modal || !embed) return;
+  let loaded = false;
+  const load = () => {
+    if (loaded) return; loaded = true;
+    if (HUBSPOT_MEETING_URL) {
+      const box = document.createElement('div');
+      box.className = 'meetings-iframe-container';
+      box.setAttribute('data-src', HUBSPOT_MEETING_URL + (HUBSPOT_MEETING_URL.includes('?') ? '&' : '?') + 'embed=true');
+      embed.appendChild(box);
+      const sc = document.createElement('script');
+      sc.src = 'https://static.hsappstatic.net/MeetingsEmbedCode/static-1/meetings-embed-code.js';
+      embed.appendChild(sc);
+    } else {
+      embed.innerHTML = '<div class="su-book-soon">Online booking is being set up. In the meantime, email <a href="mailto:contactus@scaleupflex.com">contactus@scaleupflex.com</a> or call <a href="tel:+14696281922">(469) 628-1922</a> and we\'ll get you on the calendar.</div>';
+    }
+  };
+  const open = () => { load(); modal.classList.add('open'); document.body.style.overflow = 'hidden'; };
+  const close = () => { modal.classList.remove('open'); document.body.style.overflow = ''; };
+  openBtn.addEventListener('click', open);
+  modal.querySelectorAll('[data-close]').forEach((el) => el.addEventListener('click', close));
+  window.addEventListener('keydown', (e) => { if (e.key === 'Escape' && modal.classList.contains('open')) close(); });
+})();
+
+/* ============================================================
    HERO — rotating space type in the headline
    ============================================================ */
 (() => {

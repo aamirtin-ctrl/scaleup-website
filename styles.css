@@ -625,6 +625,13 @@ button { font-family: inherit; }
 .su-form input:focus, .su-form select:focus, .su-form textarea:focus { border-color: rgba(36,29,19,0.45); }
 .su-form select { appearance: none; }
 .su-form button { justify-content: center; margin-top: 6px; }
+.su-form-or { display: flex; align-items: center; gap: 12px; margin: 2px 0; font-size: 11px; font-weight: 600; letter-spacing: 0.16em; color: rgba(36,29,19,0.4); }
+.su-form-or::before, .su-form-or::after { content: ''; flex: 1; height: 1px; background: rgba(36,29,19,0.14); }
+.su-book-btn { width: 100%; justify-content: center; }
+#su-book-embed { margin-top: 22px; min-height: 120px; }
+.meetings-iframe-container { min-height: 660px; }
+.su-book-soon { padding: 34px 24px; text-align: center; font-size: 15px; line-height: 1.65; color: rgba(36,29,19,0.65); }
+.su-book-soon a { color: var(--red); font-weight: 600; }
 
 .su-footer {
   max-width: 1180px; margin: 100px auto 0;
