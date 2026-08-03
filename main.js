@@ -48,9 +48,9 @@ const DEVS = [
       lede: '4156 N Goliad St, Rockwall, TX — five acres of highway frontage, with showroom space in two highway-facing units.',
       cards: [
         { name: 'Showroom unit', size: '3,000 SF', sub: 'Bldgs A/E west end · glass front, open bay',
-          // carousel — add the better 3,000 SF interior renders here (newest/best first)
-          imgs: ['assets/3000rockwall.webp', 'assets/rockwall-render-1.webp'] },
-        { name: 'Standard bay', size: '1,500 SF', sub: 'Bldgs A–D · office front, roll-up rear', img: 'assets/1500rockwall.webp' },
+          imgs: ['assets/rockwall-3000-2.webp', 'assets/rockwall-3000-3.webp', 'assets/rockwall-3000-4.webp', 'assets/rockwall-3000-1.webp'] },
+        { name: 'Standard bay', size: '1,500 SF', sub: 'Bldgs A–D · office front, roll-up rear',
+          imgs: ['assets/rockwall-1500-1.webp', 'assets/rockwall-1500-2.webp'] },
         { name: 'Large bay', size: '2,000 SF', sub: 'Bldgs F–I · office front, roll-up rear', img: 'assets/2000rockwall.webp' },
       ],
       minis: [
@@ -105,10 +105,17 @@ const DEVS = [
    ============================================================ */
 const PROGRESS_MEDIA = {
   Rockwall: [
-    { type: 'image', src: 'assets/rockwall-render-1.webp', date: 'RENDERING', caption: 'Street-side elevation — showroom fronts and grade-level doors' },
-    { type: 'image', src: 'assets/rockwall.webp',     date: 'RENDERING', caption: 'The finished park — aerial view from N Goliad St' },
-    { type: 'image', src: 'assets/3000rockwall.webp', date: 'RENDERING', caption: 'Showroom unit interior — glass front, open bay' },
-    { type: 'image', src: 'assets/2000rockwall.webp', date: 'RENDERING', caption: 'Standard bay — office front, roll-up rear' },
+    { type: 'image', src: 'assets/rockwall-main-entrance.webp', date: 'RENDERING', caption: 'Main entrance off N Goliad St' },
+    { type: 'image', src: 'assets/rockwall-aerial-right.webp', date: 'RENDERING', caption: 'Aerial view — full park' },
+    { type: 'image', src: 'assets/rockwall-aerial-left.webp', date: 'RENDERING', caption: 'Aerial view — from the west' },
+    { type: 'image', src: 'assets/rockwall-highway.webp', date: 'RENDERING', caption: 'Highway frontage' },
+    { type: 'image', src: 'assets/rockwall-a-front.webp', date: 'RENDERING', caption: 'Showroom fronts — street elevation' },
+    { type: 'image', src: 'assets/rockwall-a-opp-front.webp', date: 'RENDERING', caption: 'Showroom fronts — opposite view' },
+    { type: 'image', src: 'assets/rockwall-a-left.webp', date: 'RENDERING', caption: 'Building A — end elevation' },
+    { type: 'image', src: 'assets/rockwall-a-opp-left.webp', date: 'RENDERING', caption: 'Building A — opposite end' },
+    { type: 'image', src: 'assets/rockwall-a-right.webp', date: 'RENDERING', caption: 'Grade-level door bays' },
+    { type: 'image', src: 'assets/rockwall-b-d-left.webp', date: 'RENDERING', caption: 'Buildings B–D' },
+    { type: 'image', src: 'assets/rockwall-detention-pond.webp', date: 'RENDERING', caption: 'Landscaped site & detention pond' },
   ],
 };
 
