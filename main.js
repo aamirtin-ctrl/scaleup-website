@@ -682,7 +682,7 @@ const CONTACT_EMAIL = 'contactus@scaleupflex.com';
     setTimeout(() => {
       rot.textContent = WORDS[i];
       rot.classList.remove('su-word-out');
-    }, 290);
+    }, 450);
   }, 3200);
 })();
 
