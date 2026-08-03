@@ -47,7 +47,9 @@ const DEVS = [
     plans: {
       lede: '4156 N Goliad St, Rockwall, TX — five acres of highway frontage, with showroom space in two highway-facing units.',
       cards: [
-        { name: 'Showroom unit', size: '3,000 SF', sub: 'Bldgs A/E west end · glass front, open bay', img: 'assets/3000rockwall.webp' },
+        { name: 'Showroom unit', size: '3,000 SF', sub: 'Bldgs A/E west end · glass front, open bay',
+          // carousel — add the better 3,000 SF interior renders here (newest/best first)
+          imgs: ['assets/3000rockwall.webp', 'assets/rockwall-render-1.webp'] },
         { name: 'Standard bay', size: '1,500 SF', sub: 'Bldgs A–D · office front, roll-up rear', img: 'assets/1500rockwall.webp' },
         { name: 'Large bay', size: '2,000 SF', sub: 'Bldgs F–I · office front, roll-up rear', img: 'assets/2000rockwall.webp' },
       ],
@@ -103,6 +105,7 @@ const DEVS = [
    ============================================================ */
 const PROGRESS_MEDIA = {
   Rockwall: [
+    { type: 'image', src: 'assets/rockwall-render-1.webp', date: 'RENDERING', caption: 'Street-side elevation — showroom fronts and grade-level doors' },
     { type: 'image', src: 'assets/rockwall.webp',     date: 'RENDERING', caption: 'The finished park — aerial view from N Goliad St' },
     { type: 'image', src: 'assets/3000rockwall.webp', date: 'RENDERING', caption: 'Showroom unit interior — glass front, open bay' },
     { type: 'image', src: 'assets/2000rockwall.webp', date: 'RENDERING', caption: 'Standard bay — office front, roll-up rear' },
@@ -261,19 +264,34 @@ function buildCard(d, idx) {
   }
 
   if (d.plans) {
-    const planCardsHtml = d.plans.cards.map(pc => `
+    const planCardsHtml = d.plans.cards.map(pc => {
+      const imgs = pc.imgs || (pc.img ? [pc.img] : []);
+      let thumb;
+      if (imgs.length > 1) {
+        thumb = `<div class="su-plan-thumb su-plan-thumb-img su-plan-carousel">
+          <div class="su-plan-strip">${imgs.map(src =>
+            `<img src="${src}" alt="${pc.name} — ${pc.size}" loading="lazy" decoding="async">`).join('')}</div>
+          <span class="su-plan-size">${pc.size}</span>
+          <div class="su-plan-dots">${imgs.map((_, i) =>
+            `<button type="button" class="su-plan-dot${i === 0 ? ' active' : ''}" data-i="${i}" aria-label="Photo ${i + 1}"></button>`).join('')}</div>
+        </div>`;
+      } else if (imgs.length === 1) {
+        thumb = `<div class="su-plan-thumb su-plan-thumb-img">
+          <img src="${imgs[0]}" alt="${pc.name} — ${pc.size} interior" loading="lazy"><span class="su-plan-size">${pc.size}</span>
+        </div>`;
+      } else {
+        thumb = `<div class="su-plan-thumb"><span>FLOOR PLAN</span><span>${pc.size}</span></div>`;
+      }
+      return `
       <div class="su-plancard">
-        <div class="su-plan-thumb${pc.img ? ' su-plan-thumb-img' : ''}">
-          ${pc.img
-            ? `<img src="${pc.img}" alt="${pc.name} — ${pc.size} interior" loading="lazy"><span class="su-plan-size">${pc.size}</span>`
-            : `<span>FLOOR PLAN</span><span>${pc.size}</span>`}
-        </div>
+        ${thumb}
         <div class="su-plan-body">
           <span class="su-plan-name">${pc.name}</span>
           <span class="su-plan-sub">${pc.sub}</span>
           <a href="#contact" class="su-link-red">Request plan &#8594;</a>
         </div>
-      </div>`).join('');
+      </div>`;
+    }).join('');
     const siteMinisHtml = d.plans.minis.map(([v, l]) =>
       `<div class="su-ministat"><span class="su-mini-val">${v}</span><span class="su-mini-label">${l}</span></div>`).join('');
 
@@ -392,6 +410,25 @@ window.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeProgres
 
 const cards = DEVS.map(buildCard);
 cards.forEach(c => deckRoot.appendChild(c.el));
+
+/* ---- plan-card image carousels ---- */
+deckRoot.querySelectorAll('.su-plan-carousel').forEach((car) => {
+  const strip = car.querySelector('.su-plan-strip');
+  const dots = [...car.querySelectorAll('.su-plan-dot')];
+  dots.forEach((dot) => dot.addEventListener('click', (e) => {
+    e.stopPropagation();
+    const img = strip.children[+dot.dataset.i];
+    if (img) strip.scrollTo({ left: img.offsetLeft - strip.offsetLeft, behavior: 'smooth' });
+  }));
+  let tick;
+  strip.addEventListener('scroll', () => {
+    clearTimeout(tick);
+    tick = setTimeout(() => {
+      const i = Math.round(strip.scrollLeft / strip.clientWidth);
+      dots.forEach((d, k) => d.classList.toggle('active', k === i));
+    }, 60);
+  }, { passive: true });
+});
 
 /* ---- tabs ---- */
 const tabEls = DEVS.map((d, i) => {

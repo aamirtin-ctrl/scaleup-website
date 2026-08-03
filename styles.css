@@ -330,6 +330,25 @@ button { font-family: inherit; }
 .su-plan-thumb span:last-child { font-family: 'Lora', serif; font-size: 22px; color: var(--text); }
 .su-plan-thumb-img { position: relative; padding: 0; }
 .su-plan-thumb-img img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+/* plan-card image carousel */
+.su-plan-carousel { position: relative; }
+.su-plan-strip {
+  position: absolute; inset: 0; display: flex; overflow-x: auto;
+  scroll-snap-type: x mandatory; scrollbar-width: none; -webkit-overflow-scrolling: touch;
+}
+.su-plan-strip::-webkit-scrollbar { display: none; }
+.su-plan-strip img {
+  flex: 0 0 100%; width: 100%; height: 100%; object-fit: cover; scroll-snap-align: start;
+}
+.su-plan-dots {
+  position: absolute; left: 0; right: 0; bottom: 10px; z-index: 2;
+  display: flex; justify-content: center; gap: 6px; pointer-events: none;
+}
+.su-plan-dot {
+  pointer-events: auto; width: 7px; height: 7px; padding: 0; border: none; border-radius: 50%;
+  background: rgba(255,253,246,0.55); cursor: pointer; transition: background 0.2s ease, transform 0.2s ease;
+}
+.su-plan-dot.active { background: #FFFDF6; transform: scale(1.25); }
 .su-plan-size {
   position: absolute; left: 12px; bottom: 10px;
   display: inline-flex; padding: 6px 12px; border-radius: 100px;
