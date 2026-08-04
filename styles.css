@@ -74,8 +74,8 @@ button { font-family: inherit; }
 }
 .su-btn-outline:hover { border-color: rgba(36,29,19,0.7); background: rgba(36,29,19,0.05); }
 /* header sits over the dark hero photo — keep its outline button light */
-.su-header .su-btn-outline { border-color: rgba(247,243,236,0.38); color: #F7F3EC; }
-.su-header .su-btn-outline:hover { border-color: rgba(247,243,236,0.85); background: rgba(247,243,236,0.06); }
+.su-header .su-btn-outline { border-color: rgba(36,29,19,0.4); color: var(--ink); }
+.su-header .su-btn-outline:hover { border-color: rgba(36,29,19,0.7); background: rgba(36,29,19,0.05); }
 
 /* ============ logo / header ============ */
 :root { --logo-red: #D2232A; }
@@ -92,14 +92,14 @@ button { font-family: inherit; }
   padding: 30px 52px;
 }
 .su-nav { display: flex; align-items: center; gap: 42px; }
-.su-nav a { font-size: 15px; font-weight: 500; color: rgba(247,243,236,0.82); letter-spacing: 0.01em; transition: color 0.2s ease; }
-.su-nav a:hover { color: #F7F3EC; }
+.su-nav a { font-size: 15px; font-weight: 500; color: rgba(36,29,19,0.8); letter-spacing: 0.01em; transition: color 0.2s ease; }
+.su-nav a:hover { color: var(--ink); }
 
 /* ============ hero (photo stays cinematic; page below is cream) ============ */
 .su-hero { position: relative; height: 100vh; min-height: 760px; width: 100%; overflow: hidden; }
 .su-hero-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
-.su-hero-grad-a { position: absolute; inset: 0; background: linear-gradient(105deg, rgba(20,14,8,0.82) 0%, rgba(20,14,8,0.42) 42%, rgba(20,14,8,0.10) 70%, rgba(20,14,8,0.28) 100%); }
-.su-hero-grad-b { position: absolute; inset: 0; background: linear-gradient(to top, rgba(20,14,8,0.74) 0%, rgba(20,14,8,0) 38%); }
+.su-hero-grad-a { position: absolute; inset: 0; background: linear-gradient(105deg, rgba(245,239,226,0.55) 0%, rgba(245,239,226,0.12) 38%, rgba(245,239,226,0) 62%, rgba(245,239,226,0.20) 100%); }
+.su-hero-grad-b { position: absolute; inset: 0; background: linear-gradient(to top, var(--bg) 0%, rgba(245,239,226,0.72) 12%, rgba(245,239,226,0) 44%); }
 .su-hero-head {
   position: absolute; left: 52px; bottom: 13%; z-index: 5; max-width: 60%;
   animation: su-rise 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) both;
@@ -107,13 +107,13 @@ button { font-family: inherit; }
 .su-hero-kicker {
   display: flex; align-items: center; gap: 7px; margin-bottom: 20px;
   font-size: 13px; font-weight: 600; letter-spacing: 0.22em;
-  color: rgba(247,243,236,0.78);
+  color: rgba(36,29,19,0.7);
 }
 .su-hero-kicker i { display: block; width: 22px; height: 2px; border-radius: 2px; background: var(--red); margin-right: 4px; }
 .su-hero-head h1 {
   font-family: 'Lora', serif; font-weight: 600;
   font-size: clamp(46px, 6.6vw, 102px); line-height: 1.02; letter-spacing: -0.015em;
-  color: #FAF6EF; text-shadow: 0 2px 40px rgba(0,0,0,0.35);
+  color: var(--text); text-shadow: 0 1px 24px rgba(245,239,226,0.55);
 }
 .su-rotate { display: inline-block; transition: opacity 0.45s ease; }
 .su-rotate.su-word-out { opacity: 0; }
@@ -123,7 +123,8 @@ button { font-family: inherit; }
   position: absolute; right: 52px; bottom: 13%; z-index: 5; text-align: right;
   display: flex; flex-direction: column; gap: 6px;
 }
-.su-hero-cities { font-family: 'Lora', serif; font-style: italic; font-size: 19px; color: rgba(247,243,236,0.9); }
+.su-hero-cities { font-family: 'Lora', serif; font-style: italic; font-size: 19px; color: rgba(36,29,19,0.85); }
+.su-hero-meta .su-eyebrow-sm { color: rgba(36,29,19,0.55); }
 
 /* ============ developments scene ============ */
 .su-devs { position: relative; height: 520vh; }
