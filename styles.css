@@ -338,7 +338,7 @@ button { font-family: inherit; }
 }
 .su-plan-strip::-webkit-scrollbar { display: none; }
 .su-plan-strip img {
-  flex: 0 0 100%; width: 100%; height: 100%; object-fit: cover; scroll-snap-align: start;
+  position: relative; flex: 0 0 100%; width: 100%; height: 100%; object-fit: cover; scroll-snap-align: start;
 }
 .su-plan-dots {
   position: absolute; left: 0; right: 0; bottom: 10px; z-index: 2;
@@ -625,12 +625,11 @@ button { font-family: inherit; }
 .su-form input:focus, .su-form select:focus, .su-form textarea:focus { border-color: rgba(36,29,19,0.45); }
 .su-form select { appearance: none; }
 .su-form button { justify-content: center; margin-top: 6px; }
-.su-form-or { display: flex; align-items: center; gap: 12px; margin: 2px 0; font-size: 11px; font-weight: 600; letter-spacing: 0.16em; color: rgba(36,29,19,0.4); }
-.su-form-or::before, .su-form-or::after { content: ''; flex: 1; height: 1px; background: rgba(36,29,19,0.14); }
-.su-book-btn { width: 100%; justify-content: center; }
-#su-book-embed { margin-top: 22px; min-height: 120px; }
+.su-book-toggle { flex-direction: row !important; align-items: center; gap: 10px; font-size: 13px !important; letter-spacing: 0 !important; text-transform: none !important; color: rgba(36,29,19,0.72) !important; cursor: pointer; margin-top: 2px; }
+.su-book-toggle input { width: 16px; height: 16px; accent-color: var(--red); flex-shrink: 0; cursor: pointer; }
+#su-book-embed { margin-top: 6px; }
 .meetings-iframe-container { min-height: 660px; }
-.su-book-soon { padding: 34px 24px; text-align: center; font-size: 15px; line-height: 1.65; color: rgba(36,29,19,0.65); }
+.su-book-soon { padding: 22px 20px; border: 1px dashed rgba(36,29,19,0.2); border-radius: 12px; background: rgba(36,29,19,0.03); text-align: center; font-size: 14px; line-height: 1.6; color: rgba(36,29,19,0.65); }
 .su-book-soon a { color: var(--red); font-weight: 600; }
 
 .su-footer {
