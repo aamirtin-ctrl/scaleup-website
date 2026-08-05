@@ -455,6 +455,37 @@ deckRoot.querySelectorAll('.su-plan-carousel').forEach((car) => {
   if (!matchMedia('(prefers-reduced-motion: reduce)').matches) play();
 });
 
+/* ---- plan-photo lightbox (click a plan image to enlarge) ---- */
+(() => {
+  const lb = document.getElementById('su-lightbox');
+  if (!lb) return;
+  const lbImg = lb.querySelector('.su-lb-img');
+  const arrows = [...lb.querySelectorAll('.su-lb-arrow')];
+  let group = [], gi = 0;
+  const render = () => {
+    lbImg.src = group[gi];
+    arrows.forEach((a) => { a.style.display = group.length > 1 ? '' : 'none'; });
+  };
+  const open = (srcs, i) => { group = srcs; gi = i; render(); lb.classList.add('open'); document.body.style.overflow = 'hidden'; };
+  const close = () => { lb.classList.remove('open'); document.body.style.overflow = ''; lbImg.src = ''; };
+  const step = (d) => { gi = (gi + d + group.length) % group.length; render(); };
+  deckRoot.querySelectorAll('.su-plancard').forEach((card) => {
+    const imgEls = [...card.querySelectorAll('img')];
+    const srcs = imgEls.map((im) => im.getAttribute('src'));
+    imgEls.forEach((im, i) => im.addEventListener('click', (e) => { e.stopPropagation(); open(srcs, i); }));
+  });
+  lb.querySelector('.su-lb-close').addEventListener('click', close);
+  lb.querySelector('.su-lb-prev').addEventListener('click', (e) => { e.stopPropagation(); step(-1); });
+  lb.querySelector('.su-lb-next').addEventListener('click', (e) => { e.stopPropagation(); step(1); });
+  lb.addEventListener('click', (e) => { if (e.target === lb) close(); });
+  window.addEventListener('keydown', (e) => {
+    if (!lb.classList.contains('open')) return;
+    if (e.key === 'Escape') close();
+    else if (e.key === 'ArrowLeft') step(-1);
+    else if (e.key === 'ArrowRight') step(1);
+  });
+})();
+
 /* ---- tabs ---- */
 const tabEls = DEVS.map((d, i) => {
   const b = el('button', 'su-tab', `
