@@ -643,9 +643,8 @@ button { font-family: inherit; }
 .su-form input:focus, .su-form select:focus, .su-form textarea:focus { border-color: rgba(36,29,19,0.45); }
 .su-form select { appearance: none; }
 .su-form button { justify-content: center; margin-top: 6px; }
-.su-book-toggle { flex-direction: row !important; align-items: center; gap: 10px; font-size: 13px !important; letter-spacing: 0 !important; text-transform: none !important; color: rgba(36,29,19,0.72) !important; cursor: pointer; margin-top: 2px; }
-.su-book-toggle input { width: 16px; height: 16px; accent-color: var(--red); flex-shrink: 0; cursor: pointer; }
-#su-book-embed { margin-top: 6px; }
+.su-book-btn { width: 100%; justify-content: center; }
+#su-book-embed { margin-top: 2px; }
 .meetings-iframe-container { min-height: 660px; }
 .su-book-soon { padding: 22px 20px; border: 1px dashed rgba(36,29,19,0.2); border-radius: 12px; background: rgba(36,29,19,0.03); text-align: center; font-size: 14px; line-height: 1.6; color: rgba(36,29,19,0.65); }
 .su-book-soon a { color: var(--red); font-weight: 600; }

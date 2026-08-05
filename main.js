@@ -768,9 +768,9 @@ const CONTACT_EMAIL = 'contactus@scaleupflex.com';
    ============================================================ */
 const HUBSPOT_MEETING_URL = '';
 (() => {
-  const check = document.getElementById('su-book-check');
+  const openBtn = document.getElementById('su-book-open');
   const embed = document.getElementById('su-book-embed');
-  if (!check || !embed) return;
+  if (!openBtn || !embed) return;
   let loaded = false;
   const load = () => {
     if (loaded) return; loaded = true;
@@ -786,9 +786,11 @@ const HUBSPOT_MEETING_URL = '';
       embed.innerHTML = '<div class="su-book-soon">Online booking is being set up. In the meantime, email <a href="mailto:contactus@scaleupflex.com">contactus@scaleupflex.com</a> or call <a href="tel:+14696281922">(469) 628-1922</a> and we will get you on the calendar.</div>';
     }
   };
-  check.addEventListener('change', () => {
-    if (check.checked) { load(); embed.hidden = false; }
-    else { embed.hidden = true; }
+  openBtn.addEventListener('click', () => {
+    const willShow = embed.hidden;
+    if (willShow) load();
+    embed.hidden = !willShow;
+    openBtn.setAttribute('aria-expanded', String(willShow));
   });
 })();
 
