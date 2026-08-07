@@ -766,7 +766,7 @@ const CONTACT_EMAIL = 'contactus@scaleupflex.com';
    (bookings sync to HubSpot CRM). Paste your HubSpot meetings link
    below to switch it on, e.g. 'https://meetings.hubspot.com/your-slug'.
    ============================================================ */
-const HUBSPOT_MEETING_URL = '';
+const HUBSPOT_MEETING_URL = 'https://meetings-na2.hubspot.com/taaha-motorwala';
 (() => {
   const openBtn = document.getElementById('su-book-open');
   const embed = document.getElementById('su-book-embed');
@@ -780,7 +780,7 @@ const HUBSPOT_MEETING_URL = '';
       box.setAttribute('data-src', HUBSPOT_MEETING_URL + (HUBSPOT_MEETING_URL.includes('?') ? '&' : '?') + 'embed=true');
       embed.appendChild(box);
       const sc = document.createElement('script');
-      sc.src = 'https://static.hsappstatic.net/MeetingsEmbedCode/static-1/meetings-embed-code.js';
+      sc.src = 'https://static.hsappstatic.net/MeetingsEmbed/ex/MeetingsEmbedCode.js';
       embed.appendChild(sc);
     } else {
       embed.innerHTML = '<div class="su-book-soon">Online booking is being set up. In the meantime, email <a href="mailto:contactus@scaleupflex.com">contactus@scaleupflex.com</a> or call <a href="tel:+14696281922">(469) 628-1922</a> and we will get you on the calendar.</div>';
