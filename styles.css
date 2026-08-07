@@ -644,8 +644,12 @@ button { font-family: inherit; }
 .su-form select { appearance: none; }
 .su-form button { justify-content: center; margin-top: 6px; }
 .su-book-btn { width: 100%; justify-content: center; }
-#su-book-embed { margin-top: 2px; }
-.meetings-iframe-container { min-height: 660px; }
+#su-book-embed { margin-top: 8px; }
+.su-book-head { margin: 0 0 12px; font-size: 13.5px; line-height: 1.55; color: rgba(36,29,19,0.62); }
+.meetings-iframe-container {
+  min-height: 640px; border: 1px solid rgba(36,29,19,0.12); border-radius: 14px;
+  overflow: hidden; background: #FFFEF9; box-shadow: 0 10px 30px rgba(74,56,30,0.08);
+}
 .su-book-soon { padding: 22px 20px; border: 1px dashed rgba(36,29,19,0.2); border-radius: 12px; background: rgba(36,29,19,0.03); text-align: center; font-size: 14px; line-height: 1.6; color: rgba(36,29,19,0.65); }
 .su-book-soon a { color: var(--red); font-weight: 600; }
 

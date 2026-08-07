@@ -775,9 +775,20 @@ const HUBSPOT_MEETING_URL = 'https://meetings-na2.hubspot.com/taaha-motorwala';
   const load = () => {
     if (loaded) return; loaded = true;
     if (HUBSPOT_MEETING_URL) {
+      // seamless handoff: pre-fill name/email from the form so visitors don't retype
+      const form = document.getElementById('su-form');
+      const params = new URLSearchParams({ embed: 'true' });
+      const nm = ((form && form.querySelector('[name=name]') && form.querySelector('[name=name]').value) || '').trim();
+      const em = ((form && form.querySelector('[name=email]') && form.querySelector('[name=email]').value) || '').trim();
+      if (nm) { const parts = nm.split(/\s+/); params.set('firstName', parts[0]); if (parts.length > 1) params.set('lastName', parts.slice(1).join(' ')); }
+      if (em) params.set('email', em);
+      const head = document.createElement('p');
+      head.className = 'su-book-head';
+      head.textContent = 'Pick a time that works for you. You will get a calendar invite, and we will come prepared for your size and timeline.';
+      embed.appendChild(head);
       const box = document.createElement('div');
       box.className = 'meetings-iframe-container';
-      box.setAttribute('data-src', HUBSPOT_MEETING_URL + (HUBSPOT_MEETING_URL.includes('?') ? '&' : '?') + 'embed=true');
+      box.setAttribute('data-src', HUBSPOT_MEETING_URL + '?' + params.toString());
       embed.appendChild(box);
       const sc = document.createElement('script');
       sc.src = 'https://static.hsappstatic.net/MeetingsEmbed/ex/MeetingsEmbedCode.js';
