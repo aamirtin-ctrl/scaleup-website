@@ -1,4 +1,4 @@
-# ScaleUp Developments
+# ScaleUp Flex Parks
 
 > ScaleUp is a Frisco, Texas developer that builds, leases, and operates small-bay
 > flex, warehouse, and showroom space in North Texas. Current developments:
