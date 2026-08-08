@@ -527,6 +527,18 @@
 
 .pk-sp-leg { overflow: hidden; min-height: 260px; }
 .pk-sp-leg img { width: 100%; height: 100%; min-height: 260px; object-fit: cover; display: block; }
+/* Each leg photo dissolves into its own piece's fill on the edge that meets
+   the bar — Rockwall upward into the cream, McKinney downward into the ink —
+   so the boot reads as one shape with a photo emerging from it, not a
+   rectangle pasted into a corner. */
+.pk-sp-rock-leg img {
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.45) 13%, rgba(0,0,0,0.9) 30%, #000 44%, #000 100%);
+  mask-image: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.45) 13%, rgba(0,0,0,0.9) 30%, #000 44%, #000 100%);
+}
+.pk-sp-mck-leg img {
+  -webkit-mask-image: linear-gradient(to top, transparent 0%, rgba(0,0,0,0.45) 13%, rgba(0,0,0,0.9) 30%, #000 44%, #000 100%);
+  mask-image: linear-gradient(to top, transparent 0%, rgba(0,0,0,0.45) 13%, rgba(0,0,0,0.9) 30%, #000 44%, #000 100%);
+}
 
 @media (max-width: 900px) {
   .pk-spaces {
@@ -546,8 +558,11 @@
 /* Closing CTA art, photo variant (park pages): a render fading up out of
    the cream instead of the pencil site plan. */
 .pk-outro-art.is-photo { width: 100%; height: 84%;
-  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.34) 16%, rgba(0,0,0,0.85) 36%, #000 52%, #000 100%);
-  mask-image: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.34) 16%, rgba(0,0,0,0.85) 36%, #000 52%, #000 100%);
+  --outro-fade: linear-gradient(to bottom,
+      transparent 0%, rgba(0,0,0,0.30) 15%, rgba(0,0,0,0.82) 34%, #000 50%,
+      #000 78%, rgba(0,0,0,0.55) 90%, rgba(0,0,0,0.16) 97%, transparent 100%);
+  -webkit-mask-image: var(--outro-fade);
+  mask-image: var(--outro-fade);
 }
 .pk-outro-art.is-photo img { mix-blend-mode: normal; filter: none; object-position: 50% 46%; }
 @media (max-width: 900px) { .pk-outro-art.is-photo { width: 100%; height: 72%; } }
