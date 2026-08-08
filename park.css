@@ -477,73 +477,71 @@
 }
 
 /* ============================================================
-   OUR SPACES — two interlocking pieces (DFW pillar page)
-   Each park is an L: Rockwall is the top bar plus a tab dropping
-   down the right; McKinney is a tab on the left plus the bottom
-   bar. Zero gap between cells so they tessellate; the two fills
-   do the separating.
+   OUR SPACES — two interlocking boot shapes
+   Rockwall: full-width bar on top + a leg dropping down the LEFT.
+   McKinney: a leg rising on the RIGHT + the full-width bar below.
+   Each piece is two grid cells. The grid gap draws the gutter between
+   the pieces; a negative margin cancels that gap *within* a piece so
+   its bar and leg fuse into one shape. Corner radii are squared only
+   on the joining edges, so every outer corner stays round and the two
+   inner corners read as the step of the boot.
    ============================================================ */
 .pk-spaces {
   display: grid;
-  grid-template-columns: 1.18fr 1fr;
+  grid-template-columns: 1.12fr 1fr;
   grid-template-areas:
-    "rockA rockA"
-    "mckA  rockB"
-    "mckB  mckB";
-  border-radius: 28px; overflow: hidden;
-  border: 1px solid var(--line);
-  box-shadow: 0 26px 70px rgba(74,56,30,0.09);
+    "rockbar rockbar"
+    "rockleg mckleg"
+    "mckbar  mckbar";
+  gap: 16px;
 }
-.pk-pc-rockA { grid-area: rockA; }
-.pk-pc-rockB { grid-area: rockB; }
-.pk-pc-mckA  { grid-area: mckA;  }
-.pk-pc-mckB  { grid-area: mckB;  }
+.pk-sp-rock     { grid-area: rockbar; border-radius: 28px 28px 28px 0; }
+.pk-sp-rock-leg { grid-area: rockleg; margin-top: -16px;    border-radius: 0 0 28px 28px; }
+.pk-sp-mck-leg  { grid-area: mckleg;  margin-bottom: -16px; border-radius: 28px 28px 0 0; }
+.pk-sp-mck      { grid-area: mckbar;  border-radius: 28px 0 28px 28px; }
 
-.pk-pc-rockA, .pk-pc-rockB { background: var(--panel); }
-.pk-pc-mckA,  .pk-pc-mckB  { background: var(--ink-deep); color: var(--cream-on-ink); }
+.pk-sp-rock, .pk-sp-rock-leg { background: var(--panel); }
+.pk-sp-mck,  .pk-sp-mck-leg  { background: var(--ink-deep); color: var(--cream-on-ink); }
 
-.pk-pc-txt { display: block; padding: 40px 44px 42px; transition: background 0.3s ease; }
-.pk-pc-rockA:hover { background: #FFFEFA; }
-.pk-pc-mckB:hover  { background: #241E15; }
-.pk-pc-eyebrow {
-  font-family: 'Archivo', sans-serif; font-size: 10.5px; letter-spacing: 0.18em;
-  text-transform: uppercase; color: rgba(36,29,19,0.45);
+.pk-sp-bar { display: block; padding: 42px 46px 44px; transition: background 0.3s ease; }
+.pk-sp-rock:hover { background: #FFFEFB; }
+.pk-sp-mck:hover  { background: #241E15; }
+
+.pk-sp-eyebrow {
+  font-family: 'Archivo', sans-serif; font-size: 10.5px; font-weight: 600;
+  letter-spacing: 0.18em; text-transform: uppercase; color: rgba(36,29,19,0.45);
 }
-.pk-pc-mckB .pk-pc-eyebrow { color: rgba(243,234,218,0.5); }
-.pk-pc-txt h3 {
+.pk-sp-mck .pk-sp-eyebrow { color: rgba(243,234,218,0.5); }
+.pk-sp-bar h3 {
   margin: 12px 0 0; font-family: 'Lora', serif; font-weight: 600;
   font-size: clamp(26px, 3vw, 38px); line-height: 1.06; letter-spacing: -0.025em; color: var(--text);
 }
-.pk-pc-mckB h3 { color: var(--cream-on-ink); }
-.pk-pc-meta { margin-top: 10px; font-size: 14px; color: rgba(36,29,19,0.55); }
-.pk-pc-mckB .pk-pc-meta { color: rgba(243,234,218,0.55); }
-.pk-pc-txt p { margin: 16px 0 0; max-width: 54ch; font-size: 15.5px; line-height: 1.65; color: rgba(36,29,19,0.74); }
-.pk-pc-mckB p { color: rgba(243,234,218,0.66); }
-.pk-pc-go { display: inline-block; margin-top: 20px; font-size: 14.5px; font-weight: 600; color: var(--red); }
-.pk-pc-mckB .pk-pc-go { color: #E8A0A0; }
-.pk-pc-rockA:hover .pk-pc-go, .pk-pc-mckB:hover .pk-pc-go { text-decoration: underline; text-underline-offset: 4px; }
+.pk-sp-mck h3 { color: var(--cream-on-ink); }
+.pk-sp-meta { margin-top: 10px; font-size: 14px; color: rgba(36,29,19,0.55); }
+.pk-sp-mck .pk-sp-meta { color: rgba(243,234,218,0.55); }
+.pk-sp-bar p { margin: 16px 0 0; max-width: 56ch; font-size: 15.5px; line-height: 1.65; color: rgba(36,29,19,0.74); }
+.pk-sp-mck p { color: rgba(243,234,218,0.66); }
+.pk-sp-go { display: inline-block; margin-top: 20px; font-size: 14.5px; font-weight: 600; color: var(--red); }
+.pk-sp-mck .pk-sp-go { color: #E8A0A0; }
+.pk-sp-bar:hover .pk-sp-go { text-decoration: underline; text-underline-offset: 4px; }
 
-/* The tab carries its piece's fill as a frame around the photo. Without this
-   the image covers the cell edge-to-edge, the cream/ink fills disappear and
-   the two L-shapes stop reading as shapes at all. */
-.pk-pc-img { display: grid; padding: 24px; min-height: 268px; }
-.pk-pc-img img {
-  width: 100%; height: 100%; min-height: 0; object-fit: cover;
-  display: block; border-radius: 14px;
-}
-.pk-pc-rockB img { box-shadow: 0 6px 20px rgba(74,56,30,0.13); }
-.pk-pc-mckA  img { box-shadow: 0 6px 20px rgba(0,0,0,0.3); }
+.pk-sp-leg { overflow: hidden; min-height: 260px; }
+.pk-sp-leg img { width: 100%; height: 100%; min-height: 260px; object-fit: cover; display: block; }
 
 @media (max-width: 900px) {
   .pk-spaces {
     grid-template-columns: 1fr;
-    grid-template-areas: "rockA" "rockB" "mckA" "mckB";
-    border-radius: 22px;
+    grid-template-areas: "rockbar" "rockleg" "mckleg" "mckbar";
+    gap: 14px;
   }
-  .pk-pc-txt { padding: 30px 26px 32px; }
-  .pk-pc-img { min-height: 200px; padding: 18px; }
+  /* stacked: each cell is its own rounded block, so drop the fusing */
+  .pk-sp-rock     { border-radius: 22px 22px 0 0; }
+  .pk-sp-rock-leg { margin-top: -14px; border-radius: 0 0 22px 22px; }
+  .pk-sp-mck-leg  { margin-bottom: -14px; border-radius: 22px 22px 0 0; }
+  .pk-sp-mck      { border-radius: 0 0 22px 22px; }
+  .pk-sp-bar { padding: 30px 26px 32px; }
+  .pk-sp-leg, .pk-sp-leg img { min-height: 200px; }
 }
-
 
 /* Closing CTA art, photo variant (park pages): a render fading up out of
    the cream instead of the pencil site plan. */
