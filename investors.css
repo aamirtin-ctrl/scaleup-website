@@ -41,11 +41,8 @@ body:not(.iv-locked) .iv-page { visibility: visible; }
 
 /* ---------- floating pill nav ---------- */
 .iv-nav {
-  position: fixed; top: 22px; left: 50%; transform: translateX(-50%); z-index: 50;
+  /* positioning + pill morph now come from [data-stick] .su-morph in styles.css */
   display: flex; align-items: center; gap: 30px;
-  padding: 10px 12px 10px 22px; border-radius: 100px;
-  background: rgba(255,252,244,0.96);
-  border: 1px solid rgba(36,29,19,0.12); box-shadow: 0 18px 50px rgba(74,56,30,0.16);
   white-space: nowrap;
 }
 .iv-nav-links { display: flex; gap: 24px; }

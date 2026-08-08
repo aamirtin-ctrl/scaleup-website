@@ -751,3 +751,43 @@ button { font-family: inherit; }
   .su-form { padding: 24px 20px; }
   .su-footer { margin-top: 70px; flex-direction: column; gap: 16px; text-align: center; }
 }
+
+/* ============================================================
+   Sticky header morph (Journal + investor pages)
+   Flat/transparent at top -> floating pill on scroll.
+   Progress comes from header.js as --hp (0..1).
+   ============================================================ */
+[data-stick] {
+  --hp: 0;
+  position: fixed; top: 0; left: 0; right: 0; z-index: 60;
+  display: flex; justify-content: center;
+  padding: calc(14px * var(--hp)) calc(14px * var(--hp)) 0;
+  pointer-events: none;
+}
+[data-stick] > * { pointer-events: auto; }
+
+/* the bar itself morphs from full-bleed transparent -> inset pill */
+[data-stick] .su-morph {
+  display: flex; align-items: center; gap: 28px;
+  width: 100%; max-width: calc(1180px + (100% - 1180px) * (1 - var(--hp)));
+  padding: calc(26px - 8px * var(--hp)) calc(6vw - (6vw - 22px) * var(--hp));
+  border-radius: calc(100px * var(--hp));
+  background: rgba(255, 253, 246, calc(0.92 * var(--hp)));
+  border: 1px solid rgba(36, 29, 19, calc(0.12 * var(--hp)));
+  box-shadow: 0 18px 50px rgba(74, 56, 30, calc(0.14 * var(--hp)));
+  backdrop-filter: blur(calc(12px * var(--hp)));
+  -webkit-backdrop-filter: blur(calc(12px * var(--hp)));
+  white-space: nowrap;
+  transition: none;
+}
+[data-stick] .su-morph .su-logo { margin-right: auto; }
+[data-stick].is-stuck .su-morph { justify-content: space-between; }
+
+/* page needs room since the header is now fixed */
+.has-stick-header { padding-top: 92px; }
+
+@media (max-width: 900px) {
+  [data-stick] .su-morph { padding: calc(20px - 6px * var(--hp)) calc(5vw - (5vw - 18px) * var(--hp)); gap: 16px; }
+  .has-stick-header { padding-top: 76px; }
+}
+@media (prefers-reduced-motion: reduce) { [data-stick] .su-morph { transition: none; } }
