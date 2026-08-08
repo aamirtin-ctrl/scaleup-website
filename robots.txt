@@ -1,6 +1,8 @@
+# Googlebot and general crawlers may fetch /investors.html so they can read the
+# page's own "noindex" and drop it. Blocking it here instead would leave the URL
+# eligible for URL-only indexing, since a blocked page's noindex is never seen.
 User-agent: *
 Allow: /
-Disallow: /investors.html
 
 # AI / answer-engine crawlers are welcome
 User-agent: GPTBot
