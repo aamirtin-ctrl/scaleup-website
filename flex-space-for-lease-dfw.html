@@ -23,7 +23,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="landing.css">
+  <link rel="stylesheet" href="park.css">
 
   <script type="application/ld+json">
   {
@@ -68,169 +68,309 @@
 </head>
 <body>
 
-  <div class="ld-nav-wrap">
-    <header class="ld-nav">
+  <!-- ============================================================
+       1. HERO
+       ============================================================ -->
+  <section class="pk-hero">
+    <div class="pk-hero-media">
+      <img src="assets/hero.webp" alt="ScaleUp small-bay flex park exterior with grade-level doors and showroom fronts" width="1672" height="941" fetchpriority="high" decoding="async">
+    </div>
+
+    <div class="pk-nav-wrap" data-stick>
+    <header class="pk-nav su-morph">
       <a class="su-logo" href="index.html">
         <span class="su-logo-mark su-logo-mark-sm"><i></i><i></i><i></i></span>
         <span class="su-logo-word su-logo-word-sm">ScaleUp</span>
       </a>
-      <nav class="ld-nav-links">
-        <a href="index.html">Home</a>
-        <a href="flex-space-for-lease-dfw.html" class="active">Lease</a>
-        <a href="blog.html">Journal</a>
+      <nav class="pk-nav-links">
+        <a href="index.html#developments">Developments</a>
         <a href="index.html#about">About</a>
+        <a href="index.html#contact">Contact</a>
       </nav>
-      <a href="index.html#contact" class="ld-nav-cta">Schedule a tour</a>
+      <a href="index.html#contact" class="pk-nav-cta">Schedule a tour</a>
     </header>
-  </div>
-
-  <main class="ld-page">
-    <nav class="ld-crumbs" aria-label="Breadcrumb"><a href="index.html">Home</a> / Flex space for lease in DFW</nav>
-
-    <div class="ld-hero">
-      <div>
-        <span class="ld-status leasing"><i></i>Pre-leasing &middot; Two North Texas parks</span>
-        <h1>Flex space for lease in DFW</h1>
-        <p class="ld-lede"><strong>Small-bay flex space combines a warehouse bay, a finished office or showroom front, and a grade-level door in one unit, typically 1,500 to 3,500 SF.</strong> It is the building type for businesses that have outgrown a garage and a storage unit but do not need a distribution warehouse. This page covers what to look for, what it costs, and where we have space in North Texas.</p>
-        <div class="ld-hero-ctas">
-          <a href="rockwall-flex-space-for-lease.html" class="su-btn-fill">See Rockwall units <span class="su-arr">&#8594;</span></a>
-          <a href="mckinney-flex-space-for-lease.html" class="su-btn-outline">See McKinney</a>
-        </div>
-      </div>
-      <img class="ld-hero-img" src="assets/hero.webp" alt="ScaleUp small-bay flex park exterior with grade-level doors and showroom fronts" width="1672" height="941" fetchpriority="high" decoding="async">
     </div>
 
-    <section class="ld-sec">
-      <h2>Where we have space</h2>
-      <p>ScaleUp builds, leases, and operates its own parks — we are the developer, not a broker listing someone else's building. Two North Texas locations are open for pre-leasing.</p>
+    <div class="pk-hero-inner">
+      <h1>Flex space for lease<em>in DFW</em></h1>
+      <p class="pk-hero-lede"><strong>A warehouse bay, a finished office or showroom front, and a grade-level door in one unit &mdash; typically 1,500 to 3,500 SF.</strong> We build, lease, and operate our own parks in North Texas.</p>
+      <div class="pk-hero-ctas">
+        <a href="rockwall-flex-space-for-lease.html" class="su-btn-fill">See Rockwall units <span class="su-arr">&#8594;</span></a>
+        <a href="mckinney-flex-space-for-lease.html" class="su-btn-outline">See McKinney</a>
+      </div>
+    </div>
+  </section>
 
-      <div class="ld-units">
-        <article class="ld-unit">
-          <img src="assets/rockwall-aerial-right.webp" alt="Rockwall Flex Park aerial rendering" loading="lazy" decoding="async">
-          <div class="ld-unit-body">
-            <span class="ld-unit-size">Rockwall</span>
-            <span class="ld-unit-name">30 units &middot; 1,500&ndash;3,000 SF</span>
-            <span class="ld-unit-sub">4156 N Goliad St &middot; 5 acres &middot; delivering Summer 2027</span>
-            <span class="ld-unit-for">Pure small-bay flex with highway frontage. 18' clear, 3-phase power, 12&times;12 grade doors. Showroom glass on two buildings.<br><br><a href="rockwall-flex-space-for-lease.html" class="su-link-red">See Rockwall units &#8594;</a></span>
+  <!-- ============================================================
+       2. OUR SPACES — interlocking park pieces
+       ============================================================ -->
+  <section class="pk-units" style="padding-top:70px">
+    <div class="pk-wrap">
+      <div class="pk-units-head">
+        <div><h2 class="pk-h2">Our spaces</h2></div>
+        <p class="pk-body">We are the developer, not a broker listing someone else's building. Two North Texas parks are open for pre-leasing.</p>
+      </div>
+
+      <div class="pk-spaces">
+        <a class="pk-pc-rockA pk-pc-txt" href="rockwall-flex-space-for-lease.html">
+          <span class="pk-pc-eyebrow">Rockwall &middot; Delivering Summer 2027</span>
+          <h3>Rockwall Flex Park</h3>
+          <div class="pk-pc-meta">30 units &middot; 1,500&ndash;3,000 SF &middot; 5 acres &middot; 4156 N Goliad St</div>
+          <p>Pure small-bay flex with highway frontage. 18&prime; clear, 3-phase power, 12&times;12 grade doors, and showroom glass on two buildings.</p>
+          <span class="pk-pc-go">See Rockwall units &#8594;</span>
+        </a>
+
+        <div class="pk-pc-rockB pk-pc-img">
+          <img src="assets/rockwall-aerial-right.webp" alt="Aerial rendering of Rockwall Flex Park on N Goliad St" width="1600" height="901" loading="lazy" decoding="async">
+        </div>
+
+        <div class="pk-pc-mckA pk-pc-img">
+          <img src="assets/mckinney.webp" alt="McKinney Flex Park site plan on N McDonald St" width="1672" height="941" loading="lazy" decoding="async">
+        </div>
+
+        <a class="pk-pc-mckB pk-pc-txt" href="mckinney-flex-space-for-lease.html">
+          <span class="pk-pc-eyebrow">McKinney &middot; Breaking ground Q4 2026</span>
+          <h3>McKinney Flex Park</h3>
+          <div class="pk-pc-meta">40+ units &middot; 1,800&ndash;3,500 SF &middot; 6.2 acres &middot; 1990 N McDonald St</div>
+          <p>Mixed-use: roughly 75,000 SF with about 20,000 SF of retail and showroom frontage for customer-facing businesses.</p>
+          <span class="pk-pc-go">See McKinney &#8594;</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       3. HOW TO COMPARE DEVELOPERS
+       ============================================================ -->
+  <section class="pk-std">
+    <div class="pk-wrap">
+      <div class="pk-std-head">
+        <div><h2 class="pk-h2">How to compare flex space developers in DFW</h2></div>
+        <p class="pk-body">There are a number of small-bay parks going up across North Texas right now, and from a listing photo they look interchangeable. They are not.</p>
+      </div>
+
+      <div class="pk-body" style="margin-bottom:44px">
+        <p>We build these buildings, so here is what we would actually compare if we were the tenant &mdash; including the questions that expose a weak deal.</p>
+      </div>
+
+      <div class="pk-std-free">
+        <div class="pk-std-item">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v10M9.5 9.5h5M9.5 14.5h5"/></svg>
+          <b>Total occupancy cost</b>
+          <span>Ask for the base rate <em>and</em> the current NNN estimate <em>and</em> last year's actuals. A low headline rate with vague NNNs often costs more by year two.</span>
+        </div>
+        <div class="pk-std-item">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3h11l3 3v15H5z"/><path d="M9 9h6M9 13h6M9 17h4"/></svg>
+          <b>Delivered condition in writing</b>
+          <span>Office finish, restroom, HVAC tonnage, lighting, slab. Anything not listed in the lease exhibit becomes your bill after move-in.</span>
+        </div>
+        <div class="pk-std-item">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg>
+          <b>Power and phase</b>
+          <span>Look at the panel, not the brochure. Adding 3-phase after the fact costs five figures.</span>
+        </div>
+        <div class="pk-std-item">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16"/><path d="M3 8h18M3 12h18M3 16h18"/></svg>
+          <b>Door size and truck approach</b>
+          <span>A 12&times;12 handles a box truck. Then walk the approach &mdash; can your truck actually line up, or does a parking row block the angle?</span>
+        </div>
+        <div class="pk-std-item">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l8 4v6c0 4.5-3.2 7.5-8 8.5C7.2 20.5 4 17.5 4 13V7z"/><path d="M9 12l2 2 4-4"/></svg>
+          <b>Permitted use for your business</b>
+          <span>Your use has to be allowed twice: by the lease clause and by zoning. Gyms, retail, assembly, and auto work are the common trip-ups.</span>
+        </div>
+        <div class="pk-std-item">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><path d="M16 8h5M16 12h5M16 16h5"/></svg>
+          <b>Who actually operates the park</b>
+          <span>Ask whether the developer manages the property or hands it to a third party. It determines who answers when the HVAC fails in August.</span>
+        </div>
+      </div>
+
+      <div class="pk-note" style="margin-top:56px">
+        <div class="pk-note-k">The four questions</div>
+        <p><strong>What is the quoted base rate? What are estimated NNNs this year? What did NNNs actually run last year? What buildout is included in the delivered unit?</strong> Any landlord who cannot answer all four in one email is telling you something.</p>
+      </div>
+
+      <p class="pk-body" style="margin-top:26px">The long version, with everything that belongs on a walkthrough, is our <a href="blog/flex-space-lease-checklist.html">10-point flex space lease checklist</a>.</p>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       4. COSTS
+       ============================================================ -->
+  <section class="pk-rates">
+    <div class="pk-wrap">
+      <div class="pk-rates-grid">
+        <div>
+          <h2 class="pk-h2">What flex space costs in North Texas</h2>
+          <div class="pk-body" style="margin-top:20px">
+            <p>Small-bay flex in outer DFW submarkets generally quotes in the mid-teens per square foot per year, triple-net, plus NNN charges.</p>
+            <p>That is not a premium for nothing. Small bays cost more to build and operate per square foot: more walls, doors, restrooms, HVAC units, and storefront glass per 1,000 SF, and more tenants to manage. Scarcity does the rest &mdash; nationally, small-bay represents a very small share of new industrial construction while demand from small businesses keeps climbing.</p>
+            <p>Full worked example on a 2,000 SF unit: <a href="blog/how-much-does-flex-space-cost-dfw.html">how much it costs to lease flex space in DFW</a>. If NNN is new to you, start with <a href="blog/what-is-a-nnn-lease-triple-net-explained.html">what a triple-net lease actually means</a>.</p>
           </div>
-        </article>
-        <article class="ld-unit">
-          <img src="assets/mckinney.webp" alt="McKinney Flex Park site plan" loading="lazy" decoding="async">
-          <div class="ld-unit-body">
-            <span class="ld-unit-size">McKinney</span>
-            <span class="ld-unit-name">40+ units &middot; 1,800&ndash;3,500 SF</span>
-            <span class="ld-unit-sub">1990 N McDonald St &middot; 6.2 acres &middot; groundbreaking Q4 2026</span>
-            <span class="ld-unit-for">Mixed-use: ~75,000 SF with about 20,000 SF of retail and showroom frontage for customer-facing businesses.<br><br><a href="mckinney-flex-space-for-lease.html" class="su-link-red">See McKinney &#8594;</a></span>
+        </div>
+
+        <div class="pk-panel-card">
+          <div class="pk-panel-card-head">
+            <b>What you actually pay</b>
+            <em>&#9679; Triple net</em>
           </div>
-        </article>
-      </div>
-    </section>
-
-    <section class="ld-sec">
-      <h2>How to compare flex space developers in DFW</h2>
-      <p>There are a number of small-bay parks going up across North Texas right now, and from a listing photo they look interchangeable. They are not. We build these buildings, so here is what we would actually compare if we were the tenant — including the questions that expose a weak deal.</p>
-
-      <div class="ld-specs">
-        <div class="ld-spec"><b>1. Total occupancy cost, not base rent</b><span>Ask for the base rate <em>and</em> the current NNN estimate <em>and</em> last year's actuals. A low headline rate with vague NNNs often costs more by year two.</span></div>
-        <div class="ld-spec"><b>2. Delivered condition in writing</b><span>Office finish, restroom, HVAC tonnage, lighting, slab. Anything not listed in the lease exhibit becomes your bill after move-in.</span></div>
-        <div class="ld-spec"><b>3. Power and phase</b><span>Look at the panel, not the brochure. Adding 3-phase after the fact costs five figures.</span></div>
-        <div class="ld-spec"><b>4. Door size and truck approach</b><span>A 12&times;12 handles a box truck. Then walk the approach — can your truck actually line up, or does a parking row block the angle?</span></div>
-        <div class="ld-spec"><b>5. Permitted use for your business</b><span>Your use has to be allowed twice: by the lease clause and by zoning. Gyms, retail, assembly, and auto work are the common trip-ups.</span></div>
-        <div class="ld-spec"><b>6. Who actually operates the park</b><span>Ask whether the developer manages the property or hands it to a third party. It determines who answers when the HVAC fails in August.</span></div>
-      </div>
-
-      <div class="ld-callout">
-        <strong>The four questions that settle it:</strong> What is the quoted base rate? What are estimated NNNs this year? What did NNNs actually run last year? What buildout is included in the delivered unit? Any landlord who cannot answer all four in one email is telling you something.
-      </div>
-      <p>The long version, with everything that belongs on a walkthrough, is our <a href="blog/flex-space-lease-checklist.html">10-point flex space lease checklist</a>.</p>
-    </section>
-
-    <section class="ld-sec">
-      <h2>What flex space costs in North Texas</h2>
-      <p>Small-bay flex in outer DFW submarkets generally quotes in the mid-teens per square foot per year, triple-net, plus NNN charges. Our own market research found Rockwall flex averaging around $16.30/SF against roughly $9.78/SF for DFW industrial overall — with flex vacancy near 4.5% versus 9.4% market-wide.</p>
-      <p>That gap is not a premium for nothing. Small bays cost more to build and operate per square foot: more walls, doors, restrooms, HVAC units, and storefront glass per 1,000 SF, and more tenants to manage. Scarcity does the rest — nationally, small-bay represents a very small share of new industrial construction while demand from small businesses keeps climbing.</p>
-      <div class="ld-table-wrap">
-        <table class="ld-table">
-          <tr><th>Line item</th><th>Typical range</th><th>What it covers</th></tr>
-          <tr><td><strong>Base rent</strong></td><td>Mid-teens $/SF/yr</td><td>The space itself</td></tr>
-          <tr><td><strong>NNN charges</strong></td><td>Several $/SF/yr</td><td>Taxes, insurance, common-area maintenance</td></tr>
-          <tr><td><strong>Your utilities</strong></td><td>Metered per unit</td><td>Electric, water, internet — you control the thermostat</td></tr>
-          <tr><td><strong>Other</strong></td><td>Varies</td><td>Business insurance, signage, buildout beyond delivered condition</td></tr>
-        </table>
-      </div>
-      <p style="margin-top:16px">Full worked example on a 2,000 SF unit: <a href="blog/how-much-does-flex-space-cost-dfw.html">how much it costs to lease flex space in DFW</a>. If NNN is new to you, start with <a href="blog/what-is-a-nnn-lease-triple-net-explained.html">what a triple-net lease actually means</a>.</p>
-    </section>
-
-    <section class="ld-sec">
-      <h2>Choosing your unit size</h2>
-      <p>Most first-time flex tenants land between 1,500 and 3,000 SF. Size around three things, in this order:</p>
-      <ul>
-        <li><strong>People</strong> — roughly 150 to 200 SF per full-time person on site keeps an operation workable.</li>
-        <li><strong>Inventory</strong> — count the racking feet or pallet positions you use today, then add about 30 percent. Businesses that bother leasing space are usually growing into it.</li>
-        <li><strong>Vehicles</strong> — a box truck needs roughly 35 feet of clear depth to pull in. If it lives inside overnight, that is floor area you cannot use for anything else.</li>
-      </ul>
-      <p>Stepping up one size typically costs a few hundred dollars a month; moving your whole operation a year early costs weeks of disruption. The detailed breakdown is in <a href="blog/what-size-flex-space-does-my-business-need.html">what size flex space your business needs</a>.</p>
-    </section>
-
-    <section class="ld-sec">
-      <h2>Every leasing question, answered</h2>
-      <p>We publish a new answer every Tuesday and Friday in <a href="blog.html">The ScaleUp Journal</a>. These are the guides tenants use most.</p>
-      <div class="ld-related">
-        <a class="ld-rel" href="blog/what-is-flex-space.html"><span>Start here</span><b>What is flex space? A plain-English guide</b></a>
-        <a class="ld-rel" href="blog/flex-space-vs-traditional-warehouse.html"><span>Compare</span><b>Flex space vs traditional warehouse</b></a>
-        <a class="ld-rel" href="blog/flex-space-vs-self-storage-for-a-small-business.html"><span>Compare</span><b>Flex space vs self-storage for a small business</b></a>
-        <a class="ld-rel" href="blog/how-much-does-flex-space-cost-dfw.html"><span>Cost</span><b>What flex space costs to lease in DFW</b></a>
-        <a class="ld-rel" href="blog/what-is-a-nnn-lease-triple-net-explained.html"><span>Leases</span><b>What is a NNN lease? Triple net explained</b></a>
-        <a class="ld-rel" href="blog/flex-space-lease-checklist.html"><span>Checklist</span><b>10 things to verify before you sign</b></a>
-        <a class="ld-rel" href="blog/what-size-flex-space-does-my-business-need.html"><span>Sizing</span><b>What size flex space does my business need?</b></a>
-        <a class="ld-rel" href="blog/grade-level-vs-dock-high-doors.html"><span>Specs</span><b>Grade-level vs dock-high doors</b></a>
-        <a class="ld-rel" href="blog/how-much-power-does-a-shop-need.html"><span>Specs</span><b>How much power does a shop need? 3-phase explained</b></a>
-        <a class="ld-rel" href="blog/can-you-run-a-gym-church-or-retail-in-flex-space.html"><span>Permitted use</span><b>Can you run a gym, church, or retail in flex space?</b></a>
-        <a class="ld-rel" href="blog/what-does-etj-status-mean-for-a-flex-lease.html"><span>Zoning</span><b>What ETJ status means for a flex lease</b></a>
-      </div>
-    </section>
-
-    <section class="ld-sec">
-      <h2>Common questions</h2>
-      <div class="ld-faq">
-        <div class="ld-faq-item">
-          <h3>How do I compare flex space developers in DFW?</h3>
-          <p>Compare on six things rather than rate alone: total occupancy cost including NNN, delivered condition in writing, power and phase, door size and truck approach, permitted use for your specific business, and whether the landlord operates the park themselves. A low base rate with vague NNN estimates usually costs more in year two.</p>
-        </div>
-        <div class="ld-faq-item">
-          <h3>What does flex space cost to lease in DFW?</h3>
-          <p>Generally mid-teens per square foot per year triple-net in outer submarkets, plus NNN charges. Small bays cost more per square foot than big-box warehouse because of finished office, glass, and individual HVAC, but total monthly cost is far lower because you lease a fraction of the footage.</p>
-        </div>
-        <div class="ld-faq-item">
-          <h3>What size flex unit do most small businesses need?</h3>
-          <p>Most first-time tenants land between 1,500 and 3,000 SF. Size around roughly 150 to 200 SF per person on site, your current racking plus about 30 percent, and the largest vehicle that will load there.</p>
-        </div>
-        <div class="ld-faq-item">
-          <h3>Where can I lease flex space in North Texas right now?</h3>
-          <p>ScaleUp is pre-leasing 30 units of 1,500 to 3,000 SF at <a href="rockwall-flex-space-for-lease.html">Rockwall Flex Park</a> delivering Summer 2027, and taking early interest for <a href="mckinney-flex-space-for-lease.html">McKinney Flex Park</a>, breaking ground Q4 2026.</p>
+          <table class="pk-sched">
+            <thead>
+              <tr><th>Line item</th><th>Typical range</th><th>What it covers</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Base rent</td><td class="is-spec">Mid-teens $/SF/yr</td><td class="is-spec">The space itself</td></tr>
+              <tr><td>NNN charges</td><td class="is-spec">Several $/SF/yr</td><td class="is-spec">Taxes, insurance, CAM</td></tr>
+              <tr><td>Your utilities</td><td class="is-spec">Metered per unit</td><td class="is-spec">Electric, water, internet</td></tr>
+              <tr><td>Other</td><td class="is-spec">Varies</td><td class="is-spec">Insurance, signage, buildout</td></tr>
+            </tbody>
+          </table>
+          <div class="pk-panel-card-foot">You control the thermostat, so utilities sit with you rather than in a shared pool.</div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <div class="ld-cta">
-      <h2>Find the right unit</h2>
-      <p>Tell us your square footage, your timeline, and what your business actually does. We will tell you which park fits — and if neither does, we will say so.</p>
-      <div class="ld-cta-row">
+  <!-- ============================================================
+       5. SIZING
+       ============================================================ -->
+  <section class="pk-why">
+    <div class="pk-wrap">
+     <div class="pk-bigcard">
+      <div class="pk-bigcard-head">
+        <h2 class="pk-h2">Choosing your unit size</h2>
+      </div>
+      <div class="pk-body" style="margin-top:24px">
+        <p>Most first-time flex tenants land between 1,500 and 3,000 SF. Size around three things, in this order:</p>
+        <ul>
+          <li><strong>People</strong> &mdash; roughly 150 to 200 SF per full-time person on site keeps an operation workable.</li>
+          <li><strong>Inventory</strong> &mdash; count the racking feet or pallet positions you use today, then add about 30 percent. Businesses that bother leasing space are usually growing into it.</li>
+          <li><strong>Vehicles</strong> &mdash; a box truck needs roughly 35 feet of clear depth to pull in. If it lives inside overnight, that is floor area you cannot use for anything else.</li>
+        </ul>
+        <p>Stepping up one size typically costs a few hundred dollars a month; moving your whole operation a year early costs weeks of disruption. The detailed breakdown is in <a href="blog/what-size-flex-space-does-my-business-need.html">what size flex space your business needs</a>.</p>
+      </div>
+     </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       6. GUIDES
+       ============================================================ -->
+  <section class="pk-guides">
+    <div class="pk-wrap">
+      <div class="pk-guides-grid">
+        <div>
+          <h2 class="pk-h2">Every leasing question, answered</h2>
+          <p class="pk-body" style="margin-top:16px;font-size:15.5px">We publish a new answer every Tuesday and Friday in <a href="blog.html">The ScaleUp Journal</a>. These are the guides tenants use most.</p>
+        </div>
+        <div class="pk-guides-list">
+          <a href="blog/what-is-flex-space.html"><em>Start here</em><b>What is flex space? A plain-English guide</b><i>&#8594;</i></a>
+          <a href="blog/flex-space-vs-traditional-warehouse.html"><em>Compare</em><b>Flex space vs traditional warehouse</b><i>&#8594;</i></a>
+          <a href="blog/flex-space-vs-self-storage-for-a-small-business.html"><em>Compare</em><b>Flex space vs self-storage for a small business</b><i>&#8594;</i></a>
+          <a href="blog/how-much-does-flex-space-cost-dfw.html"><em>Cost</em><b>What flex space costs to lease in DFW</b><i>&#8594;</i></a>
+          <a href="blog/what-is-a-nnn-lease-triple-net-explained.html"><em>Leases</em><b>What is a NNN lease? Triple net explained</b><i>&#8594;</i></a>
+          <a href="blog/flex-space-lease-checklist.html"><em>Checklist</em><b>10 things to verify before you sign</b><i>&#8594;</i></a>
+          <a href="blog/what-size-flex-space-does-my-business-need.html"><em>Sizing</em><b>What size flex space does my business need?</b><i>&#8594;</i></a>
+          <a href="blog/grade-level-vs-dock-high-doors.html"><em>Specs</em><b>Grade-level vs dock-high doors</b><i>&#8594;</i></a>
+          <a href="blog/how-much-power-does-a-shop-need.html"><em>Specs</em><b>How much power does a shop need? 3-phase explained</b><i>&#8594;</i></a>
+          <a href="blog/can-you-run-a-gym-church-or-retail-in-flex-space.html"><em>Permitted use</em><b>Can you run a gym, church, or retail in flex space?</b><i>&#8594;</i></a>
+          <a href="blog/what-does-etj-status-mean-for-a-flex-lease.html"><em>Zoning</em><b>What ETJ status means for a flex lease</b><i>&#8594;</i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       7. FAQ
+       ============================================================ -->
+  <section class="pk-faq">
+    <div class="pk-wrap">
+      <div class="pk-faq-head">
+        <h2 class="pk-h2">Common questions</h2>
+      </div>
+
+      <div class="pk-faq-list">
+        <details open>
+          <summary>How do I compare flex space developers in DFW?</summary>
+          <p class="pk-faq-a">Compare on six things rather than rate alone: total occupancy cost including NNN, delivered condition in writing, power and phase, door size and truck approach, permitted use for your specific business, and whether the landlord operates the park themselves. A low base rate with vague NNN estimates usually costs more in year two.</p>
+        </details>
+        <details>
+          <summary>What does flex space cost to lease in DFW?</summary>
+          <p class="pk-faq-a">Generally mid-teens per square foot per year triple-net in outer submarkets, plus NNN charges. Small bays cost more per square foot than big-box warehouse because of finished office, glass, and individual HVAC, but total monthly cost is far lower because you lease a fraction of the footage.</p>
+        </details>
+        <details>
+          <summary>What size flex unit do most small businesses need?</summary>
+          <p class="pk-faq-a">Most first-time tenants land between 1,500 and 3,000 SF. Size around roughly 150 to 200 SF per person on site, your current racking plus about 30 percent, and the largest vehicle that will load there.</p>
+        </details>
+        <details>
+          <summary>Where can I lease flex space in North Texas right now?</summary>
+          <p class="pk-faq-a">ScaleUp is pre-leasing 30 units of 1,500 to 3,000 SF at <a href="rockwall-flex-space-for-lease.html">Rockwall Flex Park</a> delivering Summer 2027, and taking early interest for <a href="mckinney-flex-space-for-lease.html">McKinney Flex Park</a>, breaking ground Q4 2026.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       8. CLOSING CTA
+       ============================================================ -->
+  <section class="pk-outro" id="outro">
+    <div class="pk-outro-art" aria-hidden="true">
+      <img src="assets/sketch.webp" alt="" width="1250" height="1250" loading="lazy" decoding="async">
+    </div>
+    <div class="pk-outro-inner">
+      <h2>Find the<br>right unit</h2>
+      <p>Tell us your square footage, your timeline, and what your business actually does. We will tell you which park fits &mdash; and if neither does, we will say so.</p>
+      <div class="pk-outro-row">
         <a href="index.html#contact" class="su-btn-fill">Schedule a tour <span class="su-arr">&#8594;</span></a>
-        <a href="index.html#contact" class="su-btn-outline">Request rates</a>
+        <a href="index.html#contact" class="pk-outro-alt">Request rates &#8594;</a>
       </div>
     </div>
-  </main>
+  </section>
 
-  <footer class="ld-footer">
-    <a class="su-logo" href="index.html">
-      <span class="su-logo-mark su-logo-mark-sm"><i></i><i></i><i></i></span>
-      <span class="su-logo-word su-logo-word-sm">ScaleUp</span>
-    </a>
-    <span class="su-footer-note">&copy; 2026 ScaleUp Flex Parks &middot; Rockwall &middot; McKinney</span>
-    <a href="blog.html" class="su-btn-outline su-investor-btn">Leasing guides</a>
+  <!-- ============================================================
+       9. FOOTER
+       ============================================================ -->
+  <footer class="pk-footer">
+    <div class="pk-footer-inner">
+      <div class="pk-footer-brand">
+        <a class="su-logo" href="index.html">
+          <span class="su-logo-mark su-logo-mark-sm"><i></i><i></i><i></i></span>
+          <span class="su-logo-word su-logo-word-sm">ScaleUp</span>
+        </a>
+        <p>Small-bay flex parks built, leased, and operated in North Texas. We are the developer, not a broker.</p>
+      </div>
+
+      <nav class="pk-footer-col" aria-label="Leasing">
+        <h3>Leasing</h3>
+        <a href="flex-space-for-lease-dfw.html">Flex space in DFW</a>
+        <a href="rockwall-flex-space-for-lease.html">Rockwall</a>
+        <a href="mckinney-flex-space-for-lease.html">McKinney</a>
+        <a href="index.html#contact">Request rates</a>
+      </nav>
+
+      <nav class="pk-footer-col" aria-label="Company">
+        <h3>Company</h3>
+        <a href="index.html#about">About</a>
+        <a href="index.html#developments">Developments</a>
+        <a href="blog.html">The ScaleUp Journal</a>
+        <a href="investors.html">Investors</a>
+      </nav>
+
+      <div class="pk-footer-col">
+        <h3>Get in touch</h3>
+        <p class="pk-footer-addr">Rockwall &middot; McKinney<br>North Texas</p>
+        <a href="mailto:contactus@scaleupflex.com">contactus@scaleupflex.com</a>
+      </div>
+    </div>
+
+    <div class="pk-footer-base">
+      <span>&copy; 2026 ScaleUp Flex Parks &middot; Rockwall &middot; McKinney</span>
+      <span>Pre-leasing now</span>
+    </div>
   </footer>
 
   <script src="logo.js"></script>
+  <script src="header.js"></script>
 </body>
 </html>

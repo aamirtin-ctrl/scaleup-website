@@ -38,12 +38,10 @@
     linear-gradient(to top, var(--bg) 0%, rgba(245,239,226,0.96) 22%, rgba(245,239,226,0.72) 38%, rgba(245,239,226,0.2) 58%, rgba(245,239,226,0) 72%);
 }
 
-/* nav sits over the image, flat — no pill, no stick */
-.pk-nav {
-  position: relative; z-index: 3;
-  max-width: 1180px; width: 100%; margin: 0 auto; padding: 26px 6vw 0;
-  display: flex; align-items: center; gap: 30px;
-}
+/* Nav: flat and transparent over the hero, condensing into a floating pill
+   on scroll. Positioning + pill visuals come from [data-stick] .su-morph in
+   styles.css; header.js drives --hp. */
+.pk-nav { display: flex; align-items: center; gap: 30px; white-space: nowrap; }
 .pk-nav .su-logo { margin-right: auto; }
 .pk-nav-links { display: flex; gap: 24px; }
 .pk-nav-links a { font-size: 13.5px; font-weight: 500; color: rgba(36,29,19,0.7); transition: color 0.2s ease; }
@@ -502,4 +500,64 @@
   .pk-panel, .pk-stage img, .pk-thumbset, .pk-track button::before,
   .pk-guides-list a, .pk-faq-list summary::before, .pk-faq-list summary::after { transition: none; }
   .pk-stage img { transform: none; }
+}
+
+/* ============================================================
+   OUR SPACES — two interlocking pieces (DFW pillar page)
+   Each park is an L: Rockwall is the top bar plus a tab dropping
+   down the right; McKinney is a tab on the left plus the bottom
+   bar. Zero gap between cells so they tessellate; the two fills
+   do the separating.
+   ============================================================ */
+.pk-spaces {
+  display: grid;
+  grid-template-columns: 1.18fr 1fr;
+  grid-template-areas:
+    "rockA rockA"
+    "mckA  rockB"
+    "mckB  mckB";
+  border-radius: 28px; overflow: hidden;
+  border: 1px solid var(--line);
+  box-shadow: 0 26px 70px rgba(74,56,30,0.09);
+}
+.pk-pc-rockA { grid-area: rockA; }
+.pk-pc-rockB { grid-area: rockB; }
+.pk-pc-mckA  { grid-area: mckA;  }
+.pk-pc-mckB  { grid-area: mckB;  }
+
+.pk-pc-rockA, .pk-pc-rockB { background: var(--panel); }
+.pk-pc-mckA,  .pk-pc-mckB  { background: var(--ink-deep); color: var(--cream-on-ink); }
+
+.pk-pc-txt { display: block; padding: 40px 44px 42px; transition: background 0.3s ease; }
+.pk-pc-rockA:hover { background: #FFFEFA; }
+.pk-pc-mckB:hover  { background: #241E15; }
+.pk-pc-eyebrow {
+  font-family: 'Archivo', sans-serif; font-size: 10.5px; letter-spacing: 0.18em;
+  text-transform: uppercase; color: rgba(36,29,19,0.45);
+}
+.pk-pc-mckB .pk-pc-eyebrow { color: rgba(243,234,218,0.5); }
+.pk-pc-txt h3 {
+  margin: 12px 0 0; font-family: 'Lora', serif; font-weight: 600;
+  font-size: clamp(26px, 3vw, 38px); line-height: 1.06; letter-spacing: -0.025em; color: var(--text);
+}
+.pk-pc-mckB h3 { color: var(--cream-on-ink); }
+.pk-pc-meta { margin-top: 10px; font-size: 14px; color: rgba(36,29,19,0.55); }
+.pk-pc-mckB .pk-pc-meta { color: rgba(243,234,218,0.55); }
+.pk-pc-txt p { margin: 16px 0 0; max-width: 54ch; font-size: 15.5px; line-height: 1.65; color: rgba(36,29,19,0.74); }
+.pk-pc-mckB p { color: rgba(243,234,218,0.66); }
+.pk-pc-go { display: inline-block; margin-top: 20px; font-size: 14.5px; font-weight: 600; color: var(--red); }
+.pk-pc-mckB .pk-pc-go { color: #E8A0A0; }
+.pk-pc-rockA:hover .pk-pc-go, .pk-pc-mckB:hover .pk-pc-go { text-decoration: underline; text-underline-offset: 4px; }
+
+.pk-pc-img { position: relative; overflow: hidden; min-height: 230px; }
+.pk-pc-img img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+
+@media (max-width: 900px) {
+  .pk-spaces {
+    grid-template-columns: 1fr;
+    grid-template-areas: "rockA" "rockB" "mckA" "mckB";
+    border-radius: 22px;
+  }
+  .pk-pc-txt { padding: 30px 26px 32px; }
+  .pk-pc-img { min-height: 190px; }
 }
