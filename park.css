@@ -359,29 +359,6 @@
 .pk-guides-list a:hover i { opacity: 1; }
 .pk-guides-list a:hover b { color: var(--red); }
 
-/* ============================================================
-   10. FOOTER — sits above the closing CTA
-   ============================================================ */
-.pk-footer { margin-top: 110px; border-top: 1px solid var(--line); }
-.pk-footer-inner {
-  max-width: 1180px; margin: 0 auto; padding: 56px 6vw 44px;
-  display: grid; grid-template-columns: 1.5fr 1fr 1fr 1.15fr; gap: 48px;
-}
-.pk-footer-brand p { margin: 18px 0 0; max-width: 30ch; font-size: 14px; line-height: 1.6; color: rgba(36,29,19,0.58); }
-.pk-footer-col { display: flex; flex-direction: column; align-items: flex-start; }
-.pk-footer-col h3 {
-  margin: 0 0 16px; font-family: 'Archivo', sans-serif; font-size: 10.5px; font-weight: 400;
-  letter-spacing: 0.16em; text-transform: uppercase; color: rgba(36,29,19,0.42);
-}
-.pk-footer-col a { font-size: 14.5px; line-height: 1.5; color: rgba(36,29,19,0.72); padding: 4px 0; transition: color 0.2s ease; }
-.pk-footer-col a:hover { color: var(--red); }
-.pk-footer-addr { margin: 0 0 10px; font-size: 14.5px; line-height: 1.55; color: rgba(36,29,19,0.72); }
-.pk-footer-base {
-  max-width: 1180px; margin: 0 auto; padding: 20px 6vw 30px;
-  border-top: 1px solid var(--line);
-  display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap;
-  font-size: 12.5px; color: rgba(36,29,19,0.48);
-}
 
 /* ============================================================
    11. CLOSING CTA — the site sketch bleeding off the bottom
@@ -434,7 +411,6 @@
   .pk-std-free { row-gap: 32px; }
   .pk-bigcard { padding: 44px 30px 48px; border-radius: 24px; }
   .pk-who { padding: 52px 30px 56px; border-radius: 24px; }
-  .pk-footer-inner { grid-template-columns: 1fr 1fr; gap: 36px; }
   .pk-outro { min-height: 72vh; }
   .pk-outro-art { width: 168%; height: 66%; }
   .pk-split, .pk-split.is-flipped { grid-template-columns: 1fr; gap: 24px; }
@@ -472,9 +448,7 @@
   .pk-panel-card-head, .pk-panel-card-foot { padding-left: 14px; padding-right: 14px; }
   /* the schedule is wider than a phone — let it scroll rather than clip */
   .pk-panel-card { overflow-x: auto; }
-  .pk-footer-inner { grid-template-columns: 1fr; gap: 30px; }
-  .pk-footer-base { flex-direction: column; text-align: center; gap: 8px; }
-  .pk-outro { min-height: 64vh; padding-top: 60px; }
+    .pk-outro { min-height: 64vh; padding-top: 60px; }
   .pk-outro-art { width: 210%; height: 58%; }
 }
 
@@ -569,3 +543,13 @@
   .pk-pc-txt { padding: 30px 26px 32px; }
   .pk-pc-img { min-height: 200px; padding: 18px; }
 }
+
+
+/* Closing CTA art, photo variant (park pages): a render fading up out of
+   the cream instead of the pencil site plan. */
+.pk-outro-art.is-photo { width: 100%; height: 84%;
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.34) 16%, rgba(0,0,0,0.85) 36%, #000 52%, #000 100%);
+  mask-image: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.34) 16%, rgba(0,0,0,0.85) 36%, #000 52%, #000 100%);
+}
+.pk-outro-art.is-photo img { mix-blend-mode: normal; filter: none; object-position: 50% 46%; }
+@media (max-width: 900px) { .pk-outro-art.is-photo { width: 100%; height: 72%; } }
