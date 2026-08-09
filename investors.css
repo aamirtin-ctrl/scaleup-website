@@ -14,7 +14,7 @@
 }
 .iv-gate.open { opacity: 0; visibility: hidden; transform: scale(1.06); pointer-events: none; }
 .iv-gate-panel { display: flex; flex-direction: column; align-items: center; text-align: center; padding: 0 24px; }
-.iv-gate-eyebrow { margin-top: 26px; font-size: 12px; font-weight: 600; letter-spacing: 0.26em; color: rgba(36,29,19,0.55); }
+.iv-gate-eyebrow { margin-top: 26px; font-size: 13px; font-weight: 500; letter-spacing: 0.26em; color: rgba(36,29,19,0.55); }
 .iv-gate-title { margin-top: 14px; font-family: 'Lora', serif; font-weight: 600; font-size: clamp(34px, 4.4vw, 54px); letter-spacing: -0.015em; color: var(--text); }
 .iv-gate-sub { margin-top: 12px; font-size: 15px; color: rgba(36,29,19,0.55); }
 .iv-gate-form { margin-top: 30px; display: flex; gap: 12px; }
@@ -50,7 +50,7 @@ body:not(.iv-locked) .iv-page { visibility: visible; }
 .iv-nav-links a:hover { color: var(--ink); }
 .iv-nav-cta {
   padding: 10px 18px; border-radius: 100px; background: var(--red);
-  font-size: 13px; font-weight: 600; color: #FBF3F0;
+  font-size: 13px; font-weight: 500; color: #FBF3F0;
   transition: background 0.2s ease;
 }
 .iv-nav-cta:hover { background: var(--red-hover); }
@@ -64,7 +64,7 @@ body:not(.iv-locked) .iv-page { visibility: visible; }
 .iv-hero-center { position: relative; z-index: 5; text-align: center; padding: 120px 24px 80px; }
 .iv-eyebrow {
   display: inline-flex; align-items: center; gap: 9px;
-  font-size: 12px; font-weight: 600; letter-spacing: 0.26em; color: rgba(36,29,19,0.55);
+  font-size: 13px; font-weight: 500; letter-spacing: 0.26em; color: rgba(36,29,19,0.55);
 }
 .iv-eyebrow i { display: block; width: 7px; height: 7px; border-radius: 50%; background: var(--red); }
 .iv-hero-center h1 {
@@ -80,7 +80,7 @@ body:not(.iv-locked) .iv-page { visibility: visible; }
   box-shadow: 0 20px 50px rgba(74,56,30,0.16);
 }
 .iv-hero-mark .su-logo-mark svg { height: 44px; }
-.iv-hero-sub { margin-top: 26px; font-size: 16px; color: rgba(36,29,19,0.6); }
+.iv-hero-sub { margin-top: 26px; font-size: 15px; color: rgba(36,29,19,0.6); }
 .iv-hero-scroll { position: absolute; bottom: 4vh; left: 50%; transform: translateX(-50%); }
 
 /* hero entrance: lines rise in after unlock */
@@ -123,7 +123,7 @@ body:not(.iv-locked) .iv-page { visibility: visible; }
   margin-top: 18px; font-family: 'Lora', serif; font-weight: 600;
   font-size: clamp(36px, 4.6vw, 64px); line-height: 1.04; letter-spacing: -0.02em; color: var(--text);
 }
-.iv-head p { margin-top: 18px; max-width: 560px; font-size: 16px; line-height: 1.65; color: rgba(36,29,19,0.6); }
+.iv-head p { margin-top: 18px; max-width: 560px; font-size: 15px; line-height: 1.65; color: rgba(36,29,19,0.6); }
 
 /* scroll-reveal: rise + de-blur */
 .iv-reveal { opacity: 0; transform: translateY(28px); filter: blur(7px); transition: opacity 0.85s cubic-bezier(0.2,0.7,0.2,1), transform 0.85s cubic-bezier(0.2,0.7,0.2,1), filter 0.85s ease; transition-delay: var(--d, 0s); }
@@ -131,9 +131,9 @@ body:not(.iv-locked) .iv-page { visibility: visible; }
 
 /* ---------- the gap ---------- */
 .iv-bars { margin-top: 56px; max-width: 720px; }
-.iv-bars-label { font-size: 11px; font-weight: 600; letter-spacing: 0.2em; color: rgba(36,29,19,0.45); }
+.iv-bars-label { font-size: 11px; font-weight: 500; letter-spacing: 0.2em; color: rgba(36,29,19,0.45); }
 .iv-bar-row { display: grid; grid-template-columns: 170px 1fr; align-items: center; gap: 20px; margin-top: 20px; }
-.iv-bar-name { font-size: 14px; color: rgba(36,29,19,0.7); }
+.iv-bar-name { font-size: 13px; color: rgba(36,29,19,0.7); }
 .iv-bar-track { position: relative; display: flex; align-items: center; gap: 12px; height: 30px; }
 .iv-bar-fill {
   height: 100%; width: 0; border-radius: 6px; background: rgba(36,29,19,0.22);
@@ -141,7 +141,7 @@ body:not(.iv-locked) .iv-page { visibility: visible; }
 }
 .iv-bar-red { background: var(--red); }
 .iv-bars.in .iv-bar-fill { width: var(--w); }
-.iv-bar-callout { font-size: 14px; font-weight: 600; color: var(--leasing-text); }
+.iv-bar-callout { font-size: 13px; font-weight: 500; color: var(--leasing-text); }
 
 .iv-stats { margin-top: 70px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; }
 .iv-stat { border-top: 1px solid rgba(36,29,19,0.16); padding-top: 24px; }
@@ -161,7 +161,7 @@ body:not(.iv-locked) .iv-page { visibility: visible; }
   padding: 16px 20px; border-radius: 16px;
   background: rgba(255,252,244,0.94);
   border: 1px solid rgba(36,29,19,0.13); box-shadow: 0 18px 44px rgba(74,56,30,0.15);
-  font-size: 13.5px; line-height: 1.55; color: rgba(36,29,19,0.75);
+  font-size: 13px; line-height: 1.55; color: rgba(36,29,19,0.75);
   transition: opacity 0.4s ease, transform 0.4s cubic-bezier(0.2, 0.7, 0.2, 1);
   transition-delay: var(--bd, 0s);
 }
@@ -191,16 +191,16 @@ body:not(.iv-locked) .iv-page { visibility: visible; }
 .iv-slot-right { left: 320px; top: -16px; width: 148px; z-index: 2; opacity: 0.8; cursor: pointer; }
 .iv-slot-top:hover, .iv-slot-right:hover { opacity: 1; transform: translateY(-5px); border-color: rgba(36,29,19,0.38); }
 
-.iv-mono { font-family: 'Lora', serif; font-weight: 600; font-size: 64px; color: rgba(36,29,19,0.8); transition: font-size 0.7s cubic-bezier(0.3, 0.05, 0.22, 1); }
-.iv-slot-top .iv-mono, .iv-slot-right .iv-mono { font-size: 30px; }
-.iv-mono-note { font-size: 9px; font-weight: 600; letter-spacing: 0.22em; color: rgba(36,29,19,0.35); }
+.iv-mono { font-family: 'Lora', serif; font-weight: 500; font-size: 64px; color: rgba(36,29,19,0.8); transition: font-size 0.7s cubic-bezier(0.3, 0.05, 0.22, 1); }
+.iv-slot-top .iv-mono, .iv-slot-right .iv-mono { font-size: 27px; }
+.iv-mono-note { font-size: 11px; font-weight: 500; letter-spacing: 0.22em; color: rgba(36,29,19,0.35); }
 .iv-slot-top .iv-mono-note, .iv-slot-right .iv-mono-note { display: none; }
 
 /* name + role */
 .iv-team-id { position: absolute; top: calc(100% + 24px); left: -60px; width: 420px; text-align: center; transition: opacity 0.35s ease, transform 0.35s ease; }
 .iv-switching .iv-team-id { opacity: 0; transform: translateY(10px); }
-.iv-team-name { font-family: 'Lora', serif; font-weight: 600; font-size: 30px; letter-spacing: -0.01em; color: var(--text); }
-.iv-team-role { display: block; margin-top: 7px; font-size: 12px; font-weight: 600; letter-spacing: 0.18em; color: var(--leasing-text); }
+.iv-team-name { font-family: 'Lora', serif; font-weight: 500; font-size: 27px; letter-spacing: -0.01em; color: var(--text); }
+.iv-team-role { display: block; margin-top: 7px; font-size: 13px; font-weight: 500; letter-spacing: 0.18em; color: var(--leasing-text); }
 
 /* dots / progress slider */
 .iv-team-dots { position: absolute; top: calc(100% + 102px); left: -60px; display: flex; justify-content: center; gap: 10px; width: 420px; }
@@ -235,9 +235,9 @@ body:not(.iv-locked) .iv-page { visibility: visible; }
   transition: background 0.25s ease, padding-left 0.25s ease;
 }
 .iv-market:hover { background: rgba(36,29,19,0.04); padding-left: 14px; }
-.iv-market-name { font-family: 'Lora', serif; font-weight: 500; font-size: 24px; color: var(--text); }
-.iv-market-loc { font-size: 14px; color: rgba(36,29,19,0.55); }
-.iv-market-status { display: flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; letter-spacing: 0.06em; color: rgba(36,29,19,0.72); }
+.iv-market-name { font-family: 'Lora', serif; font-weight: 500; font-size: 27px; color: var(--text); }
+.iv-market-loc { font-size: 13px; color: rgba(36,29,19,0.55); }
+.iv-market-status { display: flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 500; letter-spacing: 0.06em; color: rgba(36,29,19,0.72); }
 .iv-market-status i { display: block; width: 7px; height: 7px; border-radius: 50%; }
 .iv-market-delivery { font-family: 'Lora', serif; font-style: italic; font-size: 17px; color: rgba(36,29,19,0.6); }
 
@@ -252,16 +252,16 @@ body:not(.iv-locked) .iv-page { visibility: visible; }
 .iv-principle:hover { border-color: rgba(184,50,50,0.55); transform: translateY(-4px); }
 .iv-principle-n {
   position: absolute; top: 18px; right: 24px;
-  font-family: 'Lora', serif; font-style: italic; font-size: 38px; color: rgba(36,29,19,0.12);
+  font-family: 'Lora', serif; font-style: italic; font-size: 34px; color: rgba(36,29,19,0.12);
 }
-.iv-principle h3 { font-family: 'Lora', serif; font-weight: 600; font-size: 22px; color: var(--text); }
-.iv-principle p { margin-top: 10px; font-size: 14px; line-height: 1.6; color: rgba(36,29,19,0.6); max-width: 380px; }
+.iv-principle h3 { font-family: 'Lora', serif; font-weight: 600; font-size: 21px; color: var(--text); }
+.iv-principle p { margin-top: 10px; font-size: 13px; line-height: 1.6; color: rgba(36,29,19,0.6); max-width: 380px; }
 
 /* ---------- institutional ---------- */
 .iv-acq { margin-top: 56px; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; }
 .iv-acq-point { border-left: 3px solid var(--red); padding-left: 24px; }
-.iv-acq-point h3 { font-family: 'Lora', serif; font-weight: 600; font-size: 23px; color: var(--text); }
-.iv-acq-point p { margin-top: 10px; font-size: 14px; line-height: 1.65; color: rgba(36,29,19,0.6); }
+.iv-acq-point h3 { font-family: 'Lora', serif; font-weight: 600; font-size: 21px; color: var(--text); }
+.iv-acq-point p { margin-top: 10px; font-size: 13px; line-height: 1.65; color: rgba(36,29,19,0.6); }
 .iv-acq-cta { margin-top: 54px; display: flex; align-items: center; gap: 18px; }
 .iv-acq-note { font-size: 13px; color: rgba(36,29,19,0.5); }
 
@@ -271,7 +271,7 @@ body:not(.iv-locked) .iv-page { visibility: visible; }
   max-width: 1080px; margin: 0 auto; padding: 30px 6vw 40px;
   border-top: 1px solid rgba(36,29,19,0.12);
 }
-.iv-back { font-size: 14px; color: rgba(36,29,19,0.6); transition: color 0.2s ease; }
+.iv-back { font-size: 13px; color: rgba(36,29,19,0.6); transition: color 0.2s ease; }
 .iv-back:hover { color: var(--ink); }
 
 /* main-site footer button */
