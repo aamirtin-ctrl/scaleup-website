@@ -567,3 +567,100 @@
 .pk-outro-art.is-photo img { mix-blend-mode: normal; filter: none; object-position: 50% 46%; }
 @media (max-width: 900px) { .pk-outro-art.is-photo { width: 100%; height: 72%; } }
 
+
+/* ============================================================
+   CONTACT PAGE — the form card sits between two boot pieces:
+   Rockwall in the top-left, McKinney in the bottom-right.
+   Same construction as Our Spaces: each park is a bar plus a leg,
+   the grid gap draws the gutter, a negative margin cancels it
+   inside a piece so bar and leg fuse into one shape.
+   ============================================================ */
+.ct-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-areas:
+    "rockbar rockbar ."
+    "rockleg .       ."
+    "contact contact contact"
+    ".       .       mckleg"
+    ".       mckbar  mckbar";
+  gap: 16px;
+  align-items: start;
+}
+.ct-rock     { grid-area: rockbar; border-radius: 28px 28px 28px 0; }
+.ct-rock-leg { grid-area: rockleg; margin-top: -16px;    border-radius: 0 0 28px 28px; }
+.ct-mck-leg  { grid-area: mckleg;  margin-bottom: -16px; border-radius: 28px 28px 0 0; }
+.ct-mck      { grid-area: mckbar;  border-radius: 28px 0 28px 28px; }
+
+.ct-rock, .ct-rock-leg { background: var(--panel); }
+.ct-mck,  .ct-mck-leg  { background: var(--ink-deep); color: var(--cream-on-ink); }
+
+.ct-bar { display: block; padding: 32px 36px 34px; transition: background 0.3s ease; }
+.ct-rock:hover { background: #FFFEFB; }
+.ct-mck:hover  { background: #241E15; }
+.ct-bar .pk-sp-eyebrow { display: block; }
+/* the shared eyebrow colour is ink, which vanishes on the McKinney fill */
+.ct-mck .pk-sp-eyebrow { color: rgba(243,234,218,0.5); }
+.ct-bar h2 {
+  margin: 10px 0 0; font-family: 'Lora', serif; font-weight: 600;
+  font-size: clamp(22px, 2.4vw, 30px); line-height: 1.08; letter-spacing: -0.02em; color: var(--text);
+}
+.ct-mck h2 { color: var(--cream-on-ink); }
+.ct-bar .ct-meta { margin-top: 8px; font-size: 13.5px; line-height: 1.5; color: rgba(36,29,19,0.55); }
+.ct-mck .ct-meta { color: rgba(243,234,218,0.55); }
+.ct-go { display: inline-block; margin-top: 16px; font-size: 14px; font-weight: 600; color: var(--red); }
+.ct-mck .ct-go { color: #E8A0A0; }
+.ct-bar:hover .ct-go { text-decoration: underline; text-underline-offset: 4px; }
+
+.ct-leg { overflow: hidden; min-height: 210px; }
+.ct-leg img { width: 100%; height: 100%; min-height: 210px; object-fit: cover; display: block; }
+/* each leg photo dissolves into its own piece's fill on the edge meeting the bar */
+.ct-rock-leg img {
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.45) 13%, rgba(0,0,0,0.9) 30%, #000 44%, #000 100%);
+  mask-image: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.45) 13%, rgba(0,0,0,0.9) 30%, #000 44%, #000 100%);
+}
+.ct-mck-leg img {
+  -webkit-mask-image: linear-gradient(to top, transparent 0%, rgba(0,0,0,0.45) 13%, rgba(0,0,0,0.9) 30%, #000 44%, #000 100%);
+  mask-image: linear-gradient(to top, transparent 0%, rgba(0,0,0,0.45) 13%, rgba(0,0,0,0.9) 30%, #000 44%, #000 100%);
+}
+
+/* ---------- the card in the middle ---------- */
+.ct-card {
+  grid-area: contact;
+  background: var(--panel); border: 1px solid var(--line); border-radius: 28px;
+  box-shadow: 0 30px 80px rgba(74,56,30,0.10);
+  padding: 52px 54px 56px; margin: 34px 0;
+  display: grid; grid-template-columns: 0.85fr 1.15fr; gap: 54px; align-items: start;
+}
+.ct-card h1 {
+  margin: 12px 0 0; font-family: 'Lora', serif; font-weight: 600;
+  font-size: clamp(30px, 3.6vw, 46px); line-height: 1.04; letter-spacing: -0.025em; color: var(--text);
+}
+.ct-blurb { margin: 18px 0 0; font-size: 16px; line-height: 1.65; color: rgba(36,29,19,0.72); }
+.ct-meta-list { margin: 30px 0 0; display: grid; gap: 18px; }
+.ct-meta-list div { display: flex; flex-direction: column; gap: 4px; }
+.ct-label {
+  font-family: 'Archivo', sans-serif; font-size: 10px; font-weight: 600;
+  letter-spacing: 0.16em; text-transform: uppercase; color: rgba(36,29,19,0.45);
+}
+.ct-val { font-size: 15px; color: var(--text); }
+.ct-val a { color: var(--text); }
+.ct-val a:hover { color: var(--red); }
+
+@media (max-width: 1000px) {
+  .ct-card { grid-template-columns: 1fr; gap: 34px; padding: 40px 34px 44px; }
+}
+@media (max-width: 900px) {
+  .ct-grid {
+    grid-template-columns: 1fr;
+    grid-template-areas: "rockbar" "rockleg" "contact" "mckleg" "mckbar";
+    gap: 14px;
+  }
+  .ct-rock     { border-radius: 22px 22px 0 0; }
+  .ct-rock-leg { margin-top: -14px; border-radius: 0 0 22px 22px; }
+  .ct-mck-leg  { margin-bottom: -14px; border-radius: 22px 22px 0 0; }
+  .ct-mck      { border-radius: 0 0 22px 22px; }
+  .ct-card { margin: 20px 0; border-radius: 22px; }
+  .ct-bar { padding: 26px 24px 28px; }
+  .ct-leg, .ct-leg img { min-height: 170px; }
+}
