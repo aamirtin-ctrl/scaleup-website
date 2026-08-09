@@ -15,7 +15,7 @@
 .iv-gate.open { opacity: 0; visibility: hidden; transform: scale(1.06); pointer-events: none; }
 .iv-gate-panel { display: flex; flex-direction: column; align-items: center; text-align: center; padding: 0 24px; }
 .iv-gate-eyebrow { margin-top: 26px; font-size: 13px; font-weight: 500; letter-spacing: 0.26em; color: rgba(36,29,19,0.55); }
-.iv-gate-title { margin-top: 14px; font-family: 'Lora', serif; font-weight: 600; font-size: clamp(34px, 4.4vw, 54px); letter-spacing: -0.015em; color: var(--text); }
+.iv-gate-title { margin-top: 14px; font-family: 'Lora', serif; font-weight: 500; font-size: clamp(34px, 4.4vw, 54px); letter-spacing: -0.015em; color: var(--text); }
 .iv-gate-sub { margin-top: 12px; font-size: 15px; color: rgba(36,29,19,0.55); }
 .iv-gate-form { margin-top: 30px; display: flex; gap: 12px; }
 .iv-gate-form input {
@@ -68,7 +68,7 @@ body:not(.iv-locked) .iv-page { visibility: visible; }
 }
 .iv-eyebrow i { display: block; width: 7px; height: 7px; border-radius: 50%; background: var(--red); }
 .iv-hero-center h1 {
-  margin-top: 22px; font-family: 'Lora', serif; font-weight: 600;
+  margin-top: 22px; font-family: 'Lora', serif; font-weight: 500;
   font-size: clamp(56px, 8.6vw, 128px); line-height: 1.02; letter-spacing: -0.02em; color: var(--text);
 }
 .iv-hero-center h1 span { display: block; }
@@ -120,7 +120,7 @@ body:not(.iv-locked) .iv-page { visibility: visible; }
 .iv-section { position: relative; padding: 13vh 6vw; border-top: 1px solid rgba(36,29,19,0.1); }
 .iv-inner { max-width: 1080px; margin: 0 auto; }
 .iv-head h2 {
-  margin-top: 18px; font-family: 'Lora', serif; font-weight: 600;
+  margin-top: 18px; font-family: 'Lora', serif; font-weight: 500;
   font-size: clamp(36px, 4.6vw, 64px); line-height: 1.04; letter-spacing: -0.02em; color: var(--text);
 }
 .iv-head p { margin-top: 18px; max-width: 560px; font-size: 15px; line-height: 1.65; color: rgba(36,29,19,0.6); }
@@ -254,13 +254,13 @@ body:not(.iv-locked) .iv-page { visibility: visible; }
   position: absolute; top: 18px; right: 24px;
   font-family: 'Lora', serif; font-style: italic; font-size: 34px; color: rgba(36,29,19,0.12);
 }
-.iv-principle h3 { font-family: 'Lora', serif; font-weight: 600; font-size: 21px; color: var(--text); }
+.iv-principle h3 { font-family: 'Lora', serif; font-weight: 500; font-size: 21px; color: var(--text); }
 .iv-principle p { margin-top: 10px; font-size: 13px; line-height: 1.6; color: rgba(36,29,19,0.6); max-width: 380px; }
 
 /* ---------- institutional ---------- */
 .iv-acq { margin-top: 56px; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; }
 .iv-acq-point { border-left: 3px solid var(--red); padding-left: 24px; }
-.iv-acq-point h3 { font-family: 'Lora', serif; font-weight: 600; font-size: 21px; color: var(--text); }
+.iv-acq-point h3 { font-family: 'Lora', serif; font-weight: 500; font-size: 21px; color: var(--text); }
 .iv-acq-point p { margin-top: 10px; font-size: 13px; line-height: 1.65; color: rgba(36,29,19,0.6); }
 .iv-acq-cta { margin-top: 54px; display: flex; align-items: center; gap: 18px; }
 .iv-acq-note { font-size: 13px; color: rgba(36,29,19,0.5); }

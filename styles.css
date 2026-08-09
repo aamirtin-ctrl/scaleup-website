@@ -114,7 +114,7 @@ b, strong { font-weight: 600; }
 }
 .su-hero-kicker i { display: block; width: 22px; height: 2px; border-radius: 2px; background: var(--red); margin-right: 4px; }
 .su-hero-head h1 {
-  font-family: 'Lora', serif; font-weight: 600;
+  font-family: 'Lora', serif; font-weight: 500;
   font-size: clamp(46px, 6.6vw, 102px); line-height: 1.02; letter-spacing: -0.015em;
   color: var(--text); text-shadow: 0 1px 24px rgba(245,239,226,0.55);
 }
@@ -140,7 +140,7 @@ b, strong { font-weight: 600; }
   transform: translateY(-50%);
 }
 .su-left h2 {
-  font-family: 'Lora', serif; font-weight: 600;
+  font-family: 'Lora', serif; font-weight: 500;
   font-size: clamp(48px, 5.4vw, 82px); line-height: 1; letter-spacing: -0.02em;
   color: var(--text);
 }
@@ -276,7 +276,7 @@ b, strong { font-weight: 600; }
 .su-sub-head { display: flex; align-items: flex-end; justify-content: space-between; gap: 40px; flex-wrap: wrap; }
 .su-sub-eyebrow { font-size: 13px; font-weight: 500; letter-spacing: 0.22em; color: rgba(36,29,19,0.55); }
 .su-sub-title {
-  margin-top: 10px; font-family: 'Lora', serif; font-weight: 600;
+  margin-top: 10px; font-family: 'Lora', serif; font-weight: 500;
   font-size: clamp(34px, 3.8vw, 56px); letter-spacing: -0.015em; line-height: 1.02; color: var(--text);
 }
 .su-sub-lede { max-width: 440px; font-size: 13px; line-height: 1.65; color: rgba(36,29,19,0.62); }
@@ -466,7 +466,7 @@ b, strong { font-weight: 600; }
 }
 .su-modal-close:hover { border-color: rgba(36,29,19,0.6); background: rgba(36,29,19,0.05); }
 .su-modal-eyebrow { font-size: 11px; font-weight: 500; letter-spacing: 0.22em; color: rgba(36,29,19,0.55); }
-.su-modal-title { margin-top: 10px; font-family: 'Lora', serif; font-weight: 600; font-size: 34px; letter-spacing: -0.015em; color: var(--text); }
+.su-modal-title { margin-top: 10px; font-family: 'Lora', serif; font-weight: 500; font-size: 34px; letter-spacing: -0.015em; color: var(--text); }
 .su-modal-sub { margin-top: 6px; font-size: 13px; color: rgba(36,29,19,0.6); }
 
 .su-tl { margin-top: 30px; display: flex; flex-direction: column; }
@@ -534,7 +534,7 @@ b, strong { font-weight: 600; }
 .su-about-ctas { margin-top: 34px; display: flex; gap: 14px; flex-wrap: wrap; }
 
 .su-light-h2 {
-  font-family: 'Lora', serif; font-weight: 600;
+  font-family: 'Lora', serif; font-weight: 500;
   font-size: clamp(38px, 4.4vw, 64px); line-height: 1.05; letter-spacing: -0.02em;
   color: var(--text);
 }
@@ -548,7 +548,7 @@ b, strong { font-weight: 600; }
 }
 .su-value:hover { border-color: rgba(184,50,50,0.55); transform: translateY(-4px); }
 .su-value-n { position: absolute; top: 16px; right: 22px; font-family: 'Lora', serif; font-style: italic; font-size: 34px; color: rgba(36,29,19,0.12); }
-.su-value h3 { font-family: 'Lora', serif; font-weight: 600; font-size: 27px; color: var(--text); }
+.su-value h3 { font-family: 'Lora', serif; font-weight: 500; font-size: 27px; color: var(--text); }
 .su-value p { margin-top: 10px; font-size: 13px; line-height: 1.6; color: var(--muted); max-width: 300px; }
 
 .su-about-stats { margin-top: 58px; display: flex; justify-content: center; gap: 70px; flex-wrap: wrap; }
@@ -568,7 +568,7 @@ b, strong { font-weight: 600; }
 }
 .su-testi-pill::before { content: ''; display: block; width: 7px; height: 7px; border-radius: 50%; background: var(--red); }
 .su-testi-head h2 {
-  margin-top: 22px; font-family: 'Lora', serif; font-weight: 600;
+  margin-top: 22px; font-family: 'Lora', serif; font-weight: 500;
   font-size: clamp(40px, 4.6vw, 68px); line-height: 1.08; letter-spacing: -0.02em;
 }
 .su-testi-l1 { color: var(--text); }
@@ -621,7 +621,7 @@ b, strong { font-weight: 600; }
   display: grid; grid-template-columns: 1.05fr 1fr; gap: 80px; align-items: start;
 }
 .su-contact-left h2 {
-  font-family: 'Lora', serif; font-weight: 600;
+  font-family: 'Lora', serif; font-weight: 500;
   font-size: clamp(42px, 4.8vw, 72px); line-height: 1.02; letter-spacing: -0.02em; color: var(--text);
 }
 .su-contact-blurb { margin-top: 22px; max-width: 420px; font-size: 15px; line-height: 1.65; color: var(--muted); }

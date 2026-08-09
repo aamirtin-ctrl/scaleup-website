@@ -15,7 +15,7 @@
 
 
 .pk-h2 {
-  font-family: 'Lora', serif; font-weight: 600;
+  font-family: 'Lora', serif; font-weight: 500;
   font-size: clamp(27px, 3.4vw, 44px); line-height: 1.08; letter-spacing: -0.02em;
   color: var(--text); margin: 0; text-wrap: balance;
 }
@@ -59,7 +59,7 @@
   padding: 0 6vw 38px;
 }
 .pk-hero h1 {
-  margin: 0; font-family: 'Lora', serif; font-weight: 600;
+  margin: 0; font-family: 'Lora', serif; font-weight: 500;
   font-size: clamp(38px, 5.2vw, 68px); line-height: 1.0; letter-spacing: -0.03em;
   color: var(--text);
 }
@@ -128,7 +128,7 @@
 }
 .pk-panel.is-on { opacity: 1; visibility: visible; transform: none; }
 .pk-panel-size {
-  font-family: 'Lora', serif; font-weight: 600; font-size: clamp(46px, 5.6vw, 72px);
+  font-family: 'Lora', serif; font-weight: 500; font-size: clamp(46px, 5.6vw, 72px);
   line-height: 0.92; letter-spacing: -0.03em; color: var(--text);
 }
 .pk-panel-size sup { font-size: 0.3em; font-weight: 500; letter-spacing: 0.06em; vertical-align: super; color: rgba(36,29,19,0.5); margin-left: 6px; }
@@ -233,11 +233,11 @@
   text-transform: uppercase; color: rgba(36,29,19,0.45);
 }
 .pk-bigcard > h3 {
-  font-family: 'Lora', serif; font-weight: 600; font-size: 21px;
+  font-family: 'Lora', serif; font-weight: 500; font-size: 21px;
   line-height: 1.15; letter-spacing: -0.015em; color: var(--text); margin: 34px 0 14px;
 }
 .pk-split h3 {
-  font-family: 'Lora', serif; font-weight: 600; font-size: clamp(27px, 2.6vw, 34px);
+  font-family: 'Lora', serif; font-weight: 500; font-size: clamp(27px, 2.6vw, 34px);
   line-height: 1.12; letter-spacing: -0.02em; color: var(--text); margin: 0 0 16px;
 }
 .pk-split .pk-body { font-size: 15px; }
@@ -267,7 +267,7 @@
   opacity: 0.13; filter: grayscale(1) contrast(1.1);
 }
 .pk-who > * { position: relative; z-index: 1; }
-.pk-who h2 { font-family: 'Lora', serif; font-weight: 600; font-size: clamp(30px, 3.8vw, 50px); line-height: 1.06; letter-spacing: -0.025em; margin: 0; max-width: 18ch; }
+.pk-who h2 { font-family: 'Lora', serif; font-weight: 500; font-size: clamp(30px, 3.8vw, 50px); line-height: 1.06; letter-spacing: -0.025em; margin: 0; max-width: 18ch; }
 .pk-who-lede { margin: 20px 0 0; max-width: 54ch; font-size: 17px; line-height: 1.65; color: rgba(243,234,218,0.66); }
 .pk-who-list { margin: 58px 0 0; padding: 0; list-style: none; border-top: 1px solid rgba(243,234,218,0.16); }
 .pk-who-list li {
@@ -324,7 +324,7 @@
 .pk-faq-list details { border-bottom: 1px solid var(--line); }
 .pk-faq-list summary {
   list-style: none; cursor: pointer; padding: 22px 44px 22px 0; position: relative;
-  font-family: 'Lora', serif; font-weight: 600; font-size: clamp(17px, 1.9vw, 21px);
+  font-family: 'Lora', serif; font-weight: 500; font-size: clamp(17px, 1.9vw, 21px);
   line-height: 1.3; color: var(--text); transition: color 0.2s ease;
 }
 .pk-faq-list summary::-webkit-details-marker { display: none; }
@@ -388,7 +388,7 @@
 }
 .pk-outro-inner { position: relative; z-index: 1; max-width: 760px; margin: 0 auto; }
 .pk-outro h2 {
-  font-family: 'Lora', serif; font-weight: 600;
+  font-family: 'Lora', serif; font-weight: 500;
   font-size: clamp(34px, 5vw, 62px); line-height: 1.04; letter-spacing: -0.03em;
   color: var(--text); margin: 0;
 }
@@ -517,7 +517,7 @@
 }
 .pk-sp-mck .pk-sp-eyebrow { color: rgba(243,234,218,0.5); }
 .pk-sp-bar h3 {
-  margin: 12px 0 0; font-family: 'Lora', serif; font-weight: 600;
+  margin: 12px 0 0; font-family: 'Lora', serif; font-weight: 500;
   font-size: clamp(27px, 3vw, 38px); line-height: 1.06; letter-spacing: -0.025em; color: var(--text);
 }
 .pk-sp-mck h3 { color: var(--cream-on-ink); }
@@ -606,7 +606,7 @@
 /* the shared eyebrow colour is ink, which vanishes on the McKinney fill */
 .ct-mck .pk-sp-eyebrow { color: rgba(243,234,218,0.5); }
 .ct-bar h2 {
-  margin: 10px 0 0; font-family: 'Lora', serif; font-weight: 600;
+  margin: 10px 0 0; font-family: 'Lora', serif; font-weight: 500;
   font-size: clamp(21px, 2.4vw, 30px); line-height: 1.08; letter-spacing: -0.02em; color: var(--text);
 }
 .ct-mck h2 { color: var(--cream-on-ink); }
@@ -637,7 +637,7 @@
   display: grid; grid-template-columns: 0.85fr 1.15fr; gap: 54px; align-items: start;
 }
 .ct-card h1 {
-  margin: 12px 0 0; font-family: 'Lora', serif; font-weight: 600;
+  margin: 12px 0 0; font-family: 'Lora', serif; font-weight: 500;
   font-size: clamp(30px, 3.6vw, 46px); line-height: 1.04; letter-spacing: -0.025em; color: var(--text);
 }
 .ct-blurb { margin: 18px 0 0; font-size: 15px; line-height: 1.65; color: rgba(36,29,19,0.72); }

@@ -27,7 +27,7 @@
 }
 .bl-chip::before { content: ''; display: block; width: 7px; height: 7px; border-radius: 50%; background: var(--red); }
 .bl-hero h1 {
-  margin-top: 6px; font-family: 'Lora', serif; font-weight: 600;
+  margin-top: 6px; font-family: 'Lora', serif; font-weight: 500;
   font-size: clamp(40px, 5.6vw, 76px); line-height: 1.04; letter-spacing: -0.02em; color: var(--text);
 }
 .bl-hero p { margin: 18px auto 0; max-width: 560px; font-size: 15px; line-height: 1.65; color: var(--muted); }
@@ -44,7 +44,7 @@
 /* ---------- listing layout ---------- */
 .bl-main { max-width: 1180px; margin: 0 auto; padding: 0 6vw 90px; display: grid; grid-template-columns: 1fr 300px; gap: 48px; align-items: start; }
 .bl-section-head { display: flex; align-items: center; gap: 18px; margin-bottom: 26px; }
-.bl-section-head h2 { font-family: 'Lora', serif; font-weight: 600; font-size: 27px; letter-spacing: -0.01em; color: var(--text); white-space: nowrap; }
+.bl-section-head h2 { font-family: 'Lora', serif; font-weight: 500; font-size: 27px; letter-spacing: -0.01em; color: var(--text); white-space: nowrap; }
 .bl-rule { flex: 1; height: 1px; background: rgba(36,29,19,0.14); }
 
 .bl-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; }
@@ -62,14 +62,14 @@
   padding: 7px 13px; border-radius: 100px; background: rgba(255,253,246,0.92);
   font-size: 11px; font-weight: 500; letter-spacing: 0.08em; color: var(--ink);
 }
-.bl-card-text h3 { font-family: 'Lora', serif; font-weight: 600; font-size: 21px; line-height: 1.2; letter-spacing: -0.01em; color: #FAF6EF; }
+.bl-card-text h3 { font-family: 'Lora', serif; font-weight: 500; font-size: 21px; line-height: 1.2; letter-spacing: -0.01em; color: #FAF6EF; }
 .bl-card-text p { margin-top: 8px; font-size: 13px; line-height: 1.55; color: rgba(247,243,236,0.78); }
 .bl-card-date { margin-top: 10px; display: block; font-size: 11px; font-weight: 500; letter-spacing: 0.14em; color: rgba(247,243,236,0.6); }
 
 /* ---------- sidebar ---------- */
 .bl-side-block { margin-bottom: 38px; }
 .bl-side-head { display: flex; align-items: center; gap: 14px; margin-bottom: 18px; }
-.bl-side-head h2 { font-family: 'Lora', serif; font-weight: 600; font-size: 21px; color: var(--text); white-space: nowrap; }
+.bl-side-head h2 { font-family: 'Lora', serif; font-weight: 500; font-size: 21px; color: var(--text); white-space: nowrap; }
 .bl-side-item { display: flex; gap: 14px; padding: 12px 0; border-bottom: 1px solid rgba(36,29,19,0.1); }
 .bl-side-item:last-child { border-bottom: none; }
 .bl-side-item img { width: 62px; height: 62px; border-radius: 12px; object-fit: cover; flex-shrink: 0; }
@@ -83,7 +83,7 @@
 .bl-crumbs a { color: rgba(36,29,19,0.65); }
 .bl-crumbs a:hover { color: var(--ink); }
 .bl-article h1 {
-  margin-top: 18px; font-family: 'Lora', serif; font-weight: 600;
+  margin-top: 18px; font-family: 'Lora', serif; font-weight: 500;
   font-size: clamp(32px, 4.4vw, 52px); line-height: 1.08; letter-spacing: -0.015em; color: var(--text);
 }
 .bl-meta { margin-top: 16px; display: flex; flex-wrap: wrap; gap: 8px 18px; font-size: 13px; color: rgba(36,29,19,0.55); }
@@ -91,8 +91,8 @@
 .bl-hero-img { margin-top: 28px; border-radius: 18px; width: 100%; box-shadow: 0 24px 60px rgba(74,56,30,0.16); }
 
 .bl-prose { margin-top: 36px; font-size: 17px; line-height: 1.75; color: rgba(36,29,19,0.82); }
-.bl-prose h2 { margin: 40px 0 14px; font-family: 'Lora', serif; font-weight: 600; font-size: 27px; letter-spacing: -0.01em; line-height: 1.2; color: var(--text); }
-.bl-prose h3 { margin: 28px 0 10px; font-family: 'Lora', serif; font-weight: 600; font-size: 21px; color: var(--text); }
+.bl-prose h2 { margin: 40px 0 14px; font-family: 'Lora', serif; font-weight: 500; font-size: 27px; letter-spacing: -0.01em; line-height: 1.2; color: var(--text); }
+.bl-prose h3 { margin: 28px 0 10px; font-family: 'Lora', serif; font-weight: 500; font-size: 21px; color: var(--text); }
 .bl-prose p { margin: 0 0 18px; }
 .bl-prose ul, .bl-prose ol { margin: 0 0 18px; padding-left: 24px; }
 .bl-prose li { margin-bottom: 8px; }
@@ -111,7 +111,7 @@
   background: var(--panel); border: 1px solid rgba(36,29,19,0.12);
   box-shadow: 0 18px 44px rgba(74,56,30,0.1);
 }
-.bl-cta h2 { font-family: 'Lora', serif; font-weight: 600; font-size: 27px; color: var(--text); }
+.bl-cta h2 { font-family: 'Lora', serif; font-weight: 500; font-size: 27px; color: var(--text); }
 .bl-cta p { margin: 10px auto 20px; max-width: 440px; font-size: 15px; line-height: 1.6; color: var(--muted); }
 
 .bl-pn { margin-top: 44px; display: flex; justify-content: space-between; gap: 18px; border-top: 1px solid rgba(36,29,19,0.14); padding-top: 22px; }
