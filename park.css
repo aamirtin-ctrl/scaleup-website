@@ -702,18 +702,30 @@
    break its left and right edges, and the form sits on top of
    the copy column rather than beside it. Coordinates come
    straight from the Paper artboard, so they are absolute px on
-   a fixed-width stage — the layout does not reflow. Needs 1400px
-   of viewport for the overhang to clear; below that the grid
-   layout above still runs.
+   a fixed-width stage — the layout does not reflow.
+
+   The bars bleed 165px left and 163px right of the 1008px stage,
+   so the composition needs 1336px of content width — 1338px of
+   viewport once centred. That put it out of reach of most desktop
+   browsers (1280px is the common 13" laptop width), which is why
+   it used to be gated at 1400px and simply never appeared.
+
+   Rather than hide it, the whole stage is scaled to fit. transform
+   keeps every proportion and overlap exactly as drawn; only the
+   rendered size changes. transform does not shrink the layout box,
+   so the leftover height is reclaimed with a negative bottom margin.
    ============================================================ */
-@media (min-width: 1400px) {
+@media (min-width: 1180px) {
   .ct-grid {
+    --ct-s: 1;
     display: block;
     position: relative;
     width: 1008px;
     height: 1854px;
-    margin: 0 auto;
+    margin: 0 auto calc(1854px * (var(--ct-s) - 1));
     gap: 0;
+    transform: scale(var(--ct-s));
+    transform-origin: top center;
   }
 
   .ct-grid > .ct-rock,
@@ -750,3 +762,13 @@
   .ct-card-left { position: absolute; left: 54px;  top: 52px;  width: 347px; }
   .ct-card .su-form { position: absolute; left: 290px; top: 300px; width: 607px; height: 813px; }
 }
+
+/* Scale steps for the composition above. Content span is 1336px at
+   full size, so each step is the largest scale that still leaves a
+   margin at the narrow end of its range:
+     1280px viewport -> 1336 x 0.93 = 1243px, 19px each side
+     1180px viewport -> 1336 x 0.86 = 1149px, 16px each side
+   Below 1180px the scale would start shrinking body copy past
+   comfortable reading size, so the flanking grid layout runs instead. */
+@media (min-width: 1180px) and (max-width: 1279px) { .ct-grid { --ct-s: 0.86; } }
+@media (min-width: 1280px) and (max-width: 1399px) { .ct-grid { --ct-s: 0.93; } }
