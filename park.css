@@ -27,6 +27,10 @@
    1. HERO — full-bleed image fading into the cream ground
    ============================================================ */
 .pk-hero { position: relative; min-height: 100vh; display: flex; flex-direction: column; }
+/* Shorter hero for pages where the hero is an entry point, not the
+   destination — contact.html uses this so the form (the actual
+   point of the page) is one short scroll away, not two. */
+.pk-hero.pk-hero-compact { min-height: 60vh; }
 .pk-hero-media { position: absolute; inset: 0; overflow: hidden; }
 .pk-hero-media img { width: 100%; height: 100%; object-fit: cover; object-position: 62% 58%; }
 .pk-hero-media::after {
@@ -410,6 +414,7 @@
 
 @media (max-width: 900px) {
   .pk-hero { min-height: 88vh; }
+  .pk-hero.pk-hero-compact { min-height: 54vh; }
 
   .pk-units-head, .pk-std-head, .pk-rates-grid, .pk-guides-grid { grid-template-columns: 1fr; gap: 24px; }
   .pk-std-free { row-gap: 32px; }
@@ -605,11 +610,11 @@
 .ct-bar .pk-sp-eyebrow { display: block; }
 /* the shared eyebrow colour is ink, which vanishes on the McKinney fill */
 .ct-mck .pk-sp-eyebrow { color: rgba(243,234,218,0.5); }
-.ct-bar h2 {
+.ct-bar h3 {
   margin: 0; font-family: 'Lora', serif; font-weight: 500;
   font-size: clamp(21px, 2.4vw, 30px); line-height: 1.08; letter-spacing: -0.02em; color: var(--text);
 }
-.ct-mck h2 { color: var(--cream-on-ink); }
+.ct-mck h3 { color: var(--cream-on-ink); }
 .ct-bar .ct-meta { margin-top: 8px; font-size: 13px; line-height: 1.5; color: rgba(36,29,19,0.55); }
 .ct-mck .ct-meta { color: rgba(243,234,218,0.55); }
 .ct-go { display: inline-block; margin-top: 16px; font-size: 13px; font-weight: 500; color: var(--red); }
@@ -636,12 +641,14 @@
   padding: 52px 54px 56px; margin: 34px 0;
   display: grid; grid-template-columns: 0.85fr 1.15fr; gap: 54px; align-items: start;
 }
-.ct-card h1 {
-  margin: 12px 0 0; font-family: 'Lora', serif; font-weight: 500;
-  font-size: clamp(30px, 3.6vw, 46px); line-height: 1.04; letter-spacing: -0.025em; color: var(--text);
+/* the card's own heading is a small section label now — the real
+   headline lives in the hero above, so this stays out of the way
+   of the form, which is the actual point of the page */
+.ct-card-left h2 {
+  margin: 0; font-family: 'Lora', serif; font-weight: 500;
+  font-size: 21px; line-height: 1.2; letter-spacing: -0.01em; color: var(--text);
 }
-.ct-blurb { margin: 18px 0 0; font-size: 15px; line-height: 1.65; color: rgba(36,29,19,0.72); }
-.ct-meta-list { margin: 30px 0 0; display: grid; gap: 18px; }
+.ct-meta-list { margin: 22px 0 0; display: grid; gap: 18px; }
 .ct-meta-list div { display: flex; flex-direction: column; gap: 4px; }
 .ct-label {
   font-family: 'Archivo', sans-serif; font-size: 11px; font-weight: 500;
@@ -654,19 +661,38 @@
 @media (max-width: 1000px) {
   .ct-card { grid-template-columns: 1fr; gap: 34px; padding: 40px 34px 44px; }
 }
+
+/* ============================================================
+   CONTACT PAGE — mobile. The form leads: it is first in the grid
+   (named areas place it independent of DOM order, and the DOM
+   already has it first for reading order / crawlers). Rockwall
+   and McKinney follow as compact, un-fused cards — image on top,
+   text below, same rhythm for both rather than the desktop's
+   mirrored bar/leg orientation — sized well under the form so
+   they read as "see also," not as competing hero moments.
+   ============================================================ */
 @media (max-width: 900px) {
   .ct-grid {
     grid-template-columns: 1fr;
-    grid-template-areas: "rockbar" "rockleg" "contact" "mckleg" "mckbar";
-    gap: 14px;
+    grid-template-areas: "contact" "rockleg" "rockbar" "mckleg" "mckbar";
+    gap: 0;
   }
-  .ct-rock     { border-radius: 22px 22px 0 0; }
-  .ct-rock-leg { margin-top: -14px; border-radius: 0 0 22px 22px; }
-  .ct-mck-leg  { margin-bottom: -14px; border-radius: 22px 22px 0 0; }
-  .ct-mck      { border-radius: 0 0 22px 22px; }
-  .ct-card { margin: 20px 0; border-radius: 22px; }
-  .ct-bar { padding: 26px 24px 28px; }
-  .ct-leg, .ct-leg img { min-height: 170px; }
+  .ct-card { margin: 0 0 28px; border-radius: 22px; }
+
+  .ct-rock-leg { margin: 0; border-radius: 18px 18px 0 0; }
+  .ct-rock     { margin: 0 0 28px; border-radius: 0 0 18px 18px; }
+  .ct-mck-leg  { margin: 0; border-radius: 18px 18px 0 0; }
+  .ct-mck      { margin: 0; border-radius: 0 0 18px 18px; }
+
+  .ct-bar { padding: 22px 22px 24px; }
+  .ct-bar h3 { font-size: 21px; }
+  .ct-leg, .ct-leg img { min-height: 140px; }
+
+  /* two columns instead of four stacked rows — less to scroll past before the form fields */
+  .ct-meta-list { grid-template-columns: 1fr 1fr; gap: 16px 20px; }
+}
+@media (max-width: 480px) {
+  .ct-meta-list { grid-template-columns: 1fr; }
 }
 
 /* ============================================================
@@ -716,11 +742,11 @@
   .ct-rock-leg img { width: 325px; height: 284px; object-position: 50% 30%; }
   .ct-mck-leg img  { width: 325px; height: 226px; }
 
-  /* card interior: the form overlaps the copy column by ~111px */
+  /* card interior: the form overlaps the copy column by ~111px.
+     ct-card-left now holds only a small h2 + the meta list (the
+     headline moved to the page hero), so top:52 + its own content
+     height clears at 281px — measured directly, not guessed. Form
+     starts at 300px, an 19px margin past that. */
   .ct-card-left { position: absolute; left: 54px;  top: 52px;  width: 347px; }
-  .ct-card .su-form { position: absolute; left: 290px; top: 277px; width: 607px; }
-
-  /* copy runs wider than its 347px column and breaks out to the right */
-  .ct-card h1   { margin: 0; width: 519px; font-size: 46px; line-height: 48px; }
-  .ct-blurb     { width: 473px; }
+  .ct-card .su-form { position: absolute; left: 290px; top: 300px; width: 607px; height: 813px; }
 }
