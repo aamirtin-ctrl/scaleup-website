@@ -517,7 +517,7 @@
 }
 .pk-sp-mck .pk-sp-eyebrow { color: rgba(243,234,218,0.5); }
 .pk-sp-bar h3 {
-  margin: 12px 0 0; font-family: 'Lora', serif; font-weight: 500;
+  margin: 0; font-family: 'Lora', serif; font-weight: 500;
   font-size: clamp(27px, 3vw, 38px); line-height: 1.06; letter-spacing: -0.025em; color: var(--text);
 }
 .pk-sp-mck h3 { color: var(--cream-on-ink); }
@@ -606,7 +606,7 @@
 /* the shared eyebrow colour is ink, which vanishes on the McKinney fill */
 .ct-mck .pk-sp-eyebrow { color: rgba(243,234,218,0.5); }
 .ct-bar h2 {
-  margin: 10px 0 0; font-family: 'Lora', serif; font-weight: 500;
+  margin: 0; font-family: 'Lora', serif; font-weight: 500;
   font-size: clamp(21px, 2.4vw, 30px); line-height: 1.08; letter-spacing: -0.02em; color: var(--text);
 }
 .ct-mck h2 { color: var(--cream-on-ink); }
@@ -667,4 +667,60 @@
   .ct-card { margin: 20px 0; border-radius: 22px; }
   .ct-bar { padding: 26px 24px 28px; }
   .ct-leg, .ct-leg img { min-height: 170px; }
+}
+
+/* ============================================================
+   CONTACT PAGE — wide-viewport composition (Paper design)
+   The five pieces are placed on an explicit 1008px canvas and
+   deliberately overlap: the bars run wider than the column and
+   break its left and right edges, and the form sits on top of
+   the copy column rather than beside it. Coordinates come
+   straight from the Paper artboard, so they are absolute px on
+   a fixed-width stage — the layout does not reflow. Needs 1400px
+   of viewport for the overhang to clear; below that the grid
+   layout above still runs.
+   ============================================================ */
+@media (min-width: 1400px) {
+  .ct-grid {
+    display: block;
+    position: relative;
+    width: 1008px;
+    height: 1854px;
+    margin: 0 auto;
+    gap: 0;
+  }
+
+  .ct-grid > .ct-rock,
+  .ct-grid > .ct-rock-leg,
+  .ct-grid > .ct-mck-leg,
+  .ct-grid > .ct-mck,
+  .ct-grid > .ct-card { position: absolute; margin: 0; }
+
+  /* Rockwall: bar overhangs the column's left edge, leg drops beneath it */
+  .ct-rock     { left: -165px; top: 223px;  width: 1103px; height: 180px; border-radius: 18px 18px 18px 0; }
+  .ct-rock-leg { left: -165px; top: 403px;  width: 211px;  height: 284px; border-radius: 0 0 18px 18px; }
+
+  /* the form card, overlapped top and bottom by the two park pieces */
+  .ct-card     { left: 0;      top: 442px;  width: 1008px; height: 1172px; border-radius: 18px; padding: 0; display: block; }
+
+  /* McKinney: leg rises past the column's right edge, bar overhangs both sides */
+  .ct-mck-leg  { left: 939px;  top: 1445px; width: 232px;  height: 226px; border-radius: 18px 18px 0 0; }
+  .ct-mck      { left: 85px;   top: 1671px; width: 1086px; height: 183px; border-radius: 18px 0 18px 18px; }
+
+  /* the lighter, warmer fill the design moved McKinney to */
+  .ct-mck, .ct-mck-leg { background: #312C26; }
+  .ct-mck:hover        { background: #3A342C; }
+
+  /* legs are cropped rather than scaled, matching the artboard */
+  .ct-leg, .ct-leg img { min-height: 0; }
+  .ct-rock-leg img { width: 325px; height: 284px; object-position: 50% 30%; }
+  .ct-mck-leg img  { width: 325px; height: 226px; }
+
+  /* card interior: the form overlaps the copy column by ~111px */
+  .ct-card-left { position: absolute; left: 54px;  top: 52px;  width: 347px; }
+  .ct-card .su-form { position: absolute; left: 290px; top: 277px; width: 607px; }
+
+  /* copy runs wider than its 347px column and breaks out to the right */
+  .ct-card h1   { margin: 0; width: 519px; font-size: 46px; line-height: 48px; }
+  .ct-blurb     { width: 473px; }
 }
