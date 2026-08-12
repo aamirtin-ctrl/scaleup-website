@@ -1,0 +1,504 @@
+/* ============================================================
+   ScaleUp — rockwall-preview.css
+   PREVIEW ONLY — not linked, not deployed.
+   Layout redesign of the Rockwall leasing page.
+   Brand tokens (colour, type) inherited from styles.css, unchanged.
+   ============================================================ */
+
+:root {
+  --ink-deep: #1C1710;
+  --cream-on-ink: #F3EADA;
+}
+
+.rk-wrap { max-width: 1180px; margin: 0 auto; padding: 0 6vw; }
+
+
+.rk-h2 {
+  font-family: 'Lora', serif; font-weight: 600;
+  font-size: clamp(28px, 3.4vw, 44px); line-height: 1.08; letter-spacing: -0.02em;
+  color: var(--text); margin: 0; text-wrap: balance;
+}
+.rk-body { font-size: 16.5px; line-height: 1.7; color: rgba(36,29,19,0.78); max-width: 64ch; }
+.rk-body a { color: var(--red); text-decoration: underline; text-underline-offset: 3px; text-decoration-color: rgba(184,50,50,0.35); }
+.rk-body a:hover { text-decoration-color: var(--red); }
+
+/* ============================================================
+   1. HERO — full-bleed image fading into the cream ground
+   ============================================================ */
+.rk-hero { position: relative; min-height: 100vh; display: flex; flex-direction: column; }
+.rk-hero-media { position: absolute; inset: 0; overflow: hidden; }
+.rk-hero-media img { width: 100%; height: 100%; object-fit: cover; object-position: 62% 58%; }
+.rk-hero-media::after {
+  content: ''; position: absolute; inset: 0;
+  background:
+    /* top wash so the flat nav sits on light ground */
+    linear-gradient(to bottom, var(--bg) 0%, rgba(245,239,226,0.62) 7%, rgba(245,239,226,0.08) 20%, rgba(245,239,226,0) 30%),
+    /* bottom fade into the cream page — held low so the render stays intact */
+    linear-gradient(to top, var(--bg) 0%, rgba(245,239,226,0.96) 22%, rgba(245,239,226,0.72) 38%, rgba(245,239,226,0.2) 58%, rgba(245,239,226,0) 72%);
+}
+
+/* nav sits over the image, flat — no pill, no stick */
+.rk-nav {
+  position: relative; z-index: 3;
+  max-width: 1180px; width: 100%; margin: 0 auto; padding: 26px 6vw 0;
+  display: flex; align-items: center; gap: 30px;
+}
+.rk-nav .su-logo { margin-right: auto; }
+.rk-nav-links { display: flex; gap: 24px; }
+.rk-nav-links a { font-size: 13.5px; font-weight: 500; color: rgba(36,29,19,0.7); transition: color 0.2s ease; }
+.rk-nav-links a:hover, .rk-nav-links a.active { color: var(--ink); }
+.rk-nav-cta {
+  padding: 10px 20px; border-radius: 100px; background: var(--red);
+  font-size: 13px; font-weight: 600; color: #FBF3F0; transition: background 0.2s ease;
+}
+.rk-nav-cta:hover { background: var(--red-hover); }
+
+/* copy sits on the image, in the faded lower third */
+.rk-hero-inner {
+  position: relative; z-index: 2; margin-top: auto;
+  max-width: 1180px; width: 100%; margin-left: auto; margin-right: auto;
+  padding: 0 6vw 38px;
+}
+.rk-hero h1 {
+  margin: 0; font-family: 'Lora', serif; font-weight: 600;
+  font-size: clamp(38px, 5.2vw, 68px); line-height: 1.0; letter-spacing: -0.03em;
+  color: var(--text);
+}
+.rk-hero h1 em { font-style: normal; display: block; color: rgba(36,29,19,0.5); }
+.rk-hero-lede {
+  margin: 24px 0 0; max-width: 52ch; font-size: 17px; line-height: 1.62; color: rgba(36,29,19,0.76);
+}
+.rk-hero-lede strong { color: var(--text); font-weight: 600; }
+.rk-hero-ctas { margin-top: 30px; display: flex; gap: 12px; flex-wrap: wrap; }
+
+/* ============================================================
+   2. FACTS — slightly rounded card riding the hero fade
+   ============================================================ */
+.rk-facts-band { max-width: 1180px; margin: 0 auto; padding: 0 6vw; }
+.rk-facts {
+  display: grid; grid-template-columns: repeat(6, 1fr); margin: 0;
+  background: var(--panel); border: 1px solid var(--line); border-radius: 16px;
+  padding: 6px 10px; box-shadow: 0 18px 44px rgba(74,56,30,0.08);
+}
+.rk-fact { padding: 22px 24px 20px; border-left: 1px solid var(--line); }
+.rk-fact:first-child { border-left: none; }
+.rk-fact dt {
+  font-family: 'Archivo', sans-serif; font-size: 10.5px; letter-spacing: 0.16em; text-transform: uppercase;
+  color: rgba(36,29,19,0.45); margin-bottom: 12px;
+}
+.rk-fact dd { margin: 0; font-family: 'Lora', serif; font-size: 30px; line-height: 1; color: var(--text); }
+.rk-fact dd small { display: block; margin-top: 6px; font-family: 'Archivo', sans-serif; font-size: 13px; color: rgba(36,29,19,0.55); }
+.rk-fact.is-address dd { font-size: 19px; line-height: 1.25; }
+
+/* ============================================================
+   3. UNITS — sticky scroll through the three unit types
+   ============================================================ */
+.rk-units { padding-top: 64px; }
+.rk-units-head { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: end; margin-bottom: 18px; }
+.rk-units-head .rk-body { margin: 0; font-size: 16px; }
+
+.rk-units-scroll { height: 300vh; position: relative; }
+.rk-units-sticky {
+  position: sticky; top: 0; height: 100vh; min-height: 620px;
+  display: flex; flex-direction: column; justify-content: center;
+}
+.rk-units-inner {
+  max-width: 1300px; width: 100%; margin: 0 auto; padding: 0 4vw;
+  display: grid; grid-template-columns: 0.78fr 1.22fr; gap: 48px; align-items: center;
+}
+
+/* --- left: the schedule --- */
+.rk-track { display: flex; gap: 0; margin: 0 0 30px; padding: 0; list-style: none; border-top: 1px solid var(--line); }
+.rk-track button {
+  appearance: none; background: none; border: none; cursor: pointer;
+  padding: 12px 0 0; margin-right: 30px;
+  font-family: 'Archivo', sans-serif; font-size: 11px; letter-spacing: 0.14em;
+  color: rgba(36,29,19,0.38); position: relative; transition: color 0.25s ease;
+}
+.rk-track button::before {
+  content: ''; position: absolute; top: -1px; left: 0; right: 0; height: 1px;
+  background: var(--red); transform: scaleX(0); transform-origin: left; transition: transform 0.45s cubic-bezier(0.4,0,0.2,1);
+}
+.rk-track button.is-on { color: var(--ink); }
+.rk-track button.is-on::before { transform: scaleX(1); }
+
+.rk-panels { position: relative; min-height: 350px; }
+.rk-panel {
+  position: absolute; inset: 0; opacity: 0; visibility: hidden;
+  transform: translateY(14px); transition: opacity 0.5s ease, transform 0.5s ease, visibility 0.5s;
+}
+.rk-panel.is-on { opacity: 1; visibility: visible; transform: none; }
+.rk-panel-size {
+  font-family: 'Lora', serif; font-weight: 600; font-size: clamp(46px, 5.6vw, 72px);
+  line-height: 0.92; letter-spacing: -0.03em; color: var(--text);
+}
+.rk-panel-size sup { font-size: 0.3em; font-weight: 500; letter-spacing: 0.06em; vertical-align: super; color: rgba(36,29,19,0.5); margin-left: 6px; }
+.rk-panel-name { margin-top: 12px; font-size: 17px; font-weight: 600; color: var(--text); }
+.rk-panel-where { margin-top: 4px; font-family: 'Archivo', sans-serif; font-size: 11.5px; letter-spacing: 0.08em; color: rgba(36,29,19,0.5); }
+.rk-panel-desc { margin: 18px 0 0; font-size: 15.5px; line-height: 1.65; color: rgba(36,29,19,0.76); max-width: 42ch; }
+.rk-panel-desc b { color: var(--text); font-weight: 600; }
+
+.rk-panel-specs { margin: 24px 0 0; padding: 0; list-style: none; border-top: 1px solid var(--line); max-width: 380px; }
+.rk-panel-specs li {
+  display: flex; justify-content: space-between; align-items: baseline; gap: 16px;
+  padding: 9px 0; border-bottom: 1px solid var(--line);
+}
+.rk-panel-specs dt, .rk-panel-specs .k {
+  font-family: 'Archivo', sans-serif; font-size: 10.5px; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(36,29,19,0.45);
+}
+.rk-panel-specs .v { font-size: 14px; font-weight: 500; color: var(--text); }
+
+/* --- right: the stage --- */
+.rk-stage { position: relative; aspect-ratio: 16 / 10; overflow: hidden; background: rgba(36,29,19,0.05); border-radius: 18px; }
+.rk-stageset { position: absolute; inset: 0; opacity: 0; visibility: hidden; transition: opacity 0.5s ease, visibility 0.5s; }
+.rk-stageset.is-on { opacity: 1; visibility: visible; }
+.rk-stage img {
+  position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;
+  opacity: 0; transition: opacity 0.5s ease, transform 1.2s cubic-bezier(0.2,0,0.2,1); transform: scale(1.035);
+}
+.rk-stage img.is-on { opacity: 1; transform: none; }
+.rk-stage-tag {
+  position: absolute; left: 0; bottom: 0; z-index: 2;
+  padding: 9px 15px; background: rgba(255,253,246,0.94); border-radius: 0 12px 0 0;
+  font-family: 'Archivo', sans-serif; font-size: 10.5px; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(36,29,19,0.62);
+}
+
+/* stage arrows — cycle photos within the active unit */
+.rk-stage-arr {
+  position: absolute; top: 50%; transform: translateY(-50%); z-index: 3;
+  width: 40px; height: 40px; border-radius: 50%; border: none; cursor: pointer;
+  background: rgba(255,253,246,0.92); color: var(--ink);
+  font-size: 17px; line-height: 1; display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 6px 18px rgba(74,56,30,0.18);
+  opacity: 0; transition: opacity 0.25s ease, background 0.2s ease;
+}
+.rk-stage:hover .rk-stage-arr, .rk-stage-arr:focus-visible { opacity: 1; }
+.rk-stage-arr:hover { background: #FFFDF6; }
+.rk-stage-arr.is-prev { left: 14px; }
+.rk-stage-arr.is-next { right: 14px; }
+@media (hover: none) { .rk-stage-arr { opacity: 1; } }
+
+.rk-thumbs { position: relative; margin-top: 14px; height: 74px; }
+.rk-thumbset {
+  position: absolute; inset: 0; display: flex; gap: 10px;
+  overflow-x: auto; scrollbar-width: none; -webkit-overflow-scrolling: touch;
+  opacity: 0; visibility: hidden; transition: opacity 0.45s ease, visibility 0.45s;
+}
+.rk-thumbset::-webkit-scrollbar { display: none; }
+.rk-thumbset button { flex-shrink: 0; }
+.rk-thumbset.is-on { opacity: 1; visibility: visible; }
+.rk-thumbset button {
+  appearance: none; padding: 0; border: 1px solid transparent; background: none; cursor: pointer;
+  width: 108px; height: 68px; overflow: hidden; border-radius: 10px;
+  transition: border-color 0.25s ease, opacity 0.25s ease;
+  opacity: 0.55;
+}
+.rk-thumbset button img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.rk-thumbset button:hover { opacity: 0.85; }
+.rk-thumbset button.is-on { opacity: 1; border-color: var(--red); }
+
+.rk-units-note { margin-top: 26px; font-size: 15px; line-height: 1.65; color: rgba(36,29,19,0.66); }
+
+/* ============================================================
+   4. STANDARD IN EVERY BAY — ruled spec field, no boxes
+   ============================================================ */
+.rk-std { padding: 96px 0 0; }
+.rk-std-head { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: end; margin-bottom: 40px; }
+/* Plain aligned columns — icon, label, text. No rules, no boxes, no offsets. */
+.rk-std-free {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  column-gap: 40px; row-gap: 46px; align-items: start;
+}
+.rk-std-item svg { display: block; width: 26px; height: 26px; stroke: var(--red); stroke-width: 1.2; fill: none; margin-bottom: 14px; }
+.rk-std-item b { display: block; font-size: 15.5px; font-weight: 600; color: var(--text); margin-bottom: 6px; }
+.rk-std-item span { font-size: 13.5px; line-height: 1.55; color: rgba(36,29,19,0.62); }
+.rk-std-item a { color: var(--red); text-decoration: underline; text-underline-offset: 2px; text-decoration-color: rgba(184,50,50,0.35); }
+
+/* ---------- big card shell (used by "Why this site" and "Who leases here") ---------- */
+.rk-bigcard {
+  background: var(--panel); border: 1px solid var(--line); border-radius: 30px;
+  padding: 62px 56px 66px; box-shadow: 0 26px 70px rgba(74,56,30,0.07);
+}
+.rk-bigcard-head { margin-bottom: 8px; }
+
+/* ============================================================
+   5. WHY THIS SITE — alternating, asymmetric
+   ============================================================ */
+.rk-why { padding: 96px 0 0; }
+
+.rk-split { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; margin-top: 52px; }
+.rk-split.is-flipped .rk-split-media { order: 2; }
+.rk-split-media img { width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; display: block; }
+.rk-split-cap {
+  margin-top: 10px; font-family: 'Archivo', sans-serif; font-size: 10.5px; letter-spacing: 0.13em;
+  text-transform: uppercase; color: rgba(36,29,19,0.45);
+}
+.rk-split h3 {
+  font-family: 'Lora', serif; font-weight: 600; font-size: clamp(24px, 2.6vw, 34px);
+  line-height: 1.12; letter-spacing: -0.02em; color: var(--text); margin: 0 0 16px;
+}
+.rk-split .rk-body { font-size: 16px; }
+.rk-split .rk-body p { margin: 0 0 14px; }
+
+.rk-note {
+  margin-top: 64px; padding: 26px 0 0; border-top: 2px solid var(--ink);
+  display: grid; grid-template-columns: auto 1fr; gap: 34px; align-items: start;
+}
+.rk-note-k { font-family: 'Archivo', sans-serif; font-size: 10.5px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--red); padding-top: 4px; }
+.rk-note p { margin: 0; font-size: 17px; line-height: 1.6; color: rgba(36,29,19,0.8); max-width: 62ch; }
+.rk-note strong { color: var(--text); }
+
+/* ============================================================
+   6. WHO LEASES HERE — full-bleed, screen-scale, inverted
+   ============================================================ */
+.rk-who-outer { margin-top: 104px; }
+.rk-who {
+  background: var(--ink-deep); color: var(--cream-on-ink);
+  border-radius: 30px; padding: 76px 56px 80px; position: relative; overflow: hidden;
+  box-shadow: 0 30px 80px rgba(28,23,16,0.18);
+}
+.rk-who::before {
+  content: ''; position: absolute; inset: 0;
+  background-image: url('assets/rockwall-a-front.webp');
+  background-size: cover; background-position: 50% 40%;
+  opacity: 0.13; filter: grayscale(1) contrast(1.1);
+}
+.rk-who > * { position: relative; z-index: 1; }
+.rk-who .rk-who h2 { font-family: 'Lora', serif; font-weight: 600; font-size: clamp(30px, 3.8vw, 50px); line-height: 1.06; letter-spacing: -0.025em; margin: 0; max-width: 18ch; }
+.rk-who-lede { margin: 20px 0 0; max-width: 54ch; font-size: 16.5px; line-height: 1.65; color: rgba(243,234,218,0.66); }
+.rk-who-list { margin: 58px 0 0; padding: 0; list-style: none; border-top: 1px solid rgba(243,234,218,0.16); }
+.rk-who-list li {
+  display: grid; grid-template-columns: 58px 1fr 1.35fr; gap: 28px; align-items: baseline;
+  padding: 24px 0; border-bottom: 1px solid rgba(243,234,218,0.16);
+  transition: background 0.3s ease;
+}
+.rk-who-list li:hover { background: rgba(243,234,218,0.04); }
+.rk-who-n { font-family: 'Archivo', sans-serif; font-size: 11px; letter-spacing: 0.12em; color: rgba(243,234,218,0.34); }
+.rk-who-t { font-family: 'Lora', serif; font-size: clamp(20px, 2.1vw, 27px); line-height: 1.15; letter-spacing: -0.015em; color: var(--cream-on-ink); }
+.rk-who-d { font-size: 15px; line-height: 1.6; color: rgba(243,234,218,0.6); }
+.rk-who-foot { margin: 34px 0 0; font-size: 15.5px; color: rgba(243,234,218,0.6); }
+.rk-who-foot a { color: #E8A0A0; text-decoration: underline; text-underline-offset: 3px; }
+
+/* ============================================================
+   7. RATES — the one intentional panel
+   ============================================================ */
+.rk-rates { padding: 100px 0 0; }
+.rk-rates-grid { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 56px; align-items: start; }
+.rk-rates .rk-body { font-size: 16px; }
+.rk-rates .rk-body p { margin: 0 0 14px; }
+
+.rk-panel-card {
+  background: var(--panel); border: 1px solid var(--line); border-radius: 16px; overflow: hidden;
+  box-shadow: 0 18px 44px rgba(74,56,30,0.08);
+}
+.rk-panel-card-head {
+  padding: 18px 24px; border-bottom: 1px solid var(--line);
+  display: flex; align-items: center; justify-content: space-between; gap: 16px;
+}
+.rk-panel-card-head b { font-family: 'Archivo', sans-serif; font-size: 10.5px; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(36,29,19,0.5); font-weight: 400; }
+.rk-panel-card-head em {
+  font-style: normal; font-family: 'Archivo', sans-serif; font-size: 10.5px; letter-spacing: 0.12em;
+  text-transform: uppercase; color: var(--green, #3E8E63);
+}
+.rk-sched { width: 100%; border-collapse: collapse; }
+.rk-sched th {
+  text-align: left; padding: 12px 24px; border-bottom: 1px solid var(--line);
+  font-family: 'Archivo', sans-serif; font-size: 10.5px; letter-spacing: 0.14em; text-transform: uppercase;
+  font-weight: 400; color: rgba(36,29,19,0.45);
+}
+.rk-sched td { padding: 16px 24px; border-bottom: 1px solid var(--line); font-size: 14.5px; color: rgba(36,29,19,0.72); }
+.rk-sched tr:last-child td { border-bottom: none; }
+.rk-sched td:first-child { font-family: 'Lora', serif; font-size: 19px; color: var(--text); }
+.rk-sched td.is-spec { font-family: 'Archivo', sans-serif; font-size: 12px; letter-spacing: 0.06em; }
+.rk-panel-card-foot { padding: 16px 24px; border-top: 1px solid var(--line); background: rgba(36,29,19,0.02); font-size: 13.5px; line-height: 1.55; color: rgba(36,29,19,0.6); }
+
+/* ============================================================
+   8. FAQ — native disclosure, ruled
+   ============================================================ */
+.rk-faq { padding: 100px 0 0; }
+.rk-faq-head { margin-bottom: 34px; }
+.rk-faq-list { border-top: 1px solid var(--ink); }
+.rk-faq-list details { border-bottom: 1px solid var(--line); }
+.rk-faq-list summary {
+  list-style: none; cursor: pointer; padding: 22px 44px 22px 0; position: relative;
+  font-family: 'Lora', serif; font-weight: 600; font-size: clamp(18px, 1.9vw, 22px);
+  line-height: 1.3; color: var(--text); transition: color 0.2s ease;
+}
+.rk-faq-list summary::-webkit-details-marker { display: none; }
+.rk-faq-list summary:hover { color: var(--red); }
+.rk-faq-list summary::after,
+.rk-faq-list summary::before {
+  content: ''; position: absolute; right: 4px; top: 50%; background: var(--ink);
+  transition: transform 0.3s cubic-bezier(0.4,0,0.2,1), background 0.2s ease;
+}
+.rk-faq-list summary::before { width: 16px; height: 1px; transform: translateY(-50%); }
+.rk-faq-list summary::after { width: 1px; height: 16px; right: 11px; transform: translateY(-50%); }
+.rk-faq-list details[open] summary::after { transform: translateY(-50%) rotate(90deg); opacity: 0; }
+.rk-faq-list details[open] summary { color: var(--red); }
+.rk-faq-list details[open] summary::before, .rk-faq-list details[open] summary::after { background: var(--red); }
+.rk-faq-a { padding: 0 12% 26px 0; font-size: 16px; line-height: 1.7; color: rgba(36,29,19,0.72); margin: 0; }
+.rk-faq-a a { color: var(--red); text-decoration: underline; text-underline-offset: 3px; }
+
+/* ============================================================
+   9. BEFORE YOU SIGN — slim ruled index, no cards
+   ============================================================ */
+.rk-guides { padding: 96px 0 0; }
+.rk-guides-grid { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 56px; align-items: start; }
+.rk-guides-list { border-top: 1px solid var(--ink); }
+.rk-guides-list a {
+  display: grid; grid-template-columns: 110px 1fr auto; gap: 20px; align-items: baseline;
+  padding: 17px 0; border-bottom: 1px solid var(--line);
+  transition: padding-left 0.3s cubic-bezier(0.4,0,0.2,1);
+}
+.rk-guides-list a:hover { padding-left: 10px; }
+.rk-guides-list em {
+  font-style: normal; font-family: 'Archivo', sans-serif; font-size: 10.5px; letter-spacing: 0.14em;
+  text-transform: uppercase; color: rgba(36,29,19,0.42);
+}
+.rk-guides-list b { font-family: 'Lora', serif; font-weight: 500; font-size: 17px; line-height: 1.3; color: var(--text); }
+.rk-guides-list i { font-style: normal; color: var(--red); font-size: 15px; opacity: 0; transition: opacity 0.25s ease; }
+.rk-guides-list a:hover i { opacity: 1; }
+.rk-guides-list a:hover b { color: var(--red); }
+
+/* ============================================================
+   10. FOOTER — sits above the closing CTA
+   ============================================================ */
+.rk-footer { margin-top: 110px; border-top: 1px solid var(--line); }
+.rk-footer-inner {
+  max-width: 1180px; margin: 0 auto; padding: 56px 6vw 44px;
+  display: grid; grid-template-columns: 1.5fr 1fr 1fr 1.15fr; gap: 48px;
+}
+.rk-footer-brand p { margin: 18px 0 0; max-width: 30ch; font-size: 14px; line-height: 1.6; color: rgba(36,29,19,0.58); }
+.rk-footer-col { display: flex; flex-direction: column; align-items: flex-start; }
+.rk-footer-col h3 {
+  margin: 0 0 16px; font-family: 'Archivo', sans-serif; font-size: 10.5px; font-weight: 400;
+  letter-spacing: 0.16em; text-transform: uppercase; color: rgba(36,29,19,0.42);
+}
+.rk-footer-col a { font-size: 14.5px; line-height: 1.5; color: rgba(36,29,19,0.72); padding: 4px 0; transition: color 0.2s ease; }
+.rk-footer-col a:hover { color: var(--red); }
+.rk-footer-addr { margin: 0 0 10px; font-size: 14.5px; line-height: 1.55; color: rgba(36,29,19,0.72); }
+.rk-footer-base {
+  max-width: 1180px; margin: 0 auto; padding: 20px 6vw 30px;
+  border-top: 1px solid var(--line);
+  display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap;
+  font-size: 12.5px; color: rgba(36,29,19,0.48);
+}
+
+/* ============================================================
+   11. CLOSING CTA — the site sketch bleeding off the bottom
+   ============================================================ */
+.rk-outro {
+  /* --sketch-strength: how hard the pencil lines read against the cream.
+     Raise toward 3 for a bolder drawing, drop toward 1.4 for a whisper. */
+  --sketch-strength: 2.2;
+  position: relative; overflow: hidden;
+  min-height: 94vh; padding: 88px 6vw 0; text-align: center;
+}
+.rk-outro-art {
+  position: absolute; left: 50%; bottom: 0; transform: translateX(-50%);
+  width: min(1440px, 112%); height: 80%; pointer-events: none;
+  /* emerge out of the cream rather than starting as a hard edge */
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, #000 24%, #000 100%);
+  mask-image: linear-gradient(to bottom, transparent 0%, #000 24%, #000 100%);
+}
+.rk-outro-art img {
+  width: 100%; height: 100%; object-fit: cover; object-position: 50% 50%;
+  /* drop the white paper, keep the pencil lines, lift them enough to read on cream */
+  mix-blend-mode: multiply; filter: contrast(var(--sketch-strength)) saturate(0.85);
+}
+.rk-outro-inner { position: relative; z-index: 1; max-width: 760px; margin: 0 auto; }
+.rk-outro h2 {
+  font-family: 'Lora', serif; font-weight: 600;
+  font-size: clamp(34px, 5vw, 62px); line-height: 1.04; letter-spacing: -0.03em;
+  color: var(--text); margin: 0;
+}
+.rk-outro p { margin: 22px auto 0; max-width: 48ch; font-size: 16.5px; line-height: 1.65; color: rgba(36,29,19,0.7); }
+.rk-outro-row { margin-top: 32px; display: flex; gap: 22px; justify-content: center; align-items: center; flex-wrap: wrap; }
+.rk-outro-alt { font-size: 14.5px; font-weight: 500; color: rgba(36,29,19,0.62); transition: color 0.2s ease; }
+.rk-outro-alt:hover { color: var(--red); }
+
+/* ============================================================
+   Responsive
+   ============================================================ */
+@media (max-width: 1040px) {
+  .rk-facts { grid-template-columns: repeat(3, 1fr); }
+  .rk-fact:nth-child(4) { border-left: none; }
+  .rk-fact:nth-child(n+4) { border-top: 1px solid var(--line); }
+  .rk-std-free { grid-template-columns: repeat(2, 1fr); column-gap: 48px; row-gap: 34px; }
+  .rk-bigcard, .rk-who { padding-left: 40px; padding-right: 40px; }
+}
+
+@media (max-width: 900px) {
+  .rk-hero { min-height: 88vh; }
+
+  .rk-units-head, .rk-std-head, .rk-rates-grid, .rk-guides-grid { grid-template-columns: 1fr; gap: 24px; }
+  .rk-std-free { row-gap: 32px; }
+  .rk-bigcard { padding: 44px 30px 48px; border-radius: 24px; }
+  .rk-who { padding: 52px 30px 56px; border-radius: 24px; }
+  .rk-footer-inner { grid-template-columns: 1fr 1fr; gap: 36px; }
+  .rk-outro { min-height: 72vh; }
+  .rk-outro-art { width: 168%; height: 66%; }
+  .rk-split, .rk-split.is-flipped { grid-template-columns: 1fr; gap: 24px; }
+  .rk-split.is-flipped .rk-split-media { order: 0; }
+
+  .rk-units-scroll { height: 340vh; }
+  .rk-units-sticky { min-height: 0; }
+  .rk-units-inner { grid-template-columns: 1fr; gap: 26px; padding: 0 6vw; }
+  .rk-units-right { order: -1; }
+  .rk-stage { aspect-ratio: 16 / 11; }
+  .rk-thumbs { height: 58px; }
+  .rk-thumbset button { width: 84px; height: 54px; }
+  .rk-panels { min-height: 300px; }
+
+  .rk-who-list li { grid-template-columns: 34px 1fr; gap: 14px 16px; }
+  .rk-who-d { grid-column: 2; }
+  .rk-guides-list a { grid-template-columns: 1fr auto; }
+  .rk-guides-list em { grid-column: 1 / -1; margin-bottom: 2px; }
+  .rk-note { grid-template-columns: 1fr; gap: 14px; }
+}
+
+@media (max-width: 720px) {
+  .rk-nav-links { display: none; }
+}
+
+@media (max-width: 640px) {
+  .rk-facts { grid-template-columns: repeat(2, 1fr); }
+  .rk-fact { padding: 20px 16px; }
+  .rk-fact:nth-child(odd) { border-left: none; }
+  .rk-fact:nth-child(n+3) { border-top: 1px solid var(--line); }
+  .rk-std-free { grid-template-columns: 1fr; }
+  .rk-sched th { padding: 10px 14px; }
+  .rk-sched td { padding: 12px 14px; font-size: 13px; }
+  .rk-sched td:first-child { font-size: 16px; }
+  .rk-panel-card-head, .rk-panel-card-foot { padding-left: 14px; padding-right: 14px; }
+  /* the schedule is wider than a phone — let it scroll rather than clip */
+  .rk-panel-card { overflow-x: auto; }
+  .rk-footer-inner { grid-template-columns: 1fr; gap: 30px; }
+  .rk-footer-base { flex-direction: column; text-align: center; gap: 8px; }
+  .rk-outro { min-height: 64vh; padding-top: 60px; }
+  .rk-outro-art { width: 210%; height: 58%; }
+}
+
+/* Landscape phones / short windows: the pinned panel has to fit one screen,
+   so scale the stage and drop the spec list (repeated verbatim under
+   "What comes with every unit"). */
+@media (max-width: 900px) and (max-height: 700px) {
+  /* short and wide (landscape phone): stacking is what breaks the fit —
+     go back to two columns so the pinned panel stays on one screen */
+  .rk-units-inner { grid-template-columns: 0.8fr 1.2fr; gap: 20px; }
+  .rk-units-right { order: 0; }
+  .rk-stage { aspect-ratio: 16 / 8.5; }
+  .rk-thumbs { height: 46px; }
+  .rk-thumbset button { width: 68px; height: 44px; }
+  .rk-panels { min-height: 232px; }
+  .rk-panel-size { font-size: 36px; }
+  .rk-panel-desc { font-size: 13.5px; margin-top: 12px; }
+  .rk-panel-specs { display: none; }
+  .rk-track { margin-bottom: 16px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rk-panel, .rk-stage img, .rk-thumbset, .rk-track button::before,
+  .rk-guides-list a, .rk-faq-list summary::before, .rk-faq-list summary::after { transition: none; }
+  .rk-stage img { transform: none; }
+}
