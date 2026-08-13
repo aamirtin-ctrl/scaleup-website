@@ -849,3 +849,19 @@ b, strong { font-weight: 600; }
 }
 .su-submenu a:hover { background: rgba(36,29,19,0.06); color: var(--ink); }
 @media (prefers-reduced-motion: reduce) { .su-submenu { transition: none; } }
+
+
+/* ============================================================
+   DFW leasing band (homepage) — crawlable summary of the leasing
+   pages. Plain typographic band on the cream, no card chrome.
+   ============================================================ */
+.su-dfwband { padding: 96px 0 20px; }
+.su-dfw-inner { max-width: 760px; margin: 0 auto; padding: 0 6vw; }
+.su-dfwband h2 {
+  margin: 0 0 18px; font-family: 'Lora', serif; font-weight: 500;
+  font-size: clamp(27px, 3.4vw, 34px); line-height: 1.1; letter-spacing: -0.02em; color: var(--text);
+}
+.su-dfwband p { margin: 0 0 16px; font-size: 15px; line-height: 1.7; color: rgba(36,29,19,0.75); }
+.su-dfwband a { color: var(--red); text-decoration: underline; text-underline-offset: 3px; text-decoration-color: rgba(184,50,50,0.35); }
+.su-dfwband a:hover { text-decoration-color: var(--red); }
+@media (max-width: 640px) { .su-dfwband { padding: 64px 0 8px; } }
