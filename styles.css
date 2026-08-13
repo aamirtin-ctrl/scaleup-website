@@ -852,16 +852,12 @@ b, strong { font-weight: 600; }
 
 
 /* ============================================================
-   DFW leasing band (homepage) — crawlable summary of the leasing
-   pages. Plain typographic band on the cream, no card chrome.
+   DFW leasing note (homepage) — one quiet crawlable passage.
+   Footnote weight on purpose: the detail lives on the pillar page.
    ============================================================ */
-.su-dfwband { padding: 96px 0 20px; }
-.su-dfw-inner { max-width: 760px; margin: 0 auto; padding: 0 6vw; }
-.su-dfwband h2 {
-  margin: 0 0 18px; font-family: 'Lora', serif; font-weight: 500;
-  font-size: clamp(27px, 3.4vw, 34px); line-height: 1.1; letter-spacing: -0.02em; color: var(--text);
-}
-.su-dfwband p { margin: 0 0 16px; font-size: 15px; line-height: 1.7; color: rgba(36,29,19,0.75); }
-.su-dfwband a { color: var(--red); text-decoration: underline; text-underline-offset: 3px; text-decoration-color: rgba(184,50,50,0.35); }
-.su-dfwband a:hover { text-decoration-color: var(--red); }
-@media (max-width: 640px) { .su-dfwband { padding: 64px 0 8px; } }
+.su-dfwband { padding: 72px 0 0; }
+.su-dfw-inner { max-width: 720px; margin: 0 auto; padding: 0 6vw; }
+.su-dfwband p { margin: 0; font-size: 13px; line-height: 1.75; color: rgba(36,29,19,0.55); text-align: center; }
+.su-dfwband a { color: rgba(36,29,19,0.75); text-decoration: underline; text-underline-offset: 3px; text-decoration-color: rgba(36,29,19,0.25); }
+.su-dfwband a:hover { color: var(--red); text-decoration-color: var(--red); }
+@media (max-width: 640px) { .su-dfwband { padding: 48px 0 0; } .su-dfwband p { text-align: left; } }
