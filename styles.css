@@ -851,13 +851,12 @@ b, strong { font-weight: 600; }
 @media (prefers-reduced-motion: reduce) { .su-submenu { transition: none; } }
 
 
-/* ============================================================
-   DFW leasing note (homepage) — one quiet crawlable passage.
-   Footnote weight on purpose: the detail lives on the pillar page.
-   ============================================================ */
-.su-dfwband { padding: 72px 0 0; }
-.su-dfw-inner { max-width: 720px; margin: 0 auto; padding: 0 6vw; }
-.su-dfwband p { margin: 0; font-size: 13px; line-height: 1.75; color: rgba(36,29,19,0.55); text-align: center; }
-.su-dfwband a { color: rgba(36,29,19,0.75); text-decoration: underline; text-underline-offset: 3px; text-decoration-color: rgba(36,29,19,0.25); }
-.su-dfwband a:hover { color: var(--red); text-decoration-color: var(--red); }
-@media (max-width: 640px) { .su-dfwband { padding: 48px 0 0; } .su-dfwband p { text-align: left; } }
+/* Links inside the About copy. No colour of their own — they inherit the
+   surrounding muted body colour and are marked only by the underline, so the
+   section still reads as a sentence rather than a list of links. Red on hover. */
+.su-about-lede a, .su-value p a {
+  text-decoration: underline; text-underline-offset: 3px;
+  text-decoration-thickness: 1px; text-decoration-color: currentColor;
+  transition: color 0.2s ease;
+}
+.su-about-lede a:hover, .su-value p a:hover { color: var(--red); }
