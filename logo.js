@@ -1,7 +1,7 @@
 /* ScaleUp logo mark — isometric chevron building, recreated as SVG
    Injected into every .su-logo-mark so the mark lives in one place. */
 const SU_MARK_SVG = `
-<svg viewBox="0 0 122 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+<svg viewBox="4 12 114 80" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
   <!-- underside walls -->
   <polygon fill="#171310" points="7,47 29,61 29,87 7,73"/>
   <polygon fill="#171310" points="29,61 59,43 59,69 29,87"/>

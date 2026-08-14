@@ -86,7 +86,7 @@ b, strong { font-weight: 600; }
 .su-logo-mark { display: flex; align-items: center; height: 28px; }
 .su-logo-mark svg { height: 100%; width: auto; display: block; }
 .su-logo-word { font-family: 'Archivo', sans-serif; font-weight: 600; font-size: 21px; letter-spacing: -0.01em; color: var(--logo-red); }
-.su-logo-mark-sm { height: 18px; }
+.su-logo-mark-sm { height: 22px; }
 .su-logo-word-sm { font-size: 15px; }
 
 .su-header {
@@ -513,8 +513,9 @@ b, strong { font-weight: 600; }
   max-width: 1180px; margin: 0 auto 30px;
   display: grid; grid-template-columns: 1.05fr 1fr; gap: 64px; align-items: center;
 }
-/* the pencil sketch is white line art for the dark site — invert it to graphite on paper */
-.su-sketch { width: 100%; opacity: 0.85; filter: invert(0.82) sepia(0.18); mix-blend-mode: multiply; }
+/* the pencil sketch is white line art for the dark site. A partial invert left the lines
+   near-white, so multiply against the cream background erased them — invert fully. */
+.su-sketch { width: 100%; height: auto; opacity: 0.9; filter: invert(1) contrast(1.2); mix-blend-mode: multiply; }
 .su-about-copy { text-align: left; }
 .su-about-chip {
   display: inline-flex; align-items: center; gap: 9px;

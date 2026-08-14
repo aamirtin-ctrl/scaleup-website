@@ -183,7 +183,7 @@
 
 .pk-thumbs { position: relative; margin-top: 14px; height: 74px; }
 .pk-thumbset {
-  position: absolute; inset: 0; display: flex; gap: 10px;
+  position: absolute; inset: 0; display: flex; gap: 10px; justify-content: center;
   overflow-x: auto; scrollbar-width: none; -webkit-overflow-scrolling: touch;
   opacity: 0; visibility: hidden; transition: opacity 0.45s ease, visibility 0.45s;
 }
@@ -693,6 +693,24 @@
 }
 @media (max-width: 480px) {
   .ct-meta-list { grid-template-columns: 1fr; }
+}
+
+/* ---------- McKinney site plan ---------- */
+.ct-plan { margin-top: 96px; }
+.ct-plan-head { max-width: 62ch; }
+.ct-plan-head .pk-body { margin-top: 16px; font-size: 15px; }
+.ct-plan-fig {
+  margin: 30px 0 0; padding: 20px;
+  background: var(--panel); border: 1px solid var(--line); border-radius: 18px;
+  box-shadow: 0 30px 80px rgba(74,56,30,0.10);
+}
+.ct-plan-fig img { width: 100%; height: auto; border-radius: 10px; }
+.ct-plan-fig figcaption {
+  margin-top: 16px; font-size: 13px; line-height: 1.5; color: rgba(36,29,19,0.5);
+}
+@media (max-width: 900px) {
+  .ct-plan { margin-top: 62px; }
+  .ct-plan-fig { padding: 12px; border-radius: 14px; }
 }
 
 /* ============================================================

@@ -3,19 +3,21 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Contact ScaleUp Flex Parks | Rockwall &amp; McKinney Leasing</title>
-  <meta name="description" content="Talk to the developer, not a broker. Tell us your square footage and timeline and we will send availability, the rate sheet, and a site plan.">
-  <link rel="canonical" href="https://scaleupflex.com/contact.html">
-  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <title>Schedule a Tour | ScaleUp Flex Parks</title>
+  <meta name="description" content="Pick a time to walk Rockwall or McKinney with the developer.">
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="icon" type="image/png" sizes="48x48" href="assets/favicon-48.png">
   <link rel="icon" type="image/png" sizes="192x192" href="assets/favicon-192.png">
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
-  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="application-name" content="ScaleUp Flex">
+  <meta name="apple-mobile-web-app-title" content="ScaleUp Flex">
+  <meta name="robots" content="noindex, follow">
   <meta name="theme-color" content="#F5EFE2">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="ScaleUp Flex Parks">
-  <meta property="og:title" content="Contact ScaleUp Flex Parks | Rockwall &amp; McKinney Leasing">
-  <meta property="og:description" content="Talk to the developer, not a broker. Send us your square footage and timeline.">
+  <meta property="og:title" content="Schedule a Tour | ScaleUp Flex Parks">
+  <meta property="og:description" content="Pick a time to walk Rockwall or McKinney with the developer.">
   <meta property="og:url" content="https://scaleupflex.com/contact.html">
   <meta property="og:image" content="https://scaleupflex.com/assets/og.jpg">
   <meta name="twitter:card" content="summary_large_image">
@@ -29,7 +31,7 @@
   {
     "@context": "https://schema.org",
     "@type": "ContactPage",
-    "name": "Contact ScaleUp Flex Parks",
+    "name": "Schedule a Tour with ScaleUp Flex Parks",
     "url": "https://scaleupflex.com/contact.html",
     "description": "Leasing contact for ScaleUp Flex Parks, developer of small-bay flex parks in Rockwall and McKinney, Texas.",
     "mainEntity": {
@@ -84,17 +86,17 @@
           </span>
         </span>
         <a href="about.html">About</a>
-        <a href="contact.html" class="active">Contact</a>
+        <a href="index.html#contact" class="active">Contact</a>
       </nav>
-      <a href="#su-form" class="pk-nav-cta">Send an inquiry</a>
+      <a href="#su-book" class="pk-nav-cta">Pick a time</a>
     </header>
     </div>
 
     <div class="pk-hero-inner">
-      <h1>Let&rsquo;s find <em>your space</em></h1>
-      <p class="pk-hero-lede"><strong>Tell us your square footage and your timeline.</strong> We will send current availability, the rate sheet, and a site plan. If neither park fits, we will say so.</p>
+      <h1>Book a <em>walkthrough</em></h1>
+      <p class="pk-hero-lede"><strong>Pick a time and we will walk the site with you.</strong> You will get a calendar invite, and we will come prepared for your size and timeline.</p>
       <div class="pk-hero-ctas">
-        <a href="#su-form" class="su-btn-fill">Send an inquiry <span class="su-arr">&#8595;</span></a>
+        <a href="#su-book" class="su-btn-fill">Pick a time <span class="su-arr">&#8595;</span></a>
         <a href="tel:+14696281922" class="su-btn-outline">Call (469) 628-1922</a>
       </div>
     </div>
@@ -119,26 +121,9 @@
           </div>
         </div>
 
-        <form class="su-form" id="su-form">
-          <label>Name<input type="text" name="name" placeholder="Your name" required></label>
-          <label>Email<input type="email" name="email" placeholder="you@company.com" required></label>
-          <label>Phone (optional)<input type="tel" name="phone" placeholder="(555) 555-5555"></label>
-          <label>Park name
-            <select name="dev">
-              <option>Rockwall</option>
-              <option>McKinney</option>
-              <option>Not sure yet</option>
-            </select>
-          </label>
-          <label>Message<textarea name="message" rows="4" placeholder="Tell us about your space needs&hellip;"></textarea></label>
-          <!-- Scheduling turned off for now. The HubSpot Meetings handler in
-               contact.js is guarded on these two elements, so it no-ops while
-               they are commented out — restore both lines to switch it back on.
-          <button type="button" class="su-btn-outline su-book-btn" id="su-book-open" aria-expanded="false">Schedule a meeting <span class="su-arr">&#8594;</span></button>
-          <div id="su-book-embed" hidden></div>
-          -->
-          <button type="submit" class="su-btn-fill">Send inquiry <span class="su-arr">&#8594;</span></button>
-        </form>
+        <div class="su-form" id="su-book">
+          <div id="su-book-embed" data-auto></div>
+        </div>
       </section>
 
       <!-- ---------- Rockwall piece: bar top-left, leg dropping down the left ---------- -->
@@ -160,6 +145,18 @@
       </a>
 
     </div>
+
+    <!-- ---------- McKinney site plan ---------- -->
+    <section class="ct-plan" aria-labelledby="ct-plan-h">
+      <div class="ct-plan-head">
+        <h2 class="pk-h2" id="ct-plan-h">The McKinney site plan</h2>
+        <p class="pk-body">Nine buildings at 1990 N McDonald St &mdash; one retail, one showroom, and seven industrial flex, wrapped around a central drive aisle with parking at the door. Bays are demised to suit, which is how the site becomes 40+ units at 1,800&ndash;3,500 SF.</p>
+      </div>
+      <figure class="ct-plan-fig">
+        <img src="assets/mckinney-site-plan.webp" alt="Site plan for McKinney Flex Park at 1990 N McDonald Street. Nine buildings sit around a central drive aisle: Building A retail at 7,200 SF, Building B showroom and industrial flex at 12,600 SF, Buildings E and F industrial flex at 9,600 SF each, and Buildings D, G, H, I and J industrial flex at 7,200 SF each, with a detention pond at the centre of the site." width="1600" height="963" loading="lazy" decoding="async">
+        <figcaption>Preliminary site plan &mdash; building sizes and unit counts subject to change.</figcaption>
+      </figure>
+    </section>
   </main>
 
   <footer class="su-foot">
@@ -177,7 +174,7 @@
         <a href="flex-space-for-lease-dfw.html">Flex space for lease in DFW</a>
         <a href="rockwall-flex-space-for-lease.html">Rockwall flex space</a>
         <a href="mckinney-flex-space-for-lease.html">McKinney flex space</a>
-        <a href="contact.html">Request the rate sheet</a>
+        <a href="index.html#contact">Request the rate sheet</a>
       </nav>
 
       <nav class="su-foot-col" aria-label="Company">
@@ -185,7 +182,7 @@
         <a href="about.html">About</a>
         <a href="blog.html">The ScaleUp Journal</a>
         <a href="investors.html">Investor access</a>
-        <a href="contact.html">Contact</a>
+        <a href="index.html#contact">Contact</a>
       </nav>
 
       <div class="su-foot-col">
