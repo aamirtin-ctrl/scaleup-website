@@ -474,8 +474,13 @@ window.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeProgres
 const cards = DEVS.map(buildCard);
 cards.forEach(c => deckRoot.appendChild(c.el));
 
-/* ---- plan-card image carousels ---- */
-deckRoot.querySelectorAll('.su-plan-carousel').forEach((car) => {
+/* ---- plan-card image carousels ----
+   All the carousels in a card share ONE clock. Each used to own its own
+   setInterval, and pausing (hover, or a manual move) tore that interval down
+   and built a fresh one on release — which re-phased that carousel against
+   its neighbours permanently. A paused carousel now just sits out the beats
+   it misses and rejoins the running clock, so they always advance together. */
+const carousels = [...deckRoot.querySelectorAll('.su-plan-carousel')].map((car) => {
   const strip = car.querySelector('.su-plan-strip');
   const dots = [...car.querySelectorAll('.su-plan-dot')];
   const count = strip.children.length;
@@ -485,11 +490,11 @@ deckRoot.querySelectorAll('.su-plan-carousel').forEach((car) => {
     if (img) strip.scrollTo({ left: img.offsetLeft - strip.offsetLeft, behavior: 'smooth' });
   };
 
-  // auto-advance, pausing on hover and briefly after any manual move
-  let timer, resumeT;
-  const stop = () => clearInterval(timer);
-  const play = () => { stop(); timer = setInterval(() => { if (strip.clientWidth) goTo(current() + 1); }, 4500); };
-  const nudge = () => { stop(); clearTimeout(resumeT); resumeT = setTimeout(play, 7000); };
+  // paused on hover, and briefly after any manual move
+  const c = { strip, goTo, current, paused: false, resumeT: 0 };
+  const hold = (ms) => { c.paused = true; clearTimeout(c.resumeT); if (ms) c.resumeT = setTimeout(() => { c.paused = false; }, ms); };
+  const release = () => { clearTimeout(c.resumeT); c.paused = false; };
+  const nudge = () => hold(7000);
 
   dots.forEach((dot) => dot.addEventListener('click', (e) => { e.stopPropagation(); goTo(+dot.dataset.i); nudge(); }));
   car.querySelector('.su-plan-prev').addEventListener('click', (e) => { e.stopPropagation(); e.preventDefault(); goTo(current() - 1); nudge(); });
@@ -504,10 +509,16 @@ deckRoot.querySelectorAll('.su-plan-carousel').forEach((car) => {
     }, 60);
   }, { passive: true });
 
-  car.addEventListener('mouseenter', stop);
-  car.addEventListener('mouseleave', play);
-  if (!matchMedia('(prefers-reduced-motion: reduce)').matches) play();
+  car.addEventListener('mouseenter', () => hold(0));
+  car.addEventListener('mouseleave', release);
+  return c;
 });
+
+if (carousels.length && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  setInterval(() => {
+    carousels.forEach((c) => { if (!c.paused && c.strip.clientWidth) c.goTo(c.current() + 1); });
+  }, 4500);
+}
 
 /* ---- plan-photo lightbox (click a plan image to enlarge) ---- */
 (() => {

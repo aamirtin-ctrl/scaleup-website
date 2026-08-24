@@ -150,6 +150,15 @@
   font-family: 'Archivo', sans-serif; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(36,29,19,0.45);
 }
 .pk-panel-specs .v { font-size: 13px; font-weight: 500; color: var(--text); }
+/* floor plan for the unit on screen, directly under its spec list */
+.pk-panel-plan {
+  display: inline-flex; align-items: center; gap: 9px; margin-top: 18px;
+  padding: 11px 20px; border-radius: 100px;
+  border: 1px solid var(--line); background: var(--panel);
+  font-family: 'Archivo', sans-serif; font-size: 13px; font-weight: 500; color: var(--text);
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+.pk-panel-plan:hover { border-color: rgba(36,29,19,0.4); background: #FFFEFA; }
 
 /* --- right: the stage --- */
 .pk-stage { position: relative; aspect-ratio: 16 / 10; overflow: hidden; background: rgba(36,29,19,0.05); border-radius: 18px; }
@@ -488,7 +497,7 @@
   .pk-panels { min-height: 232px; }
   .pk-panel-size { font-size: 34px; }
   .pk-panel-desc { font-size: 13px; margin-top: 12px; }
-  .pk-panel-specs { display: none; }
+  .pk-panel-specs, .pk-panel-plan { display: none; }
   .pk-track { margin-bottom: 16px; }
 }
 
