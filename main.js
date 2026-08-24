@@ -50,7 +50,7 @@ const DEVS = [
         { name: 'Showroom unit', size: '3,000 SF', sub: 'Bldgs A/E west end · glass front, open bay',
           imgs: ['assets/rockwall-3000-1.webp', 'assets/rockwall-3000-2.webp', 'assets/rockwall-3000-3.webp', 'assets/rockwall-3000-4.webp'] },
         { name: 'Large bay', size: '2,000 SF', sub: 'Bldgs F–I · office front, roll-up rear',
-          imgs: ['assets/rockwall-a-left.webp', 'assets/rockwall-a-right.webp', 'assets/rockwall-a-opp-left.webp', 'assets/2000rockwall.webp'] },
+          imgs: ['assets/rockwall-a-left.webp', 'assets/rockwall-a-right.webp'] },
         { name: 'Standard bay', size: '1,500 SF', sub: 'Bldgs A–D · office front, roll-up rear',
           imgs: ['assets/rockwall-b-d-left.webp', 'assets/rockwall-1500-2.webp', 'assets/rockwall-1500-1.webp'] },
       ],
