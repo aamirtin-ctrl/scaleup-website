@@ -722,7 +722,7 @@ b, strong { font-weight: 600; }
   .su-hero-head h1 { font-size: clamp(38px, 11.5vw, 52px); }
   .su-btn-hero { margin-top: 26px; padding: 14px 24px; font-size: 15px; }
 
-  /* developments: tabs stack above the deck (geometry set in main.js) */
+  /* developments: tabs stack above the deck (geometry set in main.js?v=8356f01f) */
   .su-left { left: 6vw; right: 6vw; top: 6vh; width: auto; max-width: none; }
   .su-left h2 { font-size: 34px; }
   .su-left-blurb { display: none; }
@@ -790,7 +790,7 @@ b, strong { font-weight: 600; }
 /* ============================================================
    Sticky header morph (Journal + investor pages)
    Flat/transparent at top -> floating pill on scroll.
-   Progress comes from header.js as --hp (0..1).
+   Progress comes from header.js?v=9e687745 as --hp (0..1).
    ============================================================ */
 [data-stick] {
   --hp: 0;

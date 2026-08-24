@@ -1,34 +1,58 @@
 #!/usr/bin/env python3
-"""Stamp local css/js/icon references with a content hash.
+"""Stamp every local asset reference with a content hash.
 
-Netlify serves HTML with max-age=0 but CSS/JS with max-age=3600 and
-/assets/* as immutable-for-a-year. Without a versioned URL a deploy can
-take an hour to reach returning visitors — and an overwritten icon under
-/assets/ never reaches them at all. The hash changes only when the file
-changes, so caching stays aggressive and correctness is immediate.
+Netlify serves HTML with max-age=0, CSS/JS with max-age=3600, and
+/assets/* as immutable for a year. Overwriting a file in place therefore
+never reaches anyone who already has it — `immutable` means the browser
+will not even revalidate. Content-hashed URLs are the correct pairing for
+an immutable cache: the URL changes exactly when the bytes change, so
+updates are instant and unchanged files stay cached forever.
 
-Run before every commit that touches css/js/icons.
+Covers stylesheets, scripts, and everything under assets/ (images, PDFs,
+icons). Absolute https:// references — og:image and friends — are left
+alone so social scrapers keep a stable URL.
+
+Run before every commit that touches any of them.
 """
 import glob, hashlib, os, re
 
-def h(path):
-    return hashlib.sha1(open(path, 'rb').read()).hexdigest()[:8]
+CODE = ('styles.css', 'park.css', 'investors.css', 'blog.css',
+        'main.js', 'logo.js', 'header.js', 'contact.js', 'blog.js', 'investors.js')
+ASSET_RE = re.compile(
+    r'((?:\.\./|/)?assets/[A-Za-z0-9._/-]+?\.(?:webp|png|jpe?g|svg|pdf))(\?v=[0-9a-f]{8})?')
+CODE_RE = re.compile(r'((?:\.\./)?(' + '|'.join(re.escape(c) for c in CODE) + r'))(\?v=[0-9a-f]{8})?')
+ABS = 'https://scaleupflex.com/assets/'
+MASK = '\x00ABS\x00'
 
-TARGETS = ('styles.css', 'park.css', 'investors.css', 'blog.css', 'main.js', 'logo.js',
-           'header.js', 'contact.js', 'blog.js', 'investors.js',
-           'assets/brand/favicon.svg', 'assets/brand/favicon-48.png', 'assets/brand/favicon-192.png',
-           'assets/brand/apple-touch-icon.png')
-digest = {f: h(f) for f in TARGETS if os.path.exists(f)}
+cache = {}
+def digest(path):
+    if path not in cache:
+        cache[path] = hashlib.sha1(open(path, 'rb').read()).hexdigest()[:8] if os.path.isfile(path) else None
+    return cache[path]
 
-pat = re.compile(r'((?:href|src)=")((?:\.\./)?)(' +
-                 '|'.join(re.escape(f) for f in digest) + r')(?:\?v=[0-9a-f]+)?(")')
+def stamp(m):
+    ref = m.group(1)
+    path = re.sub(r'^(\.\./|/)', '', ref)
+    d = digest(path)
+    return f'{ref}?v={d}' if d else ref
+
+targets = (glob.glob('*.html') + glob.glob('blog/*.html') + list(CODE)
+           + ['site.webmanifest'])
 changed = 0
-for page in glob.glob('*.html') + glob.glob('blog/*.html'):
-    s = open(page).read()
-    new = pat.sub(lambda m: f'{m.group(1)}{m.group(2)}{m.group(3)}?v={digest[m.group(3)]}{m.group(4)}', s)
-    if new != s:
-        open(page, 'w').write(new)
+for f in targets:
+    if not os.path.exists(f):
+        continue
+    src = open(f).read()
+    out = src.replace(ABS, MASK)
+    out = ASSET_RE.sub(stamp, out)
+    out = CODE_RE.sub(stamp, out)
+    out = out.replace(MASK, ABS)
+    if out != src:
+        open(f, 'w').write(out)
         changed += 1
-print(f'stamped {changed} pages')
-for f, d in sorted(digest.items()):
-    print(f'  {f:32} v={d}')
+print(f'stamped {changed} files')
+missing = sorted(p for p, d in cache.items() if d is None)
+if missing:
+    print('  referenced but not on disk:')
+    for p in missing:
+        print('   ', p)

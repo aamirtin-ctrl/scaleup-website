@@ -1,5 +1,5 @@
 /* ============================================================
-   ScaleUp — main.js
+   ScaleUp — main.js?v=8356f01f
    Deck swap + scroll-expand/close engine, about, testimonials
    ============================================================ */
 
@@ -22,7 +22,7 @@ const DEVS = [
       { date: 'TBD', title: 'Finish-out & paving' },
       { date: 'Summer 2027', title: 'Delivery & move-ins' }
     ],
-    img: 'assets/rockwall/park/park.webp',
+    img: 'assets/rockwall/park/park.webp?v=a2f8a965',
     blurb: 'A 5-acre flex park with highway frontage on N Goliad — 30 warehouse, showroom, and flex units with individual HVAC, 3-phase power, LED lighting, and grade-level bays.',
     stats: [
       { label: 'TOTAL UNITS', val: '30' },
@@ -48,19 +48,19 @@ const DEVS = [
       lede: '4156 N Goliad St, Rockwall, TX — five acres of highway frontage, with showroom space in two highway-facing units.',
       cards: [
         { name: 'Showroom unit', size: '3,000 SF', sub: 'Bldgs A/E west end · glass front, open bay',
-          pdf: 'assets/rockwall/layouts/Goliad_A_1F_01.pdf',
-          imgs: ['assets/rockwall/3000/exterior-1.webp', 'assets/rockwall/3000/exterior-2.webp',
-                 'assets/rockwall/3000/office.webp', 'assets/rockwall/3000/showroom.webp',
-                 'assets/rockwall/3000/display.webp', 'assets/rockwall/3000/open-bay.webp'] },
+          pdf: 'assets/rockwall/layouts/Goliad_A_1F_01.pdf?v=e5c6f962',
+          imgs: ['assets/rockwall/3000/exterior-1.webp?v=826e9635', 'assets/rockwall/3000/exterior-2.webp?v=622b9ade',
+                 'assets/rockwall/3000/office.webp?v=8de4370d', 'assets/rockwall/3000/showroom.webp?v=6d550d6c',
+                 'assets/rockwall/3000/display.webp?v=75f9e677', 'assets/rockwall/3000/open-bay.webp?v=10a7cd98'] },
         { name: 'Large bay', size: '2,000 SF', sub: 'Bldgs F–I · office front, roll-up rear',
-          pdf: 'assets/rockwall/layouts/Goliad_F-I_01.pdf',
-          imgs: ['assets/rockwall/2000/exterior.webp', 'assets/rockwall/2000/office.webp',
-                 'assets/rockwall/2000/warehouse-1.webp', 'assets/rockwall/2000/warehouse-2.webp'] },
+          pdf: 'assets/rockwall/layouts/Goliad_F-I_01.pdf?v=859a3469',
+          imgs: ['assets/rockwall/2000/exterior.webp?v=30660c56', 'assets/rockwall/2000/office.webp?v=e5ded2a5',
+                 'assets/rockwall/2000/warehouse-1.webp?v=fc6a3dd5', 'assets/rockwall/2000/warehouse-2.webp?v=a6fe6db3'] },
         { name: 'Standard bay', size: '1,500 SF', sub: 'Bldgs A–D · office front, roll-up rear',
-          pdf: 'assets/rockwall/layouts/Goliad_B-D_1F_01.pdf',
-          imgs: ['assets/rockwall/1500/exterior.webp',
-                 'assets/rockwall/1500/office.webp', 'assets/rockwall/1500/office-front.webp',
-                 'assets/rockwall/1500/warehouse.webp'] }
+          pdf: 'assets/rockwall/layouts/Goliad_B-D_1F_01.pdf?v=2b48e2d3',
+          imgs: ['assets/rockwall/1500/exterior.webp?v=f7a96dff',
+                 'assets/rockwall/1500/office.webp?v=e5ded2a5', 'assets/rockwall/1500/office-front.webp?v=d141184c',
+                 'assets/rockwall/1500/warehouse.webp?v=170b7417'] }
       ],
       minis: [
         ['5 acres', 'SITE'],
@@ -75,7 +75,7 @@ const DEVS = [
     address: '1990 N McDonald St, McKinney, TX 75071',
     status: 'In Planning', leasing: false, eyebrow: 'IN PLANNING — BREAKING GROUND Q4 2026',
     cta: 'Register interest',
-    img: 'assets/mckinney/park.webp',
+    img: 'assets/mckinney/park.webp?v=c20a3eac',
     blurb: 'A planned 6.2-acre mixed-use development on N McDonald St — retail, showroom, and flex space totaling roughly 75,000 SF, with about 20,000 SF of retail and showroom fronting McDonald St.',
     stats: [
       { label: 'SITE SIZE', val: '6.20 acres' },
@@ -84,7 +84,7 @@ const DEVS = [
     ],
     layout: {
       lede: 'Nine buildings around a central drive aisle at 1990 N McDonald St — one retail, one showroom/flex, and seven industrial flex. Bays are demised to suit, which is how the site becomes 40+ units at 1,800–3,500 SF.',
-      img: 'assets/mckinney/layout.webp',
+      img: 'assets/mckinney/layout.webp?v=ea686e46',
       caption: 'Preliminary site plan — building sizes and unit counts subject to change.',
     },
     outlook: {
@@ -119,17 +119,17 @@ const DEVS = [
    ============================================================ */
 const PROGRESS_MEDIA = {
   Rockwall: [
-    { type: 'image', src: 'assets/rockwall/park/main-entrance.webp', date: 'RENDERING', caption: 'Main entrance off N Goliad St' },
-    { type: 'image', src: 'assets/rockwall/park/aerial-right.webp', date: 'RENDERING', caption: 'Aerial view — full park' },
-    { type: 'image', src: 'assets/rockwall/park/aerial-left.webp', date: 'RENDERING', caption: 'Aerial view — from the west' },
-    { type: 'image', src: 'assets/rockwall/park/highway.webp', date: 'RENDERING', caption: 'Highway frontage' },
-    { type: 'image', src: 'assets/rockwall/park/a-front.webp', date: 'RENDERING', caption: 'Showroom fronts — street elevation' },
-    { type: 'image', src: 'assets/rockwall/park/a-opp-front.webp', date: 'RENDERING', caption: 'Showroom fronts — opposite view' },
-    { type: 'image', src: 'assets/rockwall/park/a-left.webp', date: 'RENDERING', caption: 'Building A — end elevation' },
-    { type: 'image', src: 'assets/rockwall/park/a-opp-left.webp', date: 'RENDERING', caption: 'Building A — opposite end' },
-    { type: 'image', src: 'assets/rockwall/park/a-right.webp', date: 'RENDERING', caption: 'Grade-level door bays' },
-    { type: 'image', src: 'assets/rockwall/park/b-d-left.webp', date: 'RENDERING', caption: 'Buildings B–D' },
-    { type: 'image', src: 'assets/rockwall/park/detention-pond.webp', date: 'RENDERING', caption: 'Landscaped site & detention pond' }
+    { type: 'image', src: 'assets/rockwall/park/main-entrance.webp?v=a36ca33d', date: 'RENDERING', caption: 'Main entrance off N Goliad St' },
+    { type: 'image', src: 'assets/rockwall/park/aerial-right.webp?v=8de44600', date: 'RENDERING', caption: 'Aerial view — full park' },
+    { type: 'image', src: 'assets/rockwall/park/aerial-left.webp?v=dc5bb834', date: 'RENDERING', caption: 'Aerial view — from the west' },
+    { type: 'image', src: 'assets/rockwall/park/highway.webp?v=0cb00837', date: 'RENDERING', caption: 'Highway frontage' },
+    { type: 'image', src: 'assets/rockwall/park/a-front.webp?v=1bc55826', date: 'RENDERING', caption: 'Showroom fronts — street elevation' },
+    { type: 'image', src: 'assets/rockwall/park/a-opp-front.webp?v=ed61364b', date: 'RENDERING', caption: 'Showroom fronts — opposite view' },
+    { type: 'image', src: 'assets/rockwall/park/a-left.webp?v=15c43211', date: 'RENDERING', caption: 'Building A — end elevation' },
+    { type: 'image', src: 'assets/rockwall/park/a-opp-left.webp?v=366a0a63', date: 'RENDERING', caption: 'Building A — opposite end' },
+    { type: 'image', src: 'assets/rockwall/park/a-right.webp?v=78471714', date: 'RENDERING', caption: 'Grade-level door bays' },
+    { type: 'image', src: 'assets/rockwall/park/b-d-left.webp?v=5e3c5ab8', date: 'RENDERING', caption: 'Buildings B–D' },
+    { type: 'image', src: 'assets/rockwall/park/detention-pond.webp?v=2af0b36d', date: 'RENDERING', caption: 'Landscaped site & detention pond' }
   ],
 };
 

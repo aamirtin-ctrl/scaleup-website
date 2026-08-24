@@ -1,5 +1,5 @@
 /* ============================================================
-   ScaleUp — investors.js
+   ScaleUp — investors.js?v=a40bf8ed
    Access gate, hero entrance, scroll reveals, count-ups
    ============================================================ */
 
