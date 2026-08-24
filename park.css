@@ -578,67 +578,13 @@
 
 
 /* ============================================================
-   CONTACT PAGE — the form card sits between two boot pieces:
-   Rockwall in the top-left, McKinney in the bottom-right.
-   Same construction as Our Spaces: each park is a bar plus a leg,
-   the grid gap draws the gutter, a negative margin cancels it
-   inside a piece so bar and leg fuse into one shape.
+   CONTACT PAGE — a single scheduler card; the page does one thing.
    ============================================================ */
-.ct-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-areas:
-    "rockbar rockbar ."
-    "rockleg .       ."
-    "contact contact contact"
-    ".       .       mckleg"
-    ".       mckbar  mckbar";
-  gap: 16px;
-  align-items: start;
-}
-.ct-rock     { grid-area: rockbar; border-radius: 28px 28px 28px 0; }
-.ct-rock-leg { grid-area: rockleg; margin-top: -16px;    border-radius: 0 0 28px 28px; }
-.ct-mck-leg  { grid-area: mckleg;  margin-bottom: -16px; border-radius: 28px 28px 0 0; }
-.ct-mck      { grid-area: mckbar;  border-radius: 28px 0 28px 28px; }
-
-.ct-rock, .ct-rock-leg { background: var(--panel); }
-.ct-mck,  .ct-mck-leg  { background: var(--ink-deep); color: var(--cream-on-ink); }
-
-.ct-bar { display: block; padding: 32px 36px 34px; transition: background 0.3s ease; }
-.ct-rock:hover { background: #FFFEFB; }
-.ct-mck:hover  { background: #241E15; }
-.ct-bar .pk-sp-eyebrow { display: block; }
-/* the shared eyebrow colour is ink, which vanishes on the McKinney fill */
-.ct-mck .pk-sp-eyebrow { color: rgba(243,234,218,0.5); }
-.ct-bar h3 {
-  margin: 0; font-family: 'Lora', serif; font-weight: 500;
-  font-size: clamp(21px, 2.4vw, 30px); line-height: 1.08; letter-spacing: -0.02em; color: var(--text);
-}
-.ct-mck h3 { color: var(--cream-on-ink); }
-.ct-bar .ct-meta { margin-top: 8px; font-size: 13px; line-height: 1.5; color: rgba(36,29,19,0.55); }
-.ct-mck .ct-meta { color: rgba(243,234,218,0.55); }
-.ct-go { display: inline-block; margin-top: 16px; font-size: 13px; font-weight: 500; color: var(--red); }
-.ct-mck .ct-go { color: #E8A0A0; }
-.ct-bar:hover .ct-go { text-decoration: underline; text-underline-offset: 4px; }
-
-.ct-leg { overflow: hidden; min-height: 210px; }
-.ct-leg img { width: 100%; height: 100%; min-height: 210px; object-fit: cover; display: block; }
-/* each leg photo dissolves into its own piece's fill on the edge meeting the bar */
-.ct-rock-leg img {
-  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.45) 13%, rgba(0,0,0,0.9) 30%, #000 44%, #000 100%);
-  mask-image: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.45) 13%, rgba(0,0,0,0.9) 30%, #000 44%, #000 100%);
-}
-.ct-mck-leg img {
-  -webkit-mask-image: linear-gradient(to top, transparent 0%, rgba(0,0,0,0.45) 13%, rgba(0,0,0,0.9) 30%, #000 44%, #000 100%);
-  mask-image: linear-gradient(to top, transparent 0%, rgba(0,0,0,0.45) 13%, rgba(0,0,0,0.9) 30%, #000 44%, #000 100%);
-}
-
-/* ---------- the card in the middle ---------- */
 .ct-card {
-  grid-area: contact;
   background: var(--panel); border: 1px solid var(--line); border-radius: 28px;
   box-shadow: 0 30px 80px rgba(74,56,30,0.10);
-  padding: 52px 54px 56px; margin: 34px 0;
+  padding: 52px 54px 56px; margin: 34px auto;
+  max-width: 1080px;
   display: grid; grid-template-columns: 0.85fr 1.15fr; gap: 54px; align-items: start;
 }
 /* the card's own heading is a small section label now — the real
@@ -662,131 +608,11 @@
   .ct-card { grid-template-columns: 1fr; gap: 34px; padding: 40px 34px 44px; }
 }
 
-/* ============================================================
-   CONTACT PAGE — mobile. The form leads: it is first in the grid
-   (named areas place it independent of DOM order, and the DOM
-   already has it first for reading order / crawlers). Rockwall
-   and McKinney follow as compact, un-fused cards — image on top,
-   text below, same rhythm for both rather than the desktop's
-   mirrored bar/leg orientation — sized well under the form so
-   they read as "see also," not as competing hero moments.
-   ============================================================ */
 @media (max-width: 900px) {
-  .ct-grid {
-    grid-template-columns: 1fr;
-    grid-template-areas: "contact" "rockleg" "rockbar" "mckleg" "mckbar";
-    gap: 0;
-  }
   .ct-card { margin: 0 0 28px; border-radius: 22px; }
-
-  .ct-rock-leg { margin: 0; border-radius: 18px 18px 0 0; }
-  .ct-rock     { margin: 0 0 28px; border-radius: 0 0 18px 18px; }
-  .ct-mck-leg  { margin: 0; border-radius: 18px 18px 0 0; }
-  .ct-mck      { margin: 0; border-radius: 0 0 18px 18px; }
-
-  .ct-bar { padding: 22px 22px 24px; }
-  .ct-bar h3 { font-size: 21px; }
-  .ct-leg, .ct-leg img { min-height: 140px; }
-
-  /* two columns instead of four stacked rows — less to scroll past before the form fields */
+  /* two columns instead of four stacked rows — less to scroll before the picker */
   .ct-meta-list { grid-template-columns: 1fr 1fr; gap: 16px 20px; }
 }
 @media (max-width: 480px) {
   .ct-meta-list { grid-template-columns: 1fr; }
 }
-
-/* ---------- McKinney site plan ---------- */
-.ct-plan { margin-top: 96px; }
-.ct-plan-head { max-width: 62ch; }
-.ct-plan-head .pk-body { margin-top: 16px; font-size: 15px; }
-.ct-plan-fig {
-  margin: 30px 0 0; padding: 20px;
-  background: var(--panel); border: 1px solid var(--line); border-radius: 18px;
-  box-shadow: 0 30px 80px rgba(74,56,30,0.10);
-}
-.ct-plan-fig img { width: 100%; height: auto; border-radius: 10px; }
-.ct-plan-fig figcaption {
-  margin-top: 16px; font-size: 13px; line-height: 1.5; color: rgba(36,29,19,0.5);
-}
-@media (max-width: 900px) {
-  .ct-plan { margin-top: 62px; }
-  .ct-plan-fig { padding: 12px; border-radius: 14px; }
-}
-
-/* ============================================================
-   CONTACT PAGE — wide-viewport composition (Paper design)
-   The five pieces are placed on an explicit 1008px canvas and
-   deliberately overlap: the bars run wider than the column and
-   break its left and right edges, and the form sits on top of
-   the copy column rather than beside it. Coordinates come
-   straight from the Paper artboard, so they are absolute px on
-   a fixed-width stage — the layout does not reflow.
-
-   The bars bleed 165px left and 163px right of the 1008px stage,
-   so the composition needs 1336px of content width — 1338px of
-   viewport once centred. That put it out of reach of most desktop
-   browsers (1280px is the common 13" laptop width), which is why
-   it used to be gated at 1400px and simply never appeared.
-
-   Rather than hide it, the whole stage is scaled to fit. transform
-   keeps every proportion and overlap exactly as drawn; only the
-   rendered size changes. transform does not shrink the layout box,
-   so the leftover height is reclaimed with a negative bottom margin.
-   ============================================================ */
-@media (min-width: 1180px) {
-  .ct-grid {
-    --ct-s: 1;
-    display: block;
-    position: relative;
-    width: 1008px;
-    height: 1854px;
-    margin: 0 auto calc(1854px * (var(--ct-s) - 1));
-    gap: 0;
-    transform: scale(var(--ct-s));
-    transform-origin: top center;
-  }
-
-  .ct-grid > .ct-rock,
-  .ct-grid > .ct-rock-leg,
-  .ct-grid > .ct-mck-leg,
-  .ct-grid > .ct-mck,
-  .ct-grid > .ct-card { position: absolute; margin: 0; }
-
-  /* Rockwall: bar overhangs the column's left edge, leg drops beneath it */
-  .ct-rock     { left: -165px; top: 223px;  width: 1103px; height: 180px; border-radius: 18px 18px 18px 0; }
-  .ct-rock-leg { left: -165px; top: 403px;  width: 211px;  height: 284px; border-radius: 0 0 18px 18px; }
-
-  /* the form card, overlapped top and bottom by the two park pieces */
-  .ct-card     { left: 0;      top: 442px;  width: 1008px; height: 1172px; border-radius: 18px; padding: 0; display: block; }
-
-  /* McKinney: leg rises past the column's right edge, bar overhangs both sides */
-  .ct-mck-leg  { left: 939px;  top: 1445px; width: 232px;  height: 226px; border-radius: 18px 18px 0 0; }
-  .ct-mck      { left: 85px;   top: 1671px; width: 1086px; height: 183px; border-radius: 18px 0 18px 18px; }
-
-  /* the lighter, warmer fill the design moved McKinney to */
-  .ct-mck, .ct-mck-leg { background: #312C26; }
-  .ct-mck:hover        { background: #3A342C; }
-
-  /* legs are cropped rather than scaled, matching the artboard */
-  .ct-leg, .ct-leg img { min-height: 0; }
-  .ct-rock-leg img { width: 325px; height: 284px; object-position: 50% 30%; }
-  .ct-mck-leg img  { width: 325px; height: 226px; }
-
-  /* card interior: the form overlaps the copy column by ~111px.
-     ct-card-left now holds only a small h2 + the meta list (the
-     headline moved to the page hero), so top:52 + its own content
-     height clears at 281px — measured directly, not guessed. Form
-     starts at 300px, an 19px margin past that. */
-  .ct-card-left { position: absolute; left: 54px;  top: 52px;  width: 347px; }
-  .ct-card .su-form { position: absolute; left: 290px; top: 300px; width: 607px; height: 813px; }
-}
-
-/* Scale steps for the composition above. Content span is 1336px at
-   full size, so each step is the largest scale that still leaves a
-   margin at the narrow end of its range:
-     1280px viewport -> 1336 x 0.93 = 1243px, 19px each side
-     1180px viewport -> 1336 x 0.86 = 1149px, 16px each side
-   Below 1180px the scale would start shrinking body copy past
-   comfortable reading size, so the flanking grid layout runs instead. */
-@media (min-width: 1180px) and (max-width: 1279px) { .ct-grid { --ct-s: 0.86; } }
-@media (min-width: 1280px) and (max-width: 1399px) { .ct-grid { --ct-s: 0.93; } }

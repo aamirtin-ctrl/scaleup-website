@@ -38,8 +38,8 @@ const DEVS = [
       ],
       units: [
         { name: 'Showroom unit', sub: 'Bldgs A & E · west end · glass front, open bay', size: '3,000 SF' },
-        { name: 'Standard bay', sub: 'Bldgs A–D · office front, roll-up rear', size: '1,500 SF' },
         { name: 'Large bay', sub: 'Bldgs F–I · office front, roll-up rear', size: '2,000 SF' },
+        { name: 'Standard bay', sub: 'Bldgs A–D · office front, roll-up rear', size: '1,500 SF' },
       ],
       chips: ['Individual HVAC', '3-phase power', 'LED lighting', 'Concrete paving'],
       note: 'Ask for the rate sheet and we will send current pricing for your size and timeline.',
@@ -49,9 +49,10 @@ const DEVS = [
       cards: [
         { name: 'Showroom unit', size: '3,000 SF', sub: 'Bldgs A/E west end · glass front, open bay',
           imgs: ['assets/rockwall-3000-1.webp', 'assets/rockwall-3000-2.webp', 'assets/rockwall-3000-3.webp', 'assets/rockwall-3000-4.webp'] },
+        { name: 'Large bay', size: '2,000 SF', sub: 'Bldgs F–I · office front, roll-up rear',
+          imgs: ['assets/rockwall-a-left.webp', 'assets/rockwall-a-right.webp', 'assets/rockwall-a-opp-left.webp', 'assets/2000rockwall.webp'] },
         { name: 'Standard bay', size: '1,500 SF', sub: 'Bldgs A–D · office front, roll-up rear',
-          imgs: ['assets/rockwall-1500-1.webp', 'assets/rockwall-1500-2.webp'] },
-        { name: 'Large bay', size: '2,000 SF', sub: 'Bldgs F–I · office front, roll-up rear', img: 'assets/2000rockwall.webp' },
+          imgs: ['assets/rockwall-b-d-left.webp', 'assets/rockwall-1500-2.webp', 'assets/rockwall-1500-1.webp'] },
       ],
       minis: [
         ['5 acres', 'SITE'],
