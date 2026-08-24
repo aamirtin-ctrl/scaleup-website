@@ -48,11 +48,15 @@ const DEVS = [
       lede: '4156 N Goliad St, Rockwall, TX — five acres of highway frontage, with showroom space in two highway-facing units.',
       cards: [
         { name: 'Showroom unit', size: '3,000 SF', sub: 'Bldgs A/E west end · glass front, open bay',
-          imgs: ['assets/rockwall-3000-1.webp', 'assets/rockwall-3000-2.webp', 'assets/rockwall-3000-3.webp', 'assets/rockwall-3000-4.webp'] },
+          imgs: ['assets/rockwall-3000-exterior-1.webp', 'assets/rockwall-3000-exterior-2.webp',
+                 'assets/rockwall-3000-2.webp', 'assets/rockwall-3000-1.webp',
+                 'assets/rockwall-3000-3.webp', 'assets/rockwall-3000-4.webp'] },
+        // only one true Bldgs F–I render exists; the a-* shots are Building A
         { name: 'Large bay', size: '2,000 SF', sub: 'Bldgs F–I · office front, roll-up rear',
-          imgs: ['assets/rockwall-a-left.webp', 'assets/rockwall-a-right.webp'] },
+          img: 'assets/rockwall-2000-exterior.webp' },
         { name: 'Standard bay', size: '1,500 SF', sub: 'Bldgs A–D · office front, roll-up rear',
-          imgs: ['assets/rockwall-b-d-left.webp', 'assets/rockwall-1500-2.webp', 'assets/rockwall-1500-1.webp'] },
+          imgs: ['assets/rockwall-1500-exterior.webp', 'assets/rockwall-b-d-left.webp',
+                 'assets/rockwall-1500-2.webp', 'assets/rockwall-1500-1.webp'] },
       ],
       minis: [
         ['5 acres', 'SITE'],
