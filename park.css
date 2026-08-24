@@ -1,8 +1,8 @@
 /* ============================================================
-   ScaleUp — park.css?v=0b33849e
+   ScaleUp — park.css?v=9b1d32ec
    Shared layout for the individual flex-park leasing pages
    (Rockwall, McKinney). Brand tokens — colour, type — are
-   inherited from styles.css?v=905e180c and are not redefined here.
+   inherited from styles.css?v=029222b1 and are not redefined here.
    The DFW pillar page still uses landing.css.
    ============================================================ */
 
@@ -44,7 +44,7 @@
 
 /* Nav: flat and transparent over the hero, condensing into a floating pill
    on scroll. Positioning + pill visuals come from [data-stick] .su-morph in
-   styles.css?v=905e180c; header.js?v=9e687745 drives --hp. */
+   styles.css?v=029222b1; header.js?v=9e687745 drives --hp. */
 .pk-nav { display: flex; align-items: center; gap: 30px; white-space: nowrap; }
 .pk-nav .su-logo { margin-right: auto; }
 .pk-nav-links { display: flex; gap: 24px; }
@@ -209,6 +209,20 @@
 .pk-thumbset button.is-on { opacity: 1; border-color: var(--red); }
 
 .pk-units-note { margin-top: 26px; font-size: 15px; line-height: 1.65; color: rgba(36,29,19,0.66); }
+
+/* ---- walkthrough video ---- */
+.pk-video { padding: 96px 0 0; }
+.pk-video-fig { margin: 26px 0 0; }
+.pk-video-fig video {
+  display: block; width: 100%; height: auto; aspect-ratio: 16 / 9;
+  border-radius: 18px; background: var(--ink-deep);
+  border: 1px solid var(--line);
+}
+@media (max-width: 700px) {
+  .pk-video { padding: 62px 0 0; }
+  .pk-video-fig { margin: 18px 0 0; }
+  .pk-video-fig video { border-radius: 12px; }
+}
 
 /* ---- site layout: heading and plan, nothing else ---- */
 .pk-siteplan { padding: 96px 0 0; }

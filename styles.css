@@ -722,7 +722,7 @@ b, strong { font-weight: 600; }
   .su-hero-head h1 { font-size: clamp(38px, 11.5vw, 52px); }
   .su-btn-hero { margin-top: 26px; padding: 14px 24px; font-size: 15px; }
 
-  /* developments: tabs stack above the deck (geometry set in main.js?v=66e4a5db) */
+  /* developments: tabs stack above the deck (geometry set in main.js?v=880fe68e) */
   .su-left { left: 6vw; right: 6vw; top: 6vh; width: auto; max-width: none; }
   .su-left h2 { font-size: 34px; }
   .su-left-blurb { display: none; }

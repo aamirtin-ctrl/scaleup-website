@@ -36,3 +36,5 @@ id_rsa*
 .vscode/
 *.mov
 *.mp4
+!assets/**/*.mp4
+!assets/**/*.mov

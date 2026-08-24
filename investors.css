@@ -1,6 +1,6 @@
 /* ============================================================
-   ScaleUp — investors.css?v=bd0d3cad (gated investor overview page)
-   Cream edition — builds on tokens in styles.css?v=905e180c
+   ScaleUp — investors.css?v=17767a66 (gated investor overview page)
+   Cream edition — builds on tokens in styles.css?v=029222b1
    ============================================================ */
 
 /* ---------- access gate ---------- */
@@ -41,7 +41,7 @@ body:not(.iv-locked) .iv-page { visibility: visible; }
 
 /* ---------- floating pill nav ---------- */
 .iv-nav {
-  /* positioning + pill morph now come from [data-stick] .su-morph in styles.css?v=905e180c */
+  /* positioning + pill morph now come from [data-stick] .su-morph in styles.css?v=029222b1 */
   display: flex; align-items: center; gap: 30px;
   white-space: nowrap;
 }
