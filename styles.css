@@ -389,8 +389,15 @@ b, strong { font-weight: 600; }
 .su-plan-prev { left: 8px; }
 .su-plan-next { right: 8px; }
 @media (hover: none) { .su-plan-arrow { opacity: 0.9; } }
+/* z-index matters here. The pill is a z-auto absolute sibling sitting
+   after .su-plan-strip, which normally paints it on top — but the strip
+   is a touch scroll container with scroll-snap, so while it is being
+   swiped the browser promotes it to its own compositor layer, and that
+   layer can paint over a z-auto sibling. That is why the size tag
+   vanished intermittently on phones. Naming the level fixes it: above
+   the strip, below the arrows (3). */
 .su-plan-size {
-  position: absolute; left: 12px; bottom: 10px;
+  position: absolute; left: 12px; bottom: 10px; z-index: 2;
   display: inline-flex; padding: 6px 12px; border-radius: 100px;
   background: rgba(248,243,232,0.94);
   border: 1px solid rgba(36,29,19,0.18);
