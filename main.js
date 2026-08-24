@@ -381,8 +381,20 @@ function buildGallery(items) {
         <span class="su-pg-cap">${m.caption || ''}</span>
       </figcaption>
     </figure>`).join('');
-  pgStrip.scrollLeft = 0;
 }
+
+/* Frame and side padding both derive from the measured scrollport, so the
+   active slide lands dead centre at any width and the first and last ones
+   can reach the middle too. */
+function pgCentre() {
+  const items = pgStrip.querySelectorAll('.su-pg-item');
+  if (!items.length) return;
+  const port = pgStrip.clientWidth;
+  const frame = Math.round(Math.min(640, port * (port < 620 ? 0.84 : 0.65)));
+  items.forEach((i) => { i.style.flex = `0 0 ${frame}px`; });
+  pgStrip.style.paddingInline = `${Math.max(0, (port - frame) / 2)}px`;
+}
+window.addEventListener('resize', pgCentre);
 
 function pgScroll(dir) {
   const item = pgStrip.querySelector('.su-pg-item');
@@ -406,6 +418,8 @@ function openProgress(i) {
     </div>`).join('');
   modal.classList.add('open');
   document.body.style.overflow = 'hidden';
+  pgCentre();               // the strip has no width until the modal is shown
+  pgStrip.scrollLeft = 0;
 }
 function closeProgress() {
   modal.classList.remove('open');

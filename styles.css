@@ -415,6 +415,12 @@ b, strong { font-weight: 600; }
 }
 
 /* ---- progress media gallery ---- */
+/* The active frame sits centred with an even sliver of its neighbours on
+   both sides. Frame width and the side padding that lets the first and
+   last slides reach the middle are both set from the measured scrollport
+   in pgCentre() — in CSS the two chase each other, because % padding
+   shrinks the content box the % frame width resolves against. The values
+   below are the pre-measurement fallback. */
 .su-pg { position: relative; margin-top: 26px; }
 .su-pg-strip {
   display: flex; gap: 18px; overflow-x: auto; scroll-snap-type: x mandatory;
@@ -422,7 +428,7 @@ b, strong { font-weight: 600; }
   scrollbar-width: thin; scrollbar-color: rgba(36,29,19,0.25) transparent;
 }
 .su-pg-item {
-  flex: 0 0 min(640px, 82%); scroll-snap-align: start; margin: 0;
+  flex: 0 0 65%; scroll-snap-align: center; margin: 0;
 }
 .su-pg-item img, .su-pg-item video {
   width: 100%; aspect-ratio: 16 / 10; object-fit: cover; display: block;
