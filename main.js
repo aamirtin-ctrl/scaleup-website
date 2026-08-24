@@ -48,13 +48,16 @@ const DEVS = [
       lede: '4156 N Goliad St, Rockwall, TX — five acres of highway frontage, with showroom space in two highway-facing units.',
       cards: [
         { name: 'Showroom unit', size: '3,000 SF', sub: 'Bldgs A/E west end · glass front, open bay',
+          pdf: 'assets/rockwall/layouts/Goliad_A_1F_01.pdf',
           imgs: ['assets/rockwall/3000/exterior-1.webp', 'assets/rockwall/3000/exterior-2.webp',
                  'assets/rockwall/3000/office.webp', 'assets/rockwall/3000/showroom.webp',
                  'assets/rockwall/3000/display.webp', 'assets/rockwall/3000/open-bay.webp'] },
         { name: 'Large bay', size: '2,000 SF', sub: 'Bldgs F–I · office front, roll-up rear',
+          pdf: 'assets/rockwall/layouts/Goliad_F-I_01.pdf',
           imgs: ['assets/rockwall/2000/exterior.webp', 'assets/rockwall/2000/office.webp',
                  'assets/rockwall/2000/warehouse-1.webp', 'assets/rockwall/2000/warehouse-2.webp'] },
         { name: 'Standard bay', size: '1,500 SF', sub: 'Bldgs A–D · office front, roll-up rear',
+          pdf: 'assets/rockwall/layouts/Goliad_B-D_1F_01.pdf',
           imgs: ['assets/rockwall/1500/exterior.webp',
                  'assets/rockwall/1500/office.webp', 'assets/rockwall/1500/office-front.webp',
                  'assets/rockwall/1500/warehouse.webp'] }
@@ -332,7 +335,9 @@ function buildCard(d, idx) {
         <div class="su-plan-body">
           <span class="su-plan-name">${pc.name}</span>
           <span class="su-plan-sub">${pc.sub}</span>
-          <a href="#contact" class="su-link-red">Request plan &#8594;</a>
+          ${pc.pdf
+            ? `<a href="${pc.pdf}" class="su-link-red" target="_blank" rel="noopener">See layout &#8594;</a>`
+            : `<a href="#contact" class="su-link-red">Request plan &#8594;</a>`}
         </div>
       </div>`;
     }).join('');
