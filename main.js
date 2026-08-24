@@ -20,26 +20,26 @@ const DEVS = [
       { date: 'Now', title: 'Site work & foundations', desc: 'Grading, utilities, and building pads.', state: 'current' },
       { date: 'TBD', title: 'Vertical construction' },
       { date: 'TBD', title: 'Finish-out & paving' },
-      { date: 'Summer 2027', title: 'Delivery & move-ins' },
+      { date: 'Summer 2027', title: 'Delivery & move-ins' }
     ],
     img: 'assets/rockwall/park/park.webp',
     blurb: 'A 5-acre flex park with highway frontage on N Goliad — 30 warehouse, showroom, and flex units with individual HVAC, 3-phase power, LED lighting, and grade-level bays.',
     stats: [
       { label: 'TOTAL UNITS', val: '30' },
       { label: 'RENTABLE AREA', val: '54,000 SF' },
-      { label: 'DELIVERY', val: 'Summer 2027' },
+      { label: 'DELIVERY', val: 'Summer 2027' }
     ],
     spaces: {
       minis: [
         ['30', 'UNITS'],
         ['54,000', 'SF TOTAL'],
         ["19'", 'CLEAR HEIGHT'],
-        ['12×12', 'GRADE DOORS'],
+        ['12×12', 'GRADE DOORS']
       ],
       units: [
         { name: 'Showroom unit', sub: 'Bldgs A & E · west end · glass front, open bay', size: '3,000 SF' },
         { name: 'Large bay', sub: 'Bldgs F–I · office front, roll-up rear', size: '2,000 SF' },
-        { name: 'Standard bay', sub: 'Bldgs A–D · office front, roll-up rear', size: '1,500 SF' },
+        { name: 'Standard bay', sub: 'Bldgs A–D · office front, roll-up rear', size: '1,500 SF' }
       ],
       chips: ['Individual HVAC', '3-phase power', 'LED lighting', 'Concrete paving'],
       note: 'Ask for the rate sheet and we will send current pricing for your size and timeline.',
@@ -50,22 +50,20 @@ const DEVS = [
         { name: 'Showroom unit', size: '3,000 SF', sub: 'Bldgs A/E west end · glass front, open bay',
           imgs: ['assets/rockwall/3000/exterior-1.webp', 'assets/rockwall/3000/exterior-2.webp',
                  'assets/rockwall/3000/office.webp', 'assets/rockwall/3000/showroom.webp',
-                 'assets/rockwall/3000/display.webp', 'assets/rockwall/3000/open-bay.webp',
-                 'assets/rockwall/3000/warehouse.webp'] },
+                 'assets/rockwall/3000/display.webp', 'assets/rockwall/3000/open-bay.webp'] },
         { name: 'Large bay', size: '2,000 SF', sub: 'Bldgs F–I · office front, roll-up rear',
           imgs: ['assets/rockwall/2000/exterior.webp', 'assets/rockwall/2000/office.webp',
-                 'assets/rockwall/2000/warehouse-1.webp', 'assets/rockwall/2000/warehouse-2.webp',
-                 'assets/rockwall/2000/bay.webp'] },
+                 'assets/rockwall/2000/warehouse-1.webp', 'assets/rockwall/2000/warehouse-2.webp'] },
         { name: 'Standard bay', size: '1,500 SF', sub: 'Bldgs A–D · office front, roll-up rear',
-          imgs: ['assets/rockwall/1500/exterior.webp', 'assets/rockwall/park/b-d-left.webp',
+          imgs: ['assets/rockwall/1500/exterior.webp',
                  'assets/rockwall/1500/office.webp', 'assets/rockwall/1500/office-front.webp',
-                 'assets/rockwall/1500/warehouse.webp'] },
+                 'assets/rockwall/1500/warehouse.webp'] }
       ],
       minis: [
         ['5 acres', 'SITE'],
         ['~88%', 'WAREHOUSE MIX'],
         ['3-phase', 'POWER'],
-        ['Ample', 'PARKING'],
+        ['Ample', 'PARKING']
       ],
     },
   },
@@ -79,7 +77,7 @@ const DEVS = [
     stats: [
       { label: 'SITE SIZE', val: '6.20 acres' },
       { label: 'PLANNED BUILD', val: '75,000± SF' },
-      { label: 'GROUNDBREAKING', val: 'Q4 2026' },
+      { label: 'GROUNDBREAKING', val: 'Q4 2026' }
     ],
     layout: {
       lede: 'Nine buildings around a central drive aisle at 1990 N McDonald St — one retail, one showroom/flex, and seven industrial flex. Bays are demised to suit, which is how the site becomes 40+ units at 1,800–3,500 SF.',
@@ -91,13 +89,13 @@ const DEVS = [
         ['6.20', 'ACRES'],
         ['75,000±', 'SF PLANNED'],
         ['~20K', 'SF RETAIL / SHOWROOM'],
-        ['Q4 2026', 'GROUNDBREAKING'],
+        ['Q4 2026', 'GROUNDBREAKING']
       ],
       rows: [
         { name: 'Site secured', sub: '1990 N McDonald St, McKinney, TX 75071', val: 'Complete', state: 'done' },
         { name: 'Planning & design', sub: 'Site plan, entitlements, and engineering', val: 'In progress', state: 'current' },
         { name: 'Groundbreaking', sub: 'Construction start', val: 'Q4 2026' },
-        { name: 'Pre-leasing', sub: 'Unit mix, rates, and floor plans announced', val: 'To be announced' },
+        { name: 'Pre-leasing', sub: 'Unit mix, rates, and floor plans announced', val: 'To be announced' }
       ],
       note: 'Unit mix and rates will be published as planning completes.',
     },
@@ -106,9 +104,9 @@ const DEVS = [
       { date: 'Now', title: 'Planning & design', desc: 'Site plan, entitlements, and engineering underway.', state: 'current' },
       { date: 'Q4 2026', title: 'Groundbreaking' },
       { date: 'TBD', title: 'Vertical construction' },
-      { date: 'TBD', title: 'Delivery & move-ins' },
+      { date: 'TBD', title: 'Delivery & move-ins' }
     ],
-  },
+  }
 ];
 
 /* ============================================================
@@ -128,7 +126,7 @@ const PROGRESS_MEDIA = {
     { type: 'image', src: 'assets/rockwall/park/a-opp-left.webp', date: 'RENDERING', caption: 'Building A — opposite end' },
     { type: 'image', src: 'assets/rockwall/park/a-right.webp', date: 'RENDERING', caption: 'Grade-level door bays' },
     { type: 'image', src: 'assets/rockwall/park/b-d-left.webp', date: 'RENDERING', caption: 'Buildings B–D' },
-    { type: 'image', src: 'assets/rockwall/park/detention-pond.webp', date: 'RENDERING', caption: 'Landscaped site & detention pond' },
+    { type: 'image', src: 'assets/rockwall/park/detention-pond.webp', date: 'RENDERING', caption: 'Landscaped site & detention pond' }
   ],
 };
 
@@ -595,7 +593,7 @@ function innerProgress(p, n) {
 const SLOT_TRANSFORMS = [
   null, // front (rotation computed per-frame)
   'rotate(6.5deg) translate(11%, 5%) scale(0.95)',
-  'rotate(-7deg) translate(-11%, 7%) scale(0.92)',
+  'rotate(-7deg) translate(-11%, 7%) scale(0.92)'
 ];
 
 const styleCache = new WeakMap();
@@ -740,7 +738,7 @@ const TESTIMONIALS = [
   { img: 'https://randomuser.me/api/portraits/women/26.jpg', name: 'Holly Brandt', role: 'Owner, Brandt Event Rentals',
     quote: 'Inventory in the warehouse, client meetings in the showroom, and we can load three trailers at once. It just works.' },
   { img: 'https://randomuser.me/api/portraits/men/85.jpg', name: 'Paul Nguyen', role: 'Principal, Nguyen Commercial Group',
-    quote: 'I place tenants all over North Texas. ScaleUp’s spaces lease faster than anything else I show — people walk in and stop comparing.' },
+    quote: 'I place tenants all over North Texas. ScaleUp’s spaces lease faster than anything else I show — people walk in and stop comparing.' }
 ];
 
 // symmetric arch: 11 columns, x in %, y stacks in px (mirrored around center)
@@ -755,13 +753,13 @@ const T_COLS = [
   { x: 64.0, ys: [120] },
   { x: 73.0, ys: [235] },
   { x: 82.0, ys: [135, 365] },
-  { x: 91.0, ys: [215, 445] },
+  { x: 91.0, ys: [215, 445] }
 ];
 const T_GHOSTS = [
   { x: 1.0,  y: 35 },  { x: 10.0, y: -45 }, { x: 19.0, y: 55 },
   { x: 28.0, y: -60 }, { x: 37.0, y: 20 },  { x: 46.0, y: -95 },
   { x: 55.0, y: 20 },  { x: 64.0, y: -60 }, { x: 73.0, y: 55 },
-  { x: 82.0, y: -45 }, { x: 91.0, y: 35 },
+  { x: 82.0, y: -45 }, { x: 91.0, y: 35 }
 ];
 
 // section is hidden for now — skip building it entirely
