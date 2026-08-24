@@ -202,6 +202,19 @@
 
 .pk-units-note { margin-top: 26px; font-size: 15px; line-height: 1.65; color: rgba(36,29,19,0.66); }
 
+/* ---- site layout: heading and plan, nothing else ---- */
+.pk-siteplan { padding: 96px 0 0; }
+.pk-siteplan-fig { margin: 26px 0 0; }
+.pk-siteplan-fig img {
+  display: block; width: 100%; height: auto; border-radius: 18px;
+  background: var(--panel); border: 1px solid var(--line);
+}
+@media (max-width: 700px) {
+  .pk-siteplan { padding: 62px 0 0; }
+  .pk-siteplan-fig { margin: 18px 0 0; }
+  .pk-siteplan-fig img { border-radius: 12px; }
+}
+
 /* ============================================================
    4. STANDARD IN EVERY BAY — ruled spec field, no boxes
    ============================================================ */
