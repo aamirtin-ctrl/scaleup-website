@@ -8,8 +8,8 @@
   "background_color": "#F5EFE2",
   "theme_color": "#F5EFE2",
   "icons": [
-    { "src": "/assets/favicon.svg", "type": "image/svg+xml", "sizes": "any" },
-    { "src": "/assets/favicon-192.png", "type": "image/png", "sizes": "192x192" },
-    { "src": "/assets/favicon-512.png", "type": "image/png", "sizes": "512x512" }
+    { "src": "/assets/brand/favicon.svg", "type": "image/svg+xml", "sizes": "any" },
+    { "src": "/assets/brand/favicon-192.png", "type": "image/png", "sizes": "192x192" },
+    { "src": "/assets/brand/favicon-512.png", "type": "image/png", "sizes": "512x512" }
   ]
 }

@@ -16,8 +16,8 @@ def h(path):
 
 TARGETS = ('styles.css', 'park.css', 'investors.css', 'blog.css', 'main.js', 'logo.js',
            'header.js', 'contact.js', 'blog.js', 'investors.js',
-           'assets/favicon.svg', 'assets/favicon-48.png', 'assets/favicon-192.png',
-           'assets/apple-touch-icon.png')
+           'assets/brand/favicon.svg', 'assets/brand/favicon-48.png', 'assets/brand/favicon-192.png',
+           'assets/brand/apple-touch-icon.png')
 digest = {f: h(f) for f in TARGETS if os.path.exists(f)}
 
 pat = re.compile(r'((?:href|src)=")((?:\.\./)?)(' +

@@ -266,7 +266,7 @@
 }
 .pk-who::before {
   content: ''; position: absolute; inset: 0;
-  background-image: url('assets/rockwall-a-front.webp');
+  background-image: url('assets/rockwall/park/a-front.webp');
   background-size: cover; background-position: 50% 40%;
   opacity: 0.13; filter: grayscale(1) contrast(1.1);
 }

@@ -22,7 +22,7 @@ const DEVS = [
       { date: 'TBD', title: 'Finish-out & paving' },
       { date: 'Summer 2027', title: 'Delivery & move-ins' },
     ],
-    img: 'assets/rockwall.webp',
+    img: 'assets/rockwall/park/park.webp',
     blurb: 'A 5-acre flex park with highway frontage on N Goliad — 30 warehouse, showroom, and flex units with individual HVAC, 3-phase power, LED lighting, and grade-level bays.',
     stats: [
       { label: 'TOTAL UNITS', val: '30' },
@@ -48,15 +48,18 @@ const DEVS = [
       lede: '4156 N Goliad St, Rockwall, TX — five acres of highway frontage, with showroom space in two highway-facing units.',
       cards: [
         { name: 'Showroom unit', size: '3,000 SF', sub: 'Bldgs A/E west end · glass front, open bay',
-          imgs: ['assets/rockwall-3000-exterior-1.webp', 'assets/rockwall-3000-exterior-2.webp',
-                 'assets/rockwall-3000-2.webp', 'assets/rockwall-3000-1.webp',
-                 'assets/rockwall-3000-3.webp', 'assets/rockwall-3000-4.webp'] },
-        // only one true Bldgs F–I render exists; the a-* shots are Building A
+          imgs: ['assets/rockwall/3000/exterior-1.webp', 'assets/rockwall/3000/exterior-2.webp',
+                 'assets/rockwall/3000/office.webp', 'assets/rockwall/3000/showroom.webp',
+                 'assets/rockwall/3000/display.webp', 'assets/rockwall/3000/open-bay.webp',
+                 'assets/rockwall/3000/warehouse.webp'] },
         { name: 'Large bay', size: '2,000 SF', sub: 'Bldgs F–I · office front, roll-up rear',
-          img: 'assets/rockwall-2000-exterior.webp' },
+          imgs: ['assets/rockwall/2000/exterior.webp', 'assets/rockwall/2000/office.webp',
+                 'assets/rockwall/2000/warehouse-1.webp', 'assets/rockwall/2000/warehouse-2.webp',
+                 'assets/rockwall/2000/bay.webp'] },
         { name: 'Standard bay', size: '1,500 SF', sub: 'Bldgs A–D · office front, roll-up rear',
-          imgs: ['assets/rockwall-1500-exterior.webp', 'assets/rockwall-b-d-left.webp',
-                 'assets/rockwall-1500-2.webp', 'assets/rockwall-1500-1.webp'] },
+          imgs: ['assets/rockwall/1500/exterior.webp', 'assets/rockwall/park/b-d-left.webp',
+                 'assets/rockwall/1500/office.webp', 'assets/rockwall/1500/office-front.webp',
+                 'assets/rockwall/1500/warehouse.webp'] },
       ],
       minis: [
         ['5 acres', 'SITE'],
@@ -71,13 +74,18 @@ const DEVS = [
     address: '1990 N McDonald St, McKinney, TX 75071',
     status: 'In Planning', leasing: false, eyebrow: 'IN PLANNING — BREAKING GROUND Q4 2026',
     cta: 'Register interest',
-    img: 'assets/mckinney.webp',
+    img: 'assets/mckinney/park.webp',
     blurb: 'A planned 6.2-acre mixed-use development on N McDonald St — retail, showroom, and flex space totaling roughly 75,000 SF, with about 20,000 SF of retail and showroom fronting McDonald St.',
     stats: [
       { label: 'SITE SIZE', val: '6.20 acres' },
       { label: 'PLANNED BUILD', val: '75,000± SF' },
       { label: 'GROUNDBREAKING', val: 'Q4 2026' },
     ],
+    layout: {
+      lede: 'Nine buildings around a central drive aisle at 1990 N McDonald St — one retail, one showroom/flex, and seven industrial flex. Bays are demised to suit, which is how the site becomes 40+ units at 1,800–3,500 SF.',
+      img: 'assets/mckinney/layout.webp',
+      caption: 'Preliminary site plan — building sizes and unit counts subject to change.',
+    },
     outlook: {
       minis: [
         ['6.20', 'ACRES'],
@@ -110,17 +118,17 @@ const DEVS = [
    ============================================================ */
 const PROGRESS_MEDIA = {
   Rockwall: [
-    { type: 'image', src: 'assets/rockwall-main-entrance.webp', date: 'RENDERING', caption: 'Main entrance off N Goliad St' },
-    { type: 'image', src: 'assets/rockwall-aerial-right.webp', date: 'RENDERING', caption: 'Aerial view — full park' },
-    { type: 'image', src: 'assets/rockwall-aerial-left.webp', date: 'RENDERING', caption: 'Aerial view — from the west' },
-    { type: 'image', src: 'assets/rockwall-highway.webp', date: 'RENDERING', caption: 'Highway frontage' },
-    { type: 'image', src: 'assets/rockwall-a-front.webp', date: 'RENDERING', caption: 'Showroom fronts — street elevation' },
-    { type: 'image', src: 'assets/rockwall-a-opp-front.webp', date: 'RENDERING', caption: 'Showroom fronts — opposite view' },
-    { type: 'image', src: 'assets/rockwall-a-left.webp', date: 'RENDERING', caption: 'Building A — end elevation' },
-    { type: 'image', src: 'assets/rockwall-a-opp-left.webp', date: 'RENDERING', caption: 'Building A — opposite end' },
-    { type: 'image', src: 'assets/rockwall-a-right.webp', date: 'RENDERING', caption: 'Grade-level door bays' },
-    { type: 'image', src: 'assets/rockwall-b-d-left.webp', date: 'RENDERING', caption: 'Buildings B–D' },
-    { type: 'image', src: 'assets/rockwall-detention-pond.webp', date: 'RENDERING', caption: 'Landscaped site & detention pond' },
+    { type: 'image', src: 'assets/rockwall/park/main-entrance.webp', date: 'RENDERING', caption: 'Main entrance off N Goliad St' },
+    { type: 'image', src: 'assets/rockwall/park/aerial-right.webp', date: 'RENDERING', caption: 'Aerial view — full park' },
+    { type: 'image', src: 'assets/rockwall/park/aerial-left.webp', date: 'RENDERING', caption: 'Aerial view — from the west' },
+    { type: 'image', src: 'assets/rockwall/park/highway.webp', date: 'RENDERING', caption: 'Highway frontage' },
+    { type: 'image', src: 'assets/rockwall/park/a-front.webp', date: 'RENDERING', caption: 'Showroom fronts — street elevation' },
+    { type: 'image', src: 'assets/rockwall/park/a-opp-front.webp', date: 'RENDERING', caption: 'Showroom fronts — opposite view' },
+    { type: 'image', src: 'assets/rockwall/park/a-left.webp', date: 'RENDERING', caption: 'Building A — end elevation' },
+    { type: 'image', src: 'assets/rockwall/park/a-opp-left.webp', date: 'RENDERING', caption: 'Building A — opposite end' },
+    { type: 'image', src: 'assets/rockwall/park/a-right.webp', date: 'RENDERING', caption: 'Grade-level door bays' },
+    { type: 'image', src: 'assets/rockwall/park/b-d-left.webp', date: 'RENDERING', caption: 'Buildings B–D' },
+    { type: 'image', src: 'assets/rockwall/park/detention-pond.webp', date: 'RENDERING', caption: 'Landscaped site & detention pond' },
   ],
 };
 
@@ -169,13 +177,16 @@ function buildCard(d, idx) {
   // detail layer — 1 to 3 inner pages the scroll steps through
   const detail = el('div', 'su-detail');
   const inner = el('div', 'su-detail-inner');
-  const pageCount = 1 + (d.spaces ? 1 : 0) + (d.plans ? 1 : 0) + (d.outlook ? 1 : 0);
+  const pageCount = 1 + (d.spaces ? 1 : 0) + (d.plans ? 1 : 0) + (d.layout ? 1 : 0) + (d.outlook ? 1 : 0);
   inner.style.height = (pageCount * 100) + '%';
   const pageH = (100 / pageCount) + '%';
 
   const statsHtml = d.stats.map(s =>
     `<div class="su-spec"><span class="su-spec-label">${s.label}</span><span class="su-spec-val">${s.val}</span></div>`).join('');
-  const moreLabel = d.spaces ? 'SPACES &amp; RATES' : 'THE PLAN';
+  // panels render in this order: outlook -> spaces -> layout -> plans
+  const moreLabel = d.outlook ? 'THE PLAN'
+    : d.spaces ? 'SPACES &amp; RATES'
+    : d.layout ? 'LAYOUT' : 'PLANS &amp; THE SITE';
   const moreHint = pageCount > 1
     ? `<span class="su-detail-more">${moreLabel} <span class="su-hint-arrow">&#8595;</span></span>` : '';
   const tagline = d.tagline ? `<span class="su-detail-tag">${d.tagline}</span>` : '';
@@ -233,7 +244,7 @@ function buildCard(d, idx) {
         <div class="su-units">${rowsHtml}</div>
         <div class="su-sub-foot">
           <span class="su-sub-note">${d.outlook.note || ''}</span>
-          <span class="su-sub-exit">KEEP SCROLLING TO CLOSE <span class="su-hint-arrow">&#8595;</span></span>
+          <span class="su-sub-exit">${d.layout ? 'LAYOUT' : 'KEEP SCROLLING TO CLOSE'} <span class="su-hint-arrow">&#8595;</span></span>
         </div>
       </div>`);
     planPage.style.height = pageH;
@@ -272,6 +283,28 @@ function buildCard(d, idx) {
       </div>`);
     page2.style.height = pageH;
     inner.appendChild(page2);
+  }
+
+  if (d.layout) {
+    const pageL = el('div', 'su-page', `
+      <div class="su-subpage">
+        <div class="su-sub-head">
+          <div>
+            <span class="su-sub-eyebrow">${d.name.toUpperCase()} FLEX PARK</span>
+            <h3 class="su-sub-title">Layout</h3>
+          </div>
+          <p class="su-sub-lede">${d.layout.lede}</p>
+        </div>
+        <figure class="su-layout-fig">
+          <img src="${d.layout.img}" alt="Site plan for ${d.name} Flex Park showing nine buildings around a central drive aisle" loading="lazy" decoding="async">
+        </figure>
+        <div class="su-sub-foot">
+          <span class="su-sub-note">${d.layout.caption}</span>
+          <span class="su-sub-exit">${d.plans ? 'PLANS &amp; THE SITE' : 'KEEP SCROLLING TO CLOSE'} <span class="su-hint-arrow">&#8595;</span></span>
+        </div>
+      </div>`);
+    pageL.style.height = pageH;
+    inner.appendChild(pageL);
   }
 
   if (d.plans) {

@@ -5,8 +5,7 @@ scaleup-netlify.zip
 cpanel-deploy/
 scaleup-cpanel.zip
 cpanel-htaccess.txt
-assets/Rockwall/
-assets/ChatGPT Image*.png
+source-images/
 ### backup-ignore ###
 node_modules/
 dist/

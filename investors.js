@@ -41,7 +41,7 @@ gateForm.addEventListener('submit', (e) => {
 // img: null renders a monogram placeholder — drop in headshot paths when ready
 const TEAM = [
   {
-    name: 'Murtuza Tinwala', role: 'PRINCIPAL — INDUSTRIAL & OPERATIONS', initials: 'MT', img: 'assets/Murtuza.jpeg',
+    name: 'Murtuza Tinwala', role: 'PRINCIPAL — INDUSTRIAL & OPERATIONS', initials: 'MT', img: null,
     creds: [
       '38+ years in manufacturing and industrial real estate ownership',
       'Led a team of 50+ installers delivering 200+ projects annually',
@@ -50,7 +50,7 @@ const TEAM = [
     ],
   },
   {
-    name: 'Huzefa Tinwala', role: 'PRINCIPAL — CONSTRUCTION & DESIGN', initials: 'HT', img: 'assets/huzefa.webp',
+    name: 'Huzefa Tinwala', role: 'PRINCIPAL — CONSTRUCTION & DESIGN', initials: 'HT', img: null,
     creds: [
       '29+ years in construction project management',
       '200+ commercial design & engineering projects delivered annually',
@@ -60,7 +60,7 @@ const TEAM = [
     ],
   },
   {
-    name: 'Khalid Motorwala', role: 'PRINCIPAL — CAPITAL & FINANCE', initials: 'KM', img: 'assets/khalid.webp',
+    name: 'Khalid Motorwala', role: 'PRINCIPAL — CAPITAL & FINANCE', initials: 'KM', img: null,
     creds: [
       '30+ years across commodities exports (India) and financial services (USA)',
       'Co-founder of Al-Gyas Exports — 6th largest rice exporter from India (2023)',
