@@ -1,8 +1,8 @@
 /* ============================================================
-   ScaleUp — park.css?v=d820c463
+   ScaleUp — park.css?v=0b33849e
    Shared layout for the individual flex-park leasing pages
    (Rockwall, McKinney). Brand tokens — colour, type — are
-   inherited from styles.css?v=e5fefe36 and are not redefined here.
+   inherited from styles.css?v=905e180c and are not redefined here.
    The DFW pillar page still uses landing.css.
    ============================================================ */
 
@@ -44,7 +44,7 @@
 
 /* Nav: flat and transparent over the hero, condensing into a floating pill
    on scroll. Positioning + pill visuals come from [data-stick] .su-morph in
-   styles.css?v=e5fefe36; header.js?v=9e687745 drives --hp. */
+   styles.css?v=905e180c; header.js?v=9e687745 drives --hp. */
 .pk-nav { display: flex; align-items: center; gap: 30px; white-space: nowrap; }
 .pk-nav .su-logo { margin-right: auto; }
 .pk-nav-links { display: flex; gap: 24px; }
@@ -125,7 +125,7 @@
 .pk-track button.is-on { color: var(--ink); }
 .pk-track button.is-on::before { transform: scaleX(1); }
 
-.pk-panels { position: relative; min-height: 350px; }
+.pk-panels { position: relative; min-height: 430px; }
 .pk-panel {
   position: absolute; inset: 0; opacity: 0; visibility: hidden;
   transform: translateY(14px); transition: opacity 0.5s ease, transform 0.5s ease, visibility 0.5s;
@@ -150,15 +150,14 @@
   font-family: 'Archivo', sans-serif; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(36,29,19,0.45);
 }
 .pk-panel-specs .v { font-size: 13px; font-weight: 500; color: var(--text); }
-/* floor plan for the unit on screen, directly under its spec list */
+/* floor plan for the unit on screen, directly under its spec list.
+   Plain text link, matching su-link-red on the homepage plan cards. */
 .pk-panel-plan {
-  display: inline-flex; align-items: center; gap: 9px; margin-top: 18px;
-  padding: 11px 20px; border-radius: 100px;
-  border: 1px solid var(--line); background: var(--panel);
-  font-family: 'Archivo', sans-serif; font-size: 13px; font-weight: 500; color: var(--text);
-  transition: border-color 0.2s ease, background 0.2s ease;
+  display: inline-flex; align-items: center; gap: 7px; margin-top: 16px;
+  font-family: 'Archivo', sans-serif; font-size: 13px; font-weight: 500;
+  color: var(--leasing-text); white-space: nowrap; transition: color 0.2s ease;
 }
-.pk-panel-plan:hover { border-color: rgba(36,29,19,0.4); background: #FFFEFA; }
+.pk-panel-plan:hover { color: #8E2424; }
 
 /* --- right: the stage --- */
 .pk-stage { position: relative; aspect-ratio: 16 / 10; overflow: hidden; background: rgba(36,29,19,0.05); border-radius: 18px; }
@@ -454,7 +453,7 @@
   .pk-stage { aspect-ratio: 16 / 11; }
   .pk-thumbs { height: 58px; }
   .pk-thumbset button { width: 84px; height: 54px; }
-  .pk-panels { min-height: 300px; }
+  .pk-panels { min-height: 410px; }
 
   .pk-who-list li { grid-template-columns: 34px 1fr; gap: 14px 16px; }
   .pk-who-d { grid-column: 2; }
