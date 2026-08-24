@@ -81,7 +81,7 @@ b, strong { font-weight: 600; }
 .su-header .su-btn-outline:hover { border-color: rgba(36,29,19,0.7); background: rgba(36,29,19,0.05); }
 
 /* ============ logo / header ============ */
-:root { --logo-red: #D2232A; }
+:root { --logo-red: #C92127; }
 .su-logo { display: flex; align-items: center; gap: 11px; }
 .su-logo-mark { display: flex; align-items: center; height: 28px; }
 .su-logo-mark svg { height: 100%; width: auto; display: block; }
@@ -288,7 +288,7 @@ b, strong { font-weight: 600; }
 
 .su-units { border-top: 1px solid rgba(36,29,19,0.16); }
 .su-unit {
-  display: grid; grid-template-columns: 1fr auto auto auto; align-items: center; gap: 44px;
+  display: grid; grid-template-columns: 1fr auto auto; align-items: center; gap: 44px;
   padding: 20px 6px; border-bottom: 1px solid rgba(36,29,19,0.16);
   transition: background 0.25s ease;
 }
@@ -297,7 +297,6 @@ b, strong { font-weight: 600; }
 .su-unit-name { font-family: 'Lora', serif; font-weight: 500; font-size: 27px; line-height: 1.1; color: var(--text); }
 .su-unit-sub { font-size: 13px; color: rgba(36,29,19,0.55); }
 .su-unit-size { font-family: 'Lora', serif; font-size: 27px; color: var(--text); }
-.su-unit-rate { font-family: 'Lora', serif; font-style: italic; font-size: 17px; color: rgba(36,29,19,0.55); }
 .su-link-red { font-size: 13px; font-weight: 500; color: var(--leasing-text); white-space: nowrap; transition: color 0.2s ease; }
 .su-link-red:hover { color: #8E2424; }
 
@@ -731,7 +730,6 @@ b, strong { font-weight: 600; }
   .su-unit-name { font-size: 17px; }
   .su-unit-sub { font-size: 11px; }
   .su-unit-size { font-size: 15px; }
-  .su-unit-rate { font-size: 13px; }
   .su-link-red { font-size: 13px; }
   .su-chips { gap: 6px; }
   .su-chip { padding: 6px 10px; font-size: 11px; }

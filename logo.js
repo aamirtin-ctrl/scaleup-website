@@ -1,16 +1,7 @@
-/* ScaleUp logo mark — isometric chevron building, recreated as SVG
+/* ScaleUp logo mark — the icon half of the official lockup (assets/logo-full.svg).
    Injected into every .su-logo-mark so the mark lives in one place. */
 const SU_MARK_SVG = `
-<svg viewBox="4 12 114 80" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-  <!-- underside walls -->
-  <polygon fill="#171310" points="7,47 29,61 29,87 7,73"/>
-  <polygon fill="#171310" points="29,61 59,43 59,69 29,87"/>
-  <polygon fill="#C7C2BB" points="59,43 93,63 93,89 59,69"/>
-  <polygon fill="#C7C2BB" points="93,63 115,49 115,75 93,89"/>
-  <!-- roof chevron (white gap via stroke) -->
-  <polygon fill="#D2232A" stroke="#FBF8F3" stroke-width="3" stroke-linejoin="round"
-    points="7,47 59,15 115,49 93,63 59,43 29,61"/>
-</svg>`;
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 293.67 234.04" aria-hidden="true"><polygon fill="#010101" points="49.41 234.04 .04 205 .04 93.68 49.41 122.72 49.41 234.04"/><polygon fill="#c92127" points="0 84.52 147.16 0 293.67 84.52 246.15 116.34 147.16 58.17 49.36 113.56 0 84.52"/><polygon fill="#ccc" points="49.36 234.04 99.5 204.86 99.5 152.79 146.83 125.36 147.16 67.19 49.36 122.59 49.36 234.04"/><polygon fill="#010101" points="194.75 152.54 194.75 152.54 146.83 125.36 147.16 67.19 246.15 125.36 246.33 182.77 194.75 152.54"/><polygon fill="#ccc" points="293.67 148.86 293.67 93.68 246.15 125.5 246.33 182.77 293.67 148.86"/></svg>`;
 
 document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('.su-logo-mark').forEach((m) => { m.innerHTML = SU_MARK_SVG; });

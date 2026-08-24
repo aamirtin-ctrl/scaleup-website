@@ -33,16 +33,16 @@ const DEVS = [
       minis: [
         ['30', 'UNITS'],
         ['54,000', 'SF TOTAL'],
-        ["18'", 'CLEAR HEIGHT'],
+        ["19'", 'CLEAR HEIGHT'],
         ['12×12', 'GRADE DOORS'],
       ],
       units: [
-        { name: 'Showroom unit', sub: 'Bldgs A & E · west end · glass front, open bay', size: '3,000 SF', rate: '$ — / mo' },
-        { name: 'Standard bay', sub: 'Bldgs A–D · office front, roll-up rear', size: '1,500 SF', rate: '$ — / mo' },
-        { name: 'Large bay', sub: 'Bldgs F–I · office front, roll-up rear', size: '2,000 SF', rate: '$ — / mo' },
+        { name: 'Showroom unit', sub: 'Bldgs A & E · west end · glass front, open bay', size: '3,000 SF' },
+        { name: 'Standard bay', sub: 'Bldgs A–D · office front, roll-up rear', size: '1,500 SF' },
+        { name: 'Large bay', sub: 'Bldgs F–I · office front, roll-up rear', size: '2,000 SF' },
       ],
-      chips: ['Individual HVAC', '3-phase power', 'LED lighting', 'Concrete paving', 'Landscaping included'],
-      note: 'Rates follow the leasing rate plan — PDF available on request.',
+      chips: ['Individual HVAC', '3-phase power', 'LED lighting', 'Concrete paving'],
+      note: 'Ask for the rate sheet and we will send current pricing for your size and timeline.',
     },
     plans: {
       lede: '4156 N Goliad St, Rockwall, TX — five acres of highway frontage, with showroom space in two highway-facing units.',
@@ -55,7 +55,7 @@ const DEVS = [
       ],
       minis: [
         ['5 acres', 'SITE'],
-        ['~85%', 'WAREHOUSE MIX'],
+        ['~88%', 'WAREHOUSE MIX'],
         ['3-phase', 'POWER'],
         ['Ample', 'PARKING'],
       ],
@@ -245,7 +245,6 @@ function buildCard(d, idx) {
           <span class="su-unit-sub">${u.sub}</span>
         </div>
         <span class="su-unit-size">${u.size}</span>
-        <span class="su-unit-rate">${u.rate}</span>
         <a href="#contact" class="su-link-red">Inquire &#8594;</a>
       </div>`).join('');
     const chipsHtml = d.spaces.chips.map(c => `<span class="su-chip">${c}</span>`).join('');
