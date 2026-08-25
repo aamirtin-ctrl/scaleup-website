@@ -8,9 +8,15 @@
   </url>
   <url>
     <loc>https://scaleupflex.com/blog.html</loc>
-    <lastmod>2026-08-24</lastmod>
+    <lastmod>2026-08-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://scaleupflex.com/blog/what-comes-with-a-flex-space-shell-vs-finish-out.html</loc>
+    <lastmod>2026-08-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://scaleupflex.com/blog/do-you-need-a-certificate-of-occupancy-for-flex-space.html</loc>
