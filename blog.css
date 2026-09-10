@@ -1,12 +1,12 @@
 /* ============================================================
-   ScaleUp — blog.css?v=5b14fc37 (journal listing + article pages)
-   Builds on tokens in styles.css?v=029222b1
+   ScaleUp — blog.css?v=2e998bd5 (journal listing + article pages)
+   Builds on tokens in styles.css?v=cbdc52e8
    ============================================================ */
 
 /* ---------- pill nav (static, centered) ---------- */
 .bl-nav-wrap:not([data-stick]) { display: flex; justify-content: center; padding: 22px 16px 0; }
 .bl-nav {
-  /* pill + positioning come from [data-stick] .su-morph in styles.css?v=029222b1 */
+  /* pill + positioning come from [data-stick] .su-morph in styles.css?v=cbdc52e8 */
   display: flex; align-items: center; gap: 28px; white-space: nowrap;
 }
 .bl-nav-links { display: flex; gap: 22px; }

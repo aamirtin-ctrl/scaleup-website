@@ -1,8 +1,8 @@
 /* ============================================================
-   ScaleUp — park.css?v=9b1d32ec
+   ScaleUp — park.css?v=7d0a7a8b
    Shared layout for the individual flex-park leasing pages
    (Rockwall, McKinney). Brand tokens — colour, type — are
-   inherited from styles.css?v=029222b1 and are not redefined here.
+   inherited from styles.css?v=cbdc52e8 and are not redefined here.
    The DFW pillar page still uses landing.css.
    ============================================================ */
 
@@ -44,7 +44,7 @@
 
 /* Nav: flat and transparent over the hero, condensing into a floating pill
    on scroll. Positioning + pill visuals come from [data-stick] .su-morph in
-   styles.css?v=029222b1; header.js?v=9e687745 drives --hp. */
+   styles.css?v=cbdc52e8; header.js?v=9e687745 drives --hp. */
 .pk-nav { display: flex; align-items: center; gap: 30px; white-space: nowrap; }
 .pk-nav .su-logo { margin-right: auto; }
 .pk-nav-links { display: flex; gap: 24px; }
