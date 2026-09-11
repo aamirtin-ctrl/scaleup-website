@@ -8,7 +8,7 @@
   </url>
   <url>
     <loc>https://scaleupflex.com/blog.html</loc>
-    <lastmod>2026-09-10</lastmod>
+    <lastmod>2026-09-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -154,6 +154,12 @@
   <url>
     <loc>https://scaleupflex.com/blog/do-you-need-a-personal-guarantee-to-lease-flex-space.html</loc>
     <lastmod>2026-09-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://scaleupflex.com/blog/can-you-put-a-sign-on-a-leased-flex-space.html</loc>
+    <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
