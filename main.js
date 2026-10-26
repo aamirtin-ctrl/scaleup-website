@@ -1,5 +1,5 @@
 /* ============================================================
-   ScaleUp — main.js?v=a9abc11e
+   ScaleUp — main.js?v=ec5c70ea
    Deck swap + scroll-expand/close engine, about, testimonials
    ============================================================ */
 
@@ -906,6 +906,7 @@ document.getElementById('su-form').addEventListener('submit', async (e) => {
         phone: f.get('phone') || 'Not provided',
         park: f.get('dev'),
         message: f.get('message'),
+        sms_consent: f.get('sms_consent') === 'yes' ? 'Yes — opted in to Customer Care SMS' : 'No',
         _subject: `Leasing inquiry — ${f.get('dev')}`,
         _replyto: f.get('email'),
         _template: 'table',
@@ -919,7 +920,7 @@ document.getElementById('su-form').addEventListener('submit', async (e) => {
     setTimeout(() => { btn.innerHTML = original; btn.disabled = false; }, 4000);
   } catch {
     const subject = encodeURIComponent(`Leasing inquiry — ${f.get('dev')}`);
-    const body = encodeURIComponent(`Name: ${f.get('name')}\nEmail: ${f.get('email')}\nDevelopment: ${f.get('dev')}\n\n${f.get('message')}`);
+    const body = encodeURIComponent(`Name: ${f.get('name')}\nEmail: ${f.get('email')}\nDevelopment: ${f.get('dev')}\nSMS consent: ${f.get('sms_consent') === 'yes' ? 'Yes' : 'No'}\n\n${f.get('message')}`);
     window.location.href = `mailto:${CONTACT_EMAIL}?subject=${subject}&body=${body}`;
     btn.innerHTML = original;
     btn.disabled = false;
