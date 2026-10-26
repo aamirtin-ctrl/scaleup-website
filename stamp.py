@@ -17,7 +17,7 @@ Run before every commit that touches any of them.
 import glob, hashlib, os, re
 
 CODE = ('styles.css', 'park.css', 'investors.css', 'blog.css',
-        'main.js', 'logo.js', 'header.js', 'contact.js', 'blog.js', 'investors.js')
+        'main.js', 'logo.js', 'promo.js', 'header.js', 'contact.js', 'blog.js', 'investors.js')
 ASSET_RE = re.compile(
     r'((?:\.\./|/)?assets/[A-Za-z0-9._/-]+?\.(?:webp|png|jpe?g|svg|pdf|mp4|mov|webm))(\?v=[0-9a-f]{8})?')
 CODE_RE = re.compile(r'((?:\.\./)?(' + '|'.join(re.escape(c) for c in CODE) + r'))(\?v=[0-9a-f]{8})?')
