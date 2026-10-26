@@ -831,6 +831,40 @@ b, strong { font-weight: 600; }
 }
 @media (prefers-reduced-motion: reduce) { [data-stick] .su-morph { transition: none; } }
 
+/* ============================================================
+   Promo banner — scrolling strip injected by promo.js?v=f31cae64
+   Sits at the very top; the page is pushed down by its height
+   (--promo-h) and pinned headers start below it (--promo-off).
+   ============================================================ */
+.su-promo {
+  position: absolute; top: 0; left: 0; right: 0; z-index: 70;
+  display: block; overflow: hidden; white-space: nowrap;
+  background: var(--ink); color: var(--bg);
+  font-family: 'Archivo', sans-serif; font-size: 13.5px; letter-spacing: 0.05em; line-height: 1;
+  padding: 13px 0;
+}
+.su-promo b { color: #E58A8A; font-weight: 600; }
+.su-promo-track { display: inline-flex; animation: su-promo-run 34s linear infinite; }
+.su-promo:hover .su-promo-track, .su-promo:focus-visible .su-promo-track { animation-play-state: paused; }
+.su-promo:focus-visible { outline: 2px solid var(--red); outline-offset: -2px; }
+.su-promo-item { display: inline-flex; align-items: center; gap: 16px; padding: 0 28px 0 0; margin-left: 28px; }
+.su-promo-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--red); }
+@keyframes su-promo-run { to { transform: translateX(-50%); } }
+@media (prefers-reduced-motion: reduce) { .su-promo-track { animation: none; } }
+
+body.has-promo { padding-top: var(--promo-h, 40px); }
+body.has-promo.has-stick-header { padding-top: calc(92px + var(--promo-h, 40px)); }
+body.has-promo [data-stick] { top: var(--promo-off, 40px); }
+.su-promo-over [data-promo-until] { display: none; }
+
+@media (max-width: 900px) {
+  body.has-promo.has-stick-header { padding-top: calc(76px + var(--promo-h, 36px)); }
+}
+@media (max-width: 640px) {
+  .su-promo { font-size: 12.5px; padding: 11px 0; }
+  .su-promo-item { gap: 12px; margin-left: 20px; padding-right: 20px; }
+}
+
 
 /* ============================================================
    Shared site footer — identical on every page
