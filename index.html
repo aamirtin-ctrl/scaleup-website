@@ -157,7 +157,7 @@
         <div class="su-tabs" id="su-tabs"></div>
       </div>
 
-      <!-- cards injected by main.js?v=ec5c70ea -->
+      <!-- cards injected by main.js?v=63d307d6 -->
       <div id="su-deck-root"></div>
 
       <!-- scroll hint -->
@@ -248,7 +248,7 @@
       <form class="su-form" id="su-form">
         <label>Name<input type="text" name="name" placeholder="Your name" required></label>
         <label>Email<input type="email" name="email" placeholder="you@company.com" required></label>
-        <label>Phone (optional)<input type="tel" name="phone" placeholder="(555) 555-5555"></label>
+        <label><span>Phone <span data-phone-hint>(optional)</span></span><input type="tel" name="phone" placeholder="(555) 555-5555" autocomplete="tel"></label>
         <label>Park name
           <select name="dev">
             <option>Rockwall</option>
@@ -257,14 +257,16 @@
           </select>
         </label>
         <label>Message<textarea name="message" rows="4" placeholder="Tell us about your space needs&hellip;"></textarea></label>
-        <!-- SMS opt-in for 10DLC (Customer Care). Optional and unchecked by
-             default; wording is carrier-required, so change it only with them. -->
+        <!-- SMS opt-in for 10DLC (Customer Care + Marketing). Optional and
+             unchecked by default; ticking it makes the phone required
+             (inquiry.js). Wording is carrier-required — change it only with
+             Sakari, and keep the copy on contact.html identical. -->
         <label class="su-consent">
           <input type="checkbox" name="sms_consent" value="yes">
-          <span>By checking this box, I agree to receive Customer Care messages by SMS from ScaleUp Flex Parks at the number provided. Msg &amp; data rates apply. Msg. frequency varies. Reply HELP for help and STOP to cancel. See our <a href="privacy.html">Privacy Policy</a>.</span>
+          <span>By checking this box, I agree to receive Customer Care and Marketing messages by SMS from ScaleUp Flex Parks at the number provided. Msg &amp; data rates apply. Msg. frequency varies. Reply HELP for help and STOP to cancel. See our <a href="privacy.html">Privacy Policy</a>.</span>
         </label>
         <!-- Scheduling turned off for now. The HubSpot Meetings handler in
-             main.js?v=ec5c70ea is guarded on these two elements, so it no-ops while they
+             main.js?v=63d307d6 is guarded on these two elements, so it no-ops while they
              are commented out — restore both lines to switch it back on.
         <button type="button" class="su-btn-outline su-book-btn" id="su-book-open">Schedule a meeting <span class="su-arr">&#8594;</span></button>
         <div id="su-book-embed" hidden></div>
@@ -321,6 +323,7 @@
   </div>
 
   <script src="logo.js?v=3620ba0b"></script>
-  <script src="main.js?v=ec5c70ea"></script>
+  <script src="inquiry.js?v=1fb8a4d1"></script>
+  <script src="main.js?v=63d307d6"></script>
 </body>
 </html>

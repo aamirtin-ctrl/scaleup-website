@@ -1,5 +1,5 @@
 /* ============================================================
-   ScaleUp — park.css?v=8470c63e
+   ScaleUp — park.css?v=e177133e
    Shared layout for the individual flex-park leasing pages
    (Rockwall, McKinney). Brand tokens — colour, type — are
    inherited from styles.css?v=608f2310 and are not redefined here.
@@ -638,6 +638,10 @@
 .ct-val { font-size: 15px; color: var(--text); }
 .ct-val a { color: var(--text); }
 .ct-val a:hover { color: var(--red); }
+.ct-lede { margin: 12px 0 0; font-size: 15px; line-height: 1.6; color: rgba(36,29,19,0.65); max-width: 38ch; }
+/* the inquiry form sits inside the card, so it drops its own card chrome */
+.ct-form { background: none; border: 0; box-shadow: none; padding: 0; border-radius: 0; }
+#inquiry { scroll-margin-top: 110px; }
 
 @media (max-width: 1000px) {
   .ct-card { grid-template-columns: 1fr; gap: 34px; padding: 40px 34px 44px; }

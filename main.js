@@ -1,5 +1,5 @@
 /* ============================================================
-   ScaleUp — main.js?v=ec5c70ea
+   ScaleUp — main.js?v=63d307d6
    Deck swap + scroll-expand/close engine, about, testimonials
    ============================================================ */
 
@@ -821,12 +821,6 @@ T_COLS.forEach(col => {
 }
 
 /* ============================================================
-   CONTACT — delivers to contactus@scaleupflex.com via FormSubmit;
-   falls back to the visitor's mail client if the request fails
-   ============================================================ */
-const CONTACT_EMAIL = 'contactus@scaleupflex.com';
-
-/* ============================================================
    SCHEDULE A MEETING — optional inline HubSpot Meetings scheduler
    (bookings sync to HubSpot CRM). Paste your HubSpot meetings link
    below to switch it on, e.g. 'https://meetings.hubspot.com/your-slug'.
@@ -887,42 +881,3 @@ const HUBSPOT_MEETING_URL = 'https://meetings-na2.hubspot.com/taaha-motorwala';
     }, 450);
   }, 3200);
 })();
-
-document.getElementById('su-form').addEventListener('submit', async (e) => {
-  e.preventDefault();
-  const form = e.target;
-  const f = new FormData(form);
-  const btn = form.querySelector('button[type="submit"]');
-  const original = btn.innerHTML;
-  btn.disabled = true;
-  btn.textContent = 'Sending…';
-  try {
-    const res = await fetch(`https://formsubmit.co/ajax/${CONTACT_EMAIL}`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-      body: JSON.stringify({
-        name: f.get('name'),
-        email: f.get('email'),
-        phone: f.get('phone') || 'Not provided',
-        park: f.get('dev'),
-        message: f.get('message'),
-        sms_consent: f.get('sms_consent') === 'yes' ? 'Yes — opted in to Customer Care SMS' : 'No',
-        _subject: `Leasing inquiry — ${f.get('dev')}`,
-        _replyto: f.get('email'),
-        _template: 'table',
-        _autoresponse: `Hi ${f.get('name')},\n\nThanks for reaching out to ScaleUp. We received your inquiry${f.get('dev') !== 'Not sure yet' ? ` about ${f.get('dev')}` : ''} and one of our principals will get back to you within one business day.\n\nIf it's time-sensitive, call us at (469) 628-1922.\n\nScaleUp Developments\nhttps://scaleupflex.com`,
-      }),
-    });
-    const data = await res.json().catch(() => null);
-    if (!res.ok || !data || String(data.success) !== 'true') throw new Error('send failed');
-    form.reset();
-    btn.textContent = 'Inquiry sent ✓';
-    setTimeout(() => { btn.innerHTML = original; btn.disabled = false; }, 4000);
-  } catch {
-    const subject = encodeURIComponent(`Leasing inquiry — ${f.get('dev')}`);
-    const body = encodeURIComponent(`Name: ${f.get('name')}\nEmail: ${f.get('email')}\nDevelopment: ${f.get('dev')}\nSMS consent: ${f.get('sms_consent') === 'yes' ? 'Yes' : 'No'}\n\n${f.get('message')}`);
-    window.location.href = `mailto:${CONTACT_EMAIL}?subject=${subject}&body=${body}`;
-    btn.innerHTML = original;
-    btn.disabled = false;
-  }
-});
