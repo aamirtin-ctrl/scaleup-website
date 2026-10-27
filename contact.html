@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Schedule a Tour | ScaleUp Flex Parks</title>
-  <meta name="description" content="Pick a time to walk Rockwall or McKinney with the developer.">
+  <title>Contact and Tours | ScaleUp Flex Parks</title>
+  <meta name="description" content="Send a leasing inquiry or pick a time to walk Rockwall or McKinney with the developer.">
     <link rel="icon" href="assets/brand/favicon.svg?v=159ede44" type="image/svg+xml">
   <link rel="icon" type="image/png" sizes="48x48" href="assets/brand/favicon-48.png?v=146f1fb3">
   <link rel="icon" type="image/png" sizes="192x192" href="assets/brand/favicon-192.png?v=cb7406f7">
@@ -16,8 +16,8 @@
   <meta name="theme-color" content="#F5EFE2">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="ScaleUp Flex Parks">
-  <meta property="og:title" content="Schedule a Tour | ScaleUp Flex Parks">
-  <meta property="og:description" content="Pick a time to walk Rockwall or McKinney with the developer.">
+  <meta property="og:title" content="Contact and Tours | ScaleUp Flex Parks">
+  <meta property="og:description" content="Send a leasing inquiry or pick a time to walk Rockwall or McKinney with the developer.">
   <meta property="og:url" content="https://scaleupflex.com/contact.html">
   <meta property="og:image" content="https://scaleupflex.com/assets/og.png">
   <meta property="og:image:type" content="image/png">
@@ -30,7 +30,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css?v=608f2310">
-  <link rel="stylesheet" href="park.css?v=8470c63e">
+  <link rel="stylesheet" href="park.css?v=e177133e">
 
   <script type="application/ld+json">
   {
@@ -99,28 +99,61 @@
     </div>
 
     <div class="pk-hero-inner">
-      <h1>Book a <em>walkthrough</em></h1>
-      <p class="pk-hero-lede"><strong>Pick a time and we will walk the site with you.</strong> You will get a calendar invite, and we will come prepared for your size and timeline.</p>
+      <h1>Talk to the <em>developer</em></h1>
+      <p class="pk-hero-lede"><strong>Send an inquiry or pick a time to walk the site.</strong> Either way, you deal directly with the people who build and lease the parks.</p>
       <div class="pk-hero-ctas">
-        <a href="#su-book" class="su-btn-fill">Pick a time <span class="su-arr">&#8595;</span></a>
+        <a href="#inquiry" class="su-btn-fill">Send an inquiry <span class="su-arr">&#8595;</span></a>
         <a href="tel:+14696281922" class="su-btn-outline">Call (469) 628-1922</a>
       </div>
     </div>
   </section>
 
   <!-- ============================================================
-       2. THE SCHEDULER — the only thing this page does
+       2. INQUIRY FORM — same form as the homepage #contact, with the
+       SMS opt-in. /contact is the opt-in URL registered for 10DLC,
+       so the form (phone field + consent box) must stay on this page.
        ============================================================ -->
   <main class="pk-wrap" style="padding-top:44px;padding-bottom:90px">
-    <section class="ct-card">
+    <section class="ct-card" id="inquiry">
       <div class="ct-card-left">
-        <h2>Book a walkthrough</h2>
+        <h2>Send us an inquiry</h2>
+        <p class="ct-lede">Tell us your size, timeline, and which park you are looking at. A principal will reply within one business day.</p>
         <div class="ct-meta-list">
           <div><span class="ct-label">Email</span><span class="ct-val"><a href="mailto:contactus@scaleupflex.com">contactus@scaleupflex.com</a></span></div>
           <div><span class="ct-label">Phone</span><span class="ct-val"><a href="tel:+14696281922">(469) 628-1922</a></span></div>
           <div><span class="ct-label">Headquarters</span><span class="ct-val">Frisco, Texas</span></div>
           <div><span class="ct-label">Developments</span><span class="ct-val">Rockwall &middot; McKinney</span></div>
         </div>
+      </div>
+
+      <form class="su-form ct-form" id="su-form">
+        <label>Name<input type="text" name="name" placeholder="Your name" autocomplete="name" required></label>
+        <label>Email<input type="email" name="email" placeholder="you@company.com" autocomplete="email" required></label>
+        <label><span>Phone <span data-phone-hint>(optional)</span></span><input type="tel" name="phone" placeholder="(555) 555-5555" autocomplete="tel"></label>
+        <label>Park name
+          <select name="dev">
+            <option>Rockwall</option>
+            <option>McKinney</option>
+            <option>Not sure yet</option>
+          </select>
+        </label>
+        <label>Message<textarea name="message" rows="4" placeholder="Tell us about your space needs&hellip;"></textarea></label>
+        <!-- SMS opt-in for 10DLC — keep identical to the homepage form -->
+        <label class="su-consent">
+          <input type="checkbox" name="sms_consent" value="yes">
+          <span>By checking this box, I agree to receive Customer Care and Marketing messages by SMS from ScaleUp Flex Parks at the number provided. Msg &amp; data rates apply. Msg. frequency varies. Reply HELP for help and STOP to cancel. See our <a href="privacy.html">Privacy Policy</a>.</span>
+        </label>
+        <button type="submit" class="su-btn-fill">Send inquiry <span class="su-arr">&#8594;</span></button>
+      </form>
+    </section>
+
+    <!-- ============================================================
+         3. THE SCHEDULER — book a walkthrough directly
+         ============================================================ -->
+    <section class="ct-card">
+      <div class="ct-card-left">
+        <h2>Or book a walkthrough</h2>
+        <p class="ct-lede">Pick a time and we will walk the site with you. You will get a calendar invite, and we will come prepared for your size and timeline.</p>
       </div>
 
       <div id="su-book">
@@ -170,6 +203,7 @@
 
   <script src="logo.js?v=3620ba0b"></script>
   <script src="header.js?v=9e687745"></script>
+  <script src="inquiry.js?v=1fb8a4d1"></script>
   <script src="contact.js?v=68e51be8"></script>
 </body>
 </html>
