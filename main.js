@@ -1,5 +1,5 @@
 /* ============================================================
-   ScaleUp — main.js?v=63d307d6
+   ScaleUp — main.js?v=2d8309fb
    Deck swap + scroll-expand/close engine, about, testimonials
    ============================================================ */
 
@@ -17,8 +17,8 @@ const DEVS = [
     tagline: 'Room to scale up.',
     timeline: [ // placeholder milestones — Aamir will supply real dates/details
       { date: 'March 2026', title: 'Groundbreaking', desc: '5-acre site on N Goliad St.', state: 'done' },
-      { date: 'Now', title: 'Site work & foundations', desc: 'Grading, utilities, and building pads.', state: 'current' },
-      { date: 'TBD', title: 'Vertical construction' },
+      { date: 'Complete', title: 'Site work & foundations', desc: 'Grading, utilities, and building pads.', state: 'done' },
+      { date: 'Now', title: 'Vertical construction', desc: 'Buildings going up.', state: 'current' },
       { date: 'TBD', title: 'Finish-out & paving' },
       { date: 'Summer 2027', title: 'Delivery & move-ins' }
     ],
