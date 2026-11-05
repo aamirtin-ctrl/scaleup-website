@@ -1,24 +1,26 @@
 /* ============================================================
    ScaleUp — promo banner
-   Scrolling strip above every page for the current leasing
-   special. Edit PROMO to change the wording, link, or end date;
-   after PROMO.ends the banner (and anything marked
-   data-promo-until) disappears on its own. Loaded right after
+   Scrolling strip above every page. Edit PROMO to change the
+   wording or link. Set PROMO.ends to an ISO date to have the
+   banner (and anything marked data-promo-until) disappear on its
+   own after that moment; null keeps it up. Loaded right after
    <body> so the strip is in place before the page paints.
+   No pricing or promotional offers here — leasing message only.
    ============================================================ */
 const PROMO = {
-  ends: '2026-11-30T23:59:59-06:00',   // end of Nov 30, Central time
-  href: '/rockwall-flex-space-for-lease.html#leasing-specials',
-  label: 'Early bird: up to 5 months free rent at Rockwall. 3, 4 or 5-year leases. Offer ends Nov 30, 2026.',
+  ends: null,
+  href: '/contact.html#su-book',
+  label: 'Rockwall Flex Park: vertical construction has begun. Model units open December 2026. Pre-leasing is now open. Book a tour.',
   items: [
-    'Early bird: up to <b>5 months free rent</b> at Rockwall',
-    '3, 4 or 5-year leases',
-    'Offer ends Nov 30, 2026',
+    'Rockwall Flex Park is rising: <b>vertical construction has begun</b>',
+    'Model units open <b>December 2026</b>',
+    'Pre-leasing is now open: <b>get first pick of the bays</b>',
+    'Book your tour &rarr;',
   ],
 };
 
 (() => {
-  const expired = Date.now() > new Date(PROMO.ends).getTime();
+  const expired = PROMO.ends && Date.now() > new Date(PROMO.ends).getTime();
   if (expired) {
     document.documentElement.classList.add('su-promo-over');
     return;
