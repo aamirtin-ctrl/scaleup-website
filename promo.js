@@ -10,9 +10,9 @@
 const PROMO = {
   ends: null,
   href: '/contact.html#su-book',
-  label: 'Rockwall Flex Park: vertical construction has begun. Model units open December 2026. Pre-leasing is now open. Book a tour.',
+  label: 'Rockwall Flex Park: Vertical construction has begun. Model units open December 2026. Pre-leasing is now open. Book a tour.',
   items: [
-    'Rockwall Flex Park is rising: <b>vertical construction has begun</b>',
+    'Rockwall Flex Park is rising: <b>Vertical construction has begun</b>',
     'Model units open <b>December 2026</b>',
     'Pre-leasing is now open: <b>get first pick of the bays</b>',
     'Book your tour &rarr;',
@@ -27,7 +27,7 @@ const PROMO = {
   }
   if (document.querySelector('.su-promo')) return;
 
-  const one = PROMO.items.map((t) => `<span class="su-promo-item">${t}<i class="su-promo-dot"></i></span>`).join('');
+  const one = PROMO.items.map((t) => `<span class="su-promo-item"><span>${t}</span><i class="su-promo-dot"></i></span>`).join('');
   const bar = document.createElement('a');
   bar.className = 'su-promo';
   bar.href = PROMO.href;

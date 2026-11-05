@@ -832,7 +832,7 @@ b, strong { font-weight: 600; }
 @media (prefers-reduced-motion: reduce) { [data-stick] .su-morph { transition: none; } }
 
 /* ============================================================
-   Promo banner — scrolling strip injected by promo.js?v=905a5e63
+   Promo banner — scrolling strip injected by promo.js?v=9c16ebdd
    Sits at the very top; the page is pushed down by its height
    (--promo-h) and pinned headers start below it (--promo-off).
    ============================================================ */
