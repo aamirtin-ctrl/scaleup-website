@@ -1,8 +1,8 @@
 /* ============================================================
-   ScaleUp — park.css?v=e177133e
+   ScaleUp — park.css?v=0fa4280f
    Shared layout for the individual flex-park leasing pages
    (Rockwall, McKinney). Brand tokens — colour, type — are
-   inherited from styles.css?v=608f2310 and are not redefined here.
+   inherited from styles.css?v=6e106667 and are not redefined here.
    The DFW pillar page still uses landing.css.
    ============================================================ */
 
@@ -44,7 +44,7 @@
 
 /* Nav: flat and transparent over the hero, condensing into a floating pill
    on scroll. Positioning + pill visuals come from [data-stick] .su-morph in
-   styles.css?v=608f2310; header.js?v=9e687745 drives --hp. */
+   styles.css?v=6e106667; header.js?v=9e687745 drives --hp. */
 .pk-nav { display: flex; align-items: center; gap: 30px; white-space: nowrap; }
 .pk-nav .su-logo { margin-right: auto; }
 .pk-nav-links { display: flex; gap: 24px; }
@@ -641,7 +641,7 @@
 .ct-lede { margin: 12px 0 0; font-size: 15px; line-height: 1.6; color: rgba(36,29,19,0.65); max-width: 38ch; }
 /* the inquiry form sits inside the card, so it drops its own card chrome */
 .ct-form { background: none; border: 0; box-shadow: none; padding: 0; border-radius: 0; }
-#inquiry { scroll-margin-top: 110px; }
+#inquiry, #su-book { scroll-margin-top: 110px; }
 
 @media (max-width: 1000px) {
   .ct-card { grid-template-columns: 1fr; gap: 34px; padding: 40px 34px 44px; }
@@ -655,6 +655,3 @@
 @media (max-width: 480px) {
   .ct-meta-list { grid-template-columns: 1fr; }
 }
-
-/* leasing specials — linked from the promo banner; clear the pinned header */
-#leasing-specials { scroll-margin-top: 110px; }
